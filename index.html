@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Sapiens de Ensino | Preparatório Advocacia</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração de Cores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0f1c3f',      
+                        lightblue: '#5f8bcf', 
+                        orange: '#f47b20',    
+                        orangeHover: '#d96a1a',
+                        lightbg: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #5f8bcf, #f47b20);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pulse-btn {
+            animation: pulse-orange 2s infinite;
+        }
+
+        @keyframes pulse-orange {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 123, 32, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(244, 123, 32, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(244, 123, 32, 0); }
+        }
+
+        /* Animação suave na troca de páginas */
+        .page-view {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased flex flex-col min-h-screen">
+
+    <!-- CABEÇALHO (NAVBAR) FIXO -->
+    <header class="fixed w-full z-50 bg-navy shadow-lg border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logotipo (Clica e volta ao Início) -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-lightblue rounded-lg flex items-center justify-center text-navy font-bold text-xl border-2 border-orange group-hover:bg-orange transition-colors">
+                        IS
+                    </div>
+                    <span class="font-heading font-bold text-2xl text-white tracking-tight">SAPIENS</span>
+                </a>
+                
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-orange font-medium transition-colors text-sm">Início</a>
+                    <a href="#metodologia" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Metodologia</a>
+                    <a href="#conteudo" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">O Curso</a>
+                    <a href="#docentes" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Corpo Docente</a>
+                    <a href="#faq" class="nav-link text-gray-300 hover:text-white transition-colors text-sm font-medium">Dúvidas</a>
+                </nav>
+
+                <!-- CTA Navbar -->
+                <div class="hidden md:flex">
+                    <a href="#matricula" class="nav-link-btn bg-orange hover:bg-orangeHover text-white px-6 py-2.5 rounded-md font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-orange/30 text-sm">
+                        Garantir Vaga
+                    </a>
+                </div>
+
+                <!-- Menu Mobile Botão -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-orange focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy border-t border-white/10 pb-4 px-4">
+            <a href="#home" class="mobile-nav-link block py-3 text-white border-b border-white/5">Início</a>
+            <a href="#metodologia" class="mobile-nav-link block py-3 text-gray-300 border-b border-white/5">Metodologia</a>
+            <a href="#conteudo" class="mobile-nav-link block py-3 text-gray-300 border-b border-white/5">O Curso</a>
+            <a href="#docentes" class="mobile-nav-link block py-3 text-gray-300 border-b border-white/5">Corpo Docente</a>
+            <a href="#faq" class="mobile-nav-link block py-3 text-gray-300 border-b border-white/5">Dúvidas</a>
+            <a href="#matricula" class="mobile-nav-link block py-3 text-orange font-bold">Garantir Vaga</a>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL ONDE AS PÁGINAS SERÃO RENDERIZADAS -->
+    <main class="flex-grow pt-20" id="main-content">
+        
+        <!-- ============================================== -->
+        <!-- PÁGINA 1: INÍCIO (HERO + CAPTAÇÃO)             -->
+        <!-- ============================================== -->
+        <div id="page-home" class="page-view hidden">
+            <!-- Hero Section -->
+            <section class="relative pt-16 pb-20 lg:pt-32 lg:pb-32 bg-navy overflow-hidden">
+                <div class="absolute top-0 right-0 w-1/2 h-full bg-lightblue/10 rounded-l-full blur-3xl transform translate-x-1/3 -translate-y-1/4"></div>
+                <div class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-orange/10 rounded-r-full blur-3xl transform -translate-x-1/2 translate-y-1/4"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div class="text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lightblue/20 text-lightblue text-sm font-semibold mb-6 border border-lightblue/30">
+                                <span class="w-2 h-2 rounded-full bg-orange animate-pulse"></span> Turmas Abertas 2026
+                            </div>
+                            <h1 class="font-heading text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                                Aprovamos você no Concurso Público de <span class="text-orange">Advocacia.</span>
+                            </h1>
+                            <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                                O método mais completo e atualizado do mercado. Estude com procuradores e juízes que conhecem a banca.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
+                                <a href="#matricula" class="w-full sm:w-auto pulse-btn bg-orange hover:bg-orangeHover text-white px-8 py-4 rounded-lg font-bold text-base sm:text-lg text-center transition-all shadow-xl shadow-orange/20">
+                                    Quero Ser Aprovado
+                                </a>
+                                <a href="https://wa.me/556200000000" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-lg font-bold text-base sm:text-lg text-center transition-all flex items-center justify-center gap-2">
+                                    <i class="fab fa-whatsapp text-xl"></i> Falar com Consultor
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Vídeo -->
+                        <div class="relative w-full max-w-lg mx-auto lg:max-w-none">
+                            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group cursor-pointer bg-gray-900">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-20 h-20 bg-orange/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange/50 backdrop-blur-sm">
+                                        <i class="fas fa-play text-white text-3xl ml-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Captação de Leads -->
+            <section class="py-12 sm:py-20 bg-lightblue relative overflow-hidden">
+                <div class="absolute inset-0 bg-navy/10 mix-blend-multiply"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+                        <div class="lg:w-5/12 bg-navy p-8 sm:p-10 text-white flex flex-col justify-center relative">
+                            <span class="inline-block px-3 py-1 bg-orange rounded-full text-xs font-bold uppercase tracking-wide w-max mb-6">Material Gratuito</span>
+                            <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">Baixe o Guia Definitivo da Aprovação</h3>
+                            <p class="text-gray-300 mb-4 sm:mb-8 text-sm sm:text-base">Descubra os erros fatais que eliminam 90% dos candidatos em provas de advocacia.</p>
+                        </div>
+                        <div class="lg:w-7/12 p-6 sm:p-10 lg:p-14">
+                            <form action="#" method="POST" class="space-y-4 sm:space-y-5" id="leadForm">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lightblue outline-none" placeholder="Seu nome" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp</label>
+                                        <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lightblue outline-none" placeholder="(00) 00000-0000" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                                    <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lightblue outline-none" placeholder="seu.melhor@email.com" required>
+                                </div>
+                                <button type="submit" class="w-full bg-navy hover:bg-navy/90 text-white font-bold py-3 sm:py-4 rounded-lg shadow-lg transition-all flex items-center justify-center gap-2">
+                                    <i class="fas fa-download"></i> Quero meu Material Gratuito
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 2: METODOLOGIA                          -->
+        <!-- ============================================== -->
+        <div id="page-metodologia" class="page-view hidden bg-lightbg min-h-full py-12 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-xs sm:text-sm mb-2">Metodologia Comprovada</h2>
+                    <h3 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-4">Por que escolher o Instituto Sapiens?</h3>
+                    <p class="text-gray-600 text-base sm:text-lg">Não somos apenas um curso em vídeo. Somos um ecossistema completo de preparação focado na sua aprovação estratégica.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-lightblue/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-book-open text-2xl sm:text-3xl text-lightblue"></i>
+                        </div>
+                        <h4 class="font-heading text-lg sm:text-xl font-bold text-navy mb-3">Material Verticalizado</h4>
+                        <p class="text-gray-600 text-sm sm:text-base">Esqueça materiais genéricos. Nosso conteúdo é 100% focado no edital.</p>
+                    </div>
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-2 h-full bg-orange"></div>
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-orange/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-gavel text-2xl sm:text-3xl text-orange"></i>
+                        </div>
+                        <h4 class="font-heading text-lg sm:text-xl font-bold text-navy mb-3">Corpo Docente de Elite</h4>
+                        <p class="text-gray-600 text-sm sm:text-base">Aulas ministradas por Procuradores, Juízes e Advogados de renome.</p>
+                    </div>
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-navy/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-2xl sm:text-3xl text-navy"></i>
+                        </div>
+                        <h4 class="font-heading text-lg sm:text-xl font-bold text-navy mb-3">Simulados Inéditos</h4>
+                        <p class="text-gray-600 text-sm sm:text-base">Teste seus conhecimentos com questões no exato padrão da banca.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 3: O CURSO (MÓDULOS)                    -->
+        <!-- ============================================== -->
+        <div id="page-conteudo" class="page-view hidden bg-white min-h-full py-12 sm:py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 sm:mb-12">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-xs sm:text-sm mb-2">Grade Curricular</h2>
+                    <h3 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-4">O que você vai aprender?</h3>
+                    <p class="text-gray-600 text-base">Uma grade completa, elaborada para esgotar o edital e garantir segurança na hora da prova.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-4 sm:p-6 bg-lightbg focus:outline-none" onclick="toggleAccordion('mod1')">
+                            <span class="font-bold text-navy text-base sm:text-lg flex items-center gap-3 text-left">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-lightblue text-white text-sm flex items-center justify-center">1</span> Direito Constitucional Avançado
+                            </span>
+                            <i id="icon-mod1" class="fas fa-chevron-down text-gray-400 ml-2"></i>
+                        </button>
+                        <div id="mod1" class="hidden p-4 sm:p-6 bg-white border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm sm:text-base">
+                                <li><i class="fas fa-check text-orange mr-2"></i>Controle de Constitucionalidade</li>
+                                <li><i class="fas fa-check text-orange mr-2"></i>Organização dos Poderes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-4 sm:p-6 bg-lightbg focus:outline-none" onclick="toggleAccordion('mod2')">
+                            <span class="font-bold text-navy text-base sm:text-lg flex items-center gap-3 text-left">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-lightblue text-white text-sm flex items-center justify-center">2</span> Direito Administrativo na Prática
+                            </span>
+                            <i id="icon-mod2" class="fas fa-chevron-down text-gray-400 ml-2"></i>
+                        </button>
+                        <div id="mod2" class="hidden p-4 sm:p-6 bg-white border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm sm:text-base">
+                                <li><i class="fas fa-check text-orange mr-2"></i>Nova Lei de Licitações</li>
+                                <li><i class="fas fa-check text-orange mr-2"></i>Processo Administrativo Disciplinar (PAD)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-10 sm:mt-12 text-center">
+                    <a href="#matricula" class="w-full sm:w-auto bg-navy hover:bg-navy/90 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg inline-block text-center">
+                        Quero ver os planos disponíveis
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 4: CORPO DOCENTE                        -->
+        <!-- ============================================== -->
+        <div id="page-docentes" class="page-view hidden bg-navy min-h-full py-12 sm:py-20 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-10 sm:mb-12 text-center md:text-left">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-xs sm:text-sm mb-2">Quem ensina</h2>
+                    <h3 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Aprenda com quem já chegou lá</h3>
+                    <p class="text-gray-300 max-w-2xl mx-auto md:mx-0 text-sm sm:text-base">Nosso corpo docente é formado exclusivamente por profissionais de alta performance jurídica e didática comprovada.</p>
+                </div>
+                        <div class="lg:w-7/12 p-10 lg:p-14">
+                            <form action="#" method="POST" class="space-y-5" id="leadForm">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lightblue outline-none" placeholder="Seu nome" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp</label>
+                                        <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lightblue outline-none" placeholder="(00) 00000-0000" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                                    <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-lightblue outline-none" placeholder="seu.melhor@email.com" required>
+                                </div>
+                                <button type="submit" class="w-full bg-navy hover:bg-navy/90 text-white font-bold py-4 rounded-lg shadow-lg transition-all flex items-center justify-center gap-2">
+                                    <i class="fas fa-download"></i> Quero meu Material Gratuito
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 2: METODOLOGIA                          -->
+        <!-- ============================================== -->
+        <div id="page-metodologia" class="page-view hidden bg-lightbg min-h-full py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-sm mb-2">Metodologia Comprovada</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Por que escolher o Instituto Sapiens?</h3>
+                    <p class="text-gray-600 text-lg">Não somos apenas um curso em vídeo. Somos um ecossistema completo de preparação focado na sua aprovação estratégica.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="w-16 h-16 bg-lightblue/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-book-open text-3xl text-lightblue"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-navy mb-3">Material Verticalizado</h4>
+                        <p class="text-gray-600">Esqueça materiais genéricos. Nosso conteúdo é 100% focado no edital.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-2 h-full bg-orange"></div>
+                        <div class="w-16 h-16 bg-orange/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-gavel text-3xl text-orange"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-navy mb-3">Corpo Docente de Elite</h4>
+                        <p class="text-gray-600">Aulas ministradas por Procuradores, Juízes e Advogados de renome.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="w-16 h-16 bg-navy/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-3xl text-navy"></i>
+                        </div>
+                        <h4 class="font-heading text-xl font-bold text-navy mb-3">Simulados Inéditos</h4>
+                        <p class="text-gray-600">Teste seus conhecimentos com questões no exato padrão da banca.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 3: O CURSO (MÓDULOS)                    -->
+        <!-- ============================================== -->
+        <div id="page-conteudo" class="page-view hidden bg-white min-h-full py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-sm mb-2">Grade Curricular</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">O que você vai aprender?</h3>
+                    <p class="text-gray-600">Uma grade completa, elaborada para esgotar o edital e garantir segurança na hora da prova.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-6 bg-lightbg focus:outline-none" onclick="toggleAccordion('mod1')">
+                            <span class="font-bold text-navy text-lg flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-lightblue text-white text-sm flex items-center justify-center">1</span> Direito Constitucional Avançado
+                            </span>
+                            <i id="icon-mod1" class="fas fa-chevron-down text-gray-400"></i>
+                        </button>
+                        <div id="mod1" class="hidden p-6 bg-white border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-check text-orange mr-2"></i>Controle de Constitucionalidade</li>
+                                <li><i class="fas fa-check text-orange mr-2"></i>Organização dos Poderes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-6 bg-lightbg focus:outline-none" onclick="toggleAccordion('mod2')">
+                            <span class="font-bold text-navy text-lg flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-lightblue text-white text-sm flex items-center justify-center">2</span> Direito Administrativo na Prática
+                            </span>
+                            <i id="icon-mod2" class="fas fa-chevron-down text-gray-400"></i>
+                        </button>
+                        <div id="mod2" class="hidden p-6 bg-white border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-check text-orange mr-2"></i>Nova Lei de Licitações</li>
+                                <li><i class="fas fa-check text-orange mr-2"></i>Processo Administrativo Disciplinar (PAD)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#matricula" class="bg-navy hover:bg-navy/90 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg inline-block">
+                        Quero ver os planos disponíveis
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 4: CORPO DOCENTE                        -->
+        <!-- ============================================== -->
+        <div id="page-docentes" class="page-view hidden bg-navy min-h-full py-20 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-sm mb-2">Quem ensina</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold mb-4">Aprenda com quem já chegou lá</h3>
+                    <p class="text-gray-300 max-w-2xl">Nosso corpo docente é formado exclusivamente por profissionais de alta performance jurídica e didática comprovada.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-heading font-bold text-xl mb-1">Dr. Carlos Eduardo</h4>
+                            <p class="text-lightblue text-sm font-semibold mb-3">Procurador do Estado</p>
+                            <p class="text-gray-400 text-sm">Especialista em Direito Administrativo.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="font-heading font-bold text-xl mb-1">Dra. Mariana Silva</h4>
+                            <p class="text-lightblue text-sm font-semibold mb-3">Juíza Federal</p>
+                            <p class="text-gray-400 text-sm">Mestre em Direito Constitucional.</p>
+                        </div>
+                    </div>
+                    <div class="bg-lightblue rounded-2xl p-6 flex flex-col justify-center items-center text-center border border-lightblue/50">
+                        <i class="fas fa-users text-4xl text-white mb-4"></i>
+                        <h4 class="font-heading font-bold text-xl mb-2 text-white">Equipe Completa</h4>
+                        <p class="text-white/80 text-sm mb-6">Mais de 15 especialistas dedicados à sua aprovação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 5: MATRÍCULA / CHECKOUT                 -->
+        <!-- ============================================== -->
+        <div id="page-matricula" class="page-view hidden bg-lightbg min-h-full py-12 sm:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 sm:mb-12">
+                    <h2 class="text-orange font-bold tracking-wider uppercase text-xs sm:text-sm mb-2">Inscrições Abertas</h2>
+                    <h3 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-4">Garanta sua vaga hoje</h3>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-orange/20 flex flex-col lg:flex-row relative mt-6">
+                    <div class="absolute top-0 right-0 bg-orange text-white px-4 py-1 sm:px-6 sm:py-2 rounded-bl-xl font-bold text-xs sm:text-sm z-10">LOTE 1 ACABANDO</div>
+                    
+                    <div class="lg:w-3/5 p-6 sm:p-10 lg:p-14">
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold text-navy mb-2 mt-4 sm:mt-0">Preparatório Intensivo Advocacia</h3>
+                        <p class="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-base">Acesso imediato a toda a plataforma por 12 meses.</p>
+                        <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-gray-700 text-sm sm:text-base">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-orange mt-1 mr-2 flex-shrink-0"></i> <span><strong>Mais de 200h</strong> de videoaulas.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-orange mt-1 mr-2 flex-shrink-0"></i> <span><strong>PDFs Autossuficientes</strong> com lei seca e jurisprudência.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-orange mt-1 mr-2 flex-shrink-0"></i> <span>Garantia incondicional de <strong>7 dias</strong>.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="lg:w-2/5 bg-navy text-white p-6 sm:p-10 lg:p-14 flex flex-col justify-center text-center border-t lg:border-t-0 lg:border-l border-white/10">
+                        <p class="text-lightblue font-semibold mb-2 text-sm sm:text-base">De <span class="line-through text-gray-400">R$ 1.997,00</span> por apenas</p>
+                        <div class="flex items-center justify-center gap-1 sm:gap-2 mb-2">
+                            <span class="text-xl sm:text-2xl font-bold">12x</span>
+                            <span class="text-lg sm:text-xl">R$</span>
+                            <span class="font-heading text-5xl sm:text-6xl font-extrabold text-orange">97</span><span class="text-lg sm:text-xl">,14</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-300 mb-6 sm:mb-8">ou R$ 997,00 à vista</p>
+                        <a href="#" class="pulse-btn bg-orange hover:bg-orangeHover text-white font-bold py-3 sm:py-4 rounded-xl shadow-lg transition-all w-full text-center">
+                            Matricular Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 6: DÚVIDAS / FAQ                        -->
+        <!-- ============================================== -->
+        <div id="page-faq" class="page-view hidden bg-white min-h-full py-12 sm:py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 sm:mb-12">
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold text-navy mb-4">Ainda tem dúvidas?</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Nós respondemos as perguntas mais frequentes para você tomar sua decisão com segurança.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="border-b border-gray-200">
+                        <button class="w-full flex justify-between items-center py-4 sm:py-5 text-left focus:outline-none" onclick="toggleFaq('faq1')">
+                            <span class="font-bold text-navy text-base sm:text-lg pr-4">Por quanto tempo terei acesso ao curso?</span>
+                            <i id="icon-faq1" class="fas fa-plus text-orange flex-shrink-0"></i>
+                        </button>
+                        <div id="faq1" class="hidden pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">O acesso é válido por 12 meses (1 ano).</div>
+                    </div>
+                    <div class="border-b border-gray-200">
+                        <button class="w-full flex justify-between items-center py-4 sm:py-5 text-left focus:outline-none" onclick="toggleFaq('faq2')">
+                            <span class="font-bold text-navy text-base sm:text-lg pr-4">Como funciona a garantia?</span>
+                            <i id="icon-faq2" class="fas fa-plus text-orange flex-shrink-0"></i>
+                        </button>
+                        <div id="faq2" class="hidden pb-4 sm:pb-5 text-gray-600 text-sm sm:text-base">Devolvemos 100% do valor se não se adaptar em até 7 dias.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA 6: DÚVIDAS / FAQ                        -->
+        <!-- ============================================== -->
+        <div id="page-faq" class="page-view hidden bg-white min-h-full py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="font-heading text-3xl font-bold text-navy mb-4">Ainda tem dúvidas?</h3>
+                    <p class="text-gray-600">Nós respondemos as perguntas mais frequentes para você tomar sua decisão com segurança.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="border-b border-gray-200">
+                        <button class="w-full flex justify-between items-center py-5 text-left focus:outline-none" onclick="toggleFaq('faq1')">
+                            <span class="font-bold text-navy text-lg">Por quanto tempo terei acesso ao curso?</span>
+                            <i id="icon-faq1" class="fas fa-plus text-orange"></i>
+                        </button>
+                        <div id="faq1" class="hidden pb-5 text-gray-600">O acesso é válido por 12 meses (1 ano).</div>
+                    </div>
+                    <div class="border-b border-gray-200">
+                        <button class="w-full flex justify-between items-center py-5 text-left focus:outline-none" onclick="toggleFaq('faq2')">
+                            <span class="font-bold text-navy text-lg">Como funciona a garantia?</span>
+                            <i id="icon-faq2" class="fas fa-plus text-orange"></i>
+                        </button>
+                        <div id="faq2" class="hidden pb-5 text-gray-600">Devolvemos 100% do valor se não se adaptar em até 7 dias.</div>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center bg-lightbg p-6 rounded-xl border border-gray-200">
+                    <p class="text-navy font-semibold mb-2">Não encontrou sua dúvida?</p>
+                    <a href="https://wa.me/556200000000" target="_blank" class="text-orange hover:text-orangeHover font-bold flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i> Fale com o Atendimento
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ (FOOTER) - VISÍVEL EM TODAS AS PÁGINAS -->
+    <footer class="bg-navy text-gray-400 pt-16 pb-8 border-t-4 border-orange mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-lightblue rounded border border-orange flex items-center justify-center text-navy font-bold text-lg">IS</div>
+                        <span class="font-heading font-bold text-xl text-white">SAPIENS ENSINO</span>
+                    </div>
+                    <p class="text-sm mb-4">Preparando os melhores profissionais do direito para os maiores desafios da carreira pública no Brasil.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 font-heading">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-orange transition-colors">Início</a></li>
+                        <li><a href="#metodologia" class="hover:text-orange transition-colors">Nossa Metodologia</a></li>
+                        <li><a href="#docentes" class="hover:text-orange transition-colors">Professores</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 font-heading">Contato & Empresa</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-building mt-1 text-lightblue"></i><span><strong>INSTITUTO SAPIENS DE ENSINO LTDA</strong><br>CNPJ: 65.353.165/0001-92</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-lightblue"></i><span>R BEIJUACU, 62, Quadra 172 Lote 04<br>Prq Amazônia, Goiânia - GO, 74.835-340</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-lightblue"></i><span>(62) 3092-5696</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2026 Instituto Sapiens de Ensino. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Desenvolvido por <strong>JottaDev</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/556200000000" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-green-600 transition-colors transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS (ROUTER & INTERATIVIDADE) -->
+    <script>
+        // ROUTER: Gestão das "Páginas" virtuais
+        function handleNavigation() {
+            // Pegar a âncora do URL (ex: #metodologia), se não existir usa #home
+            let hash = window.location.hash || '#home';
+            
+            // Esconder todas as páginas
+            document.querySelectorAll('.page-view').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Retirar o "active" de todos os links do menu
+            document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+                link.classList.remove('text-orange');
+                if(link.classList.contains('nav-link')) link.classList.add('text-gray-300');
+                if(link.classList.contains('mobile-nav-link')) link.classList.add('text-gray-300');
+            });
+
+            // Encontrar o elemento da página correspondente
+            const targetPageId = 'page-' + hash.substring(1);
+            const targetPage = document.getElementById(targetPageId);
+            
+            // Mostrar a página (ou fallback para Home)
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            } else {
+                document.getElementById('page-home').classList.remove('hidden');
+                hash = '#home';
+            }
+
+            // Ativar o link clicado no menu
+            document.querySelectorAll(`a[href="${hash}"]`).forEach(link => {
+                if(link.classList.contains('nav-link') || link.classList.contains('mobile-nav-link')){
+                    link.classList.remove('text-gray-300');
+                    link.classList.add('text-orange');
+                }
+            });
+
+            // Fechar menu mobile se estiver aberto e scroll para o topo
+            document.getElementById('mobileMenu').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Detectar mudanças no URL (cliques no menu)
+        window.addEventListener('hashchange', handleNavigation);
+        
+        // Rodar ao abrir o site
+        window.addEventListener('load', handleNavigation);
+
+        // Menu Mobile Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Acordeão de Módulos
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up', 'text-orange');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up', 'text-orange');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Acordeão FAQ
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus', 'rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('fa-minus', 'rotate-180');
+                icon.classList.add('fa-plus');
+            }
+        }
+
+        // Simulação do Formulário
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Enviado!';
+                btn.classList.replace('bg-navy', 'bg-green-600');
+                this.reset();
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-navy');
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
