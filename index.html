@@ -3,7 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- ============================================== -->
+    <!-- SEO & SEGURANÇA PROFISSIONAL                   -->
+    <!-- ============================================== -->
     <title>Instituto Sapiens de Ensino | A Elite Jurídica</title>
+    <meta name="description" content="Acelere sua aprovação na Elite Jurídica com o Instituto Sapiens. Engenharia reversa e metodologia preditiva para Magistratura, Ministério Público e Defensoria.">
+    <meta name="keywords" content="Instituto Sapiens, Concursos Jurídicos, Magistratura, Ministério Público, Defensoria, Aprovação, Engenharia Reversa, Direito">
+    <meta name="author" content="Instituto Sapiens de Ensino">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://institutosapiens.com.br/">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://institutosapiens.com.br/">
+    <meta property="og:title" content="Instituto Sapiens de Ensino | A Elite Jurídica">
+    <meta property="og:description" content="Abandone o estudo amador. O sistema de ensino mais letal e focado do mercado jurídico brasileiro.">
+    <meta property="og:image" content="https://institutosapiens.com.br/assets/logo_sem_fundo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://institutosapiens.com.br/">
+    <meta property="twitter:title" content="Instituto Sapiens de Ensino | A Elite Jurídica">
+    <meta property="twitter:description" content="Abandone o estudo amador. O sistema de ensino mais letal e focado do mercado jurídico brasileiro.">
+    <meta property="twitter:image" content="https://institutosapiens.com.br/assets/logo_sem_fundo.png">
+    
+    <!-- Segurança Avançada -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- ============================================== -->
     
     <!-- Fontes Premium: Inter (Leitura), Montserrat (Tech/Títulos), Playfair (Tradição/Autoridade) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,15 +168,9 @@
 
         /* ===== COMPONENTES VIVOS ===== */
         
-        /* 1. Metodologia: Laser Scanner */
+        /* 1. Metodologia: Card Tech (Animação de Laser Removida) */
         .method-card { position: relative; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(255,255,255,0.05); }
-        .method-card::before {
-            content: ''; position: absolute; left: 0; width: 100%; height: 2px;
-            background: #f47b20; box-shadow: 0 0 15px 2px #f47b20;
-            opacity: 0; transition: opacity 0.3s ease; z-index: 10; pointer-events: none;
-        }
         .method-card:hover { transform: translateY(-10px); border-color: rgba(95, 139, 207, 0.3); box-shadow: 0 20px 40px -10px rgba(95, 139, 207, 0.2); }
-        .method-card:hover::before { opacity: 1; animation: scan 2s linear infinite; }
         
         /* 2. Corpo Docente: Glint Holográfico */
         .teacher-card { position: relative; overflow: hidden; transition: all 0.5s ease; }
@@ -155,11 +178,12 @@
             content: ''; position: absolute; top: 0; width: 50%; height: 100%;
             background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
             transform: skewX(-25deg); opacity: 0; transition: opacity 0.3s; z-index: 20;
+            pointer-events: none; /* FIX: Impede que o brilho bloqueie o clique no botão */
         }
         .teacher-card:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(244, 123, 32, 0.2); border-color: #f47b20; }
         .teacher-card:hover::after { opacity: 1; animation: glint 1.5s infinite; }
         
-        /* 3. Hover Elevado Estável (Substitui o script magnético com falhas) */
+        /* 3. Hover Elevado Estável */
         .hover-lift { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease; }
         .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -10px rgba(244, 123, 32, 0.4); }
         
@@ -196,7 +220,6 @@
             <div class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-6">
                 
                 <a href="#home" class="flex-shrink-0 flex items-center gap-3 group">
-                    <!-- Substitua 'assets/logo-sapiens.svg' pelo caminho real da sua logo -->
                     <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                 </a>
                 
@@ -277,7 +300,6 @@
                         <div class="lg:col-span-5 relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none blur-reveal active delay-300">
                             <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/20 shadow-[0_0_40px_rgba(95,139,207,0.2)] bg-navyDark">
                                 
-                                <!-- Reprodutor de Vídeo: Substitua 'src' pelo caminho real do seu ficheiro .mp4 -->
                                 <video 
                                     class="w-full h-full object-cover relative z-10" 
                                     controls 
@@ -298,7 +320,8 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2">
                         
                         <div class="bg-navyDark/60 p-8 sm:p-12 flex flex-col justify-center relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-48 h-48 bg-orange opacity-10 rounded-full blur-[50px] animate-pulse"></div>
+                            <!-- Luz alterada de Laranjado para Azul Tecnológico -->
+                            <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-400 opacity-20 rounded-full blur-[50px] animate-pulse"></div>
                             <div class="relative z-10 text-center lg:text-left">
                                 <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-lightblue/10 text-lightblue border border-lightblue/20 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
                                     <i class="fas fa-lock text-xs"></i> Acesso Restrito
@@ -313,16 +336,16 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">Identificação</label>
-                                        <input type="text" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-orange focus:ring-1 focus:ring-orange outline-none transition-all text-sm shadow-inner" placeholder="Seu nome" required>
+                                        <input type="text" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition-all text-sm shadow-inner" placeholder="Seu nome" required>
                                     </div>
                                     <div>
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">WhatsApp</label>
-                                        <input type="tel" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-orange focus:ring-1 focus:ring-orange outline-none transition-all text-sm shadow-inner" placeholder="(00) 00000-0000" required>
+                                        <input type="tel" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition-all text-sm shadow-inner" placeholder="(00) 00000-0000" required>
                                     </div>
                                 </div>
                                 <div>
                                     <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">E-mail de Contato</label>
-                                    <input type="email" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-orange focus:ring-1 focus:ring-orange outline-none transition-all text-sm shadow-inner" placeholder="Seu melhor e-mail" required>
+                                    <input type="email" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition-all text-sm shadow-inner" placeholder="Seu melhor e-mail" required>
                                 </div>
                                 <div class="w-full mt-2 hover-lift">
                                     <button type="submit" class="w-full bg-lightblue hover:bg-white hover:text-navy text-white font-heading font-bold uppercase tracking-wider py-4 sm:py-5 rounded-xl shadow-[0_0_20px_rgba(95,139,207,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 flex items-center justify-center gap-3 text-[11px] sm:text-sm group">
@@ -386,7 +409,7 @@
         <!-- ============================================== -->
         <!-- PÁGINA 3: CURSOS (VITRINE CENTRALIZADA)        -->
         <!-- ============================================== -->
-        <div id="page-conteudo" class="page-view hidden min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
+        <div id="page-conteudo" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16 blur-reveal flex flex-col items-center">
                     <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-[0_0_15px_rgba(95,139,207,0.2)]">O Arsenal Sapiens</span>
@@ -397,13 +420,10 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
                     
                     <!-- Curso 1 -->
-                    <div class="glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 hover-lift cursor-pointer group blur-reveal border-t-2 border-t-orange" onclick="window.location.hash='#matricula'">
+                    <div class="glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 hover-lift cursor-pointer group blur-reveal border-t-2 border-t-orange">
                         <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
                             <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Magistratura" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40">
                             <div class="absolute top-3 left-3 bg-orange/20 border border-orange/50 text-orange px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-neon-orange">Turmas Abertas</div>
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span class="bg-white/10 backdrop-blur-md text-white font-bold px-4 py-2 rounded-lg border border-white/20">Ver Arsenal</span>
-                            </div>
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center">
@@ -420,21 +440,23 @@
                             </ul>
                             
                             <div class="flex flex-col gap-3 mt-auto relative z-20">
-                                <a href="#matricula" class="w-full bg-white hover:bg-orange text-navy hover:text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                <!-- Botão de Garantir Vaga com Link Externo -->
+                                <a href="https://hotmart.com/pt-br" target="_blank" class="w-full bg-white hover:bg-orange text-navy hover:text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                     Garantir Vaga
+                                </a>
+                                <!-- Novo Botão do Consultor / Whatsapp -->
+                                <a href="https://wa.me/556200000000" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] flex justify-center items-center gap-2">
+                                    <i class="fab fa-whatsapp text-lg"></i> Falar com Consultor
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Curso 2 -->
-                    <div class="glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 hover-lift cursor-pointer group blur-reveal delay-100 border-t-2 border-t-lightblue" onclick="window.location.hash='#matricula'">
+                    <div class="glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 hover-lift cursor-pointer group blur-reveal delay-100 border-t-2 border-t-lightblue">
                         <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
                             <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Ministério Público" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40">
                             <div class="absolute top-3 left-3 bg-lightblue/20 border border-lightblue/50 text-lightblue px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-neon-blue">Últimas Vagas</div>
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span class="bg-white/10 backdrop-blur-md text-white font-bold px-4 py-2 rounded-lg border border-white/20">Ver Arsenal</span>
-                            </div>
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center">
@@ -451,21 +473,23 @@
                             </ul>
                             
                             <div class="flex flex-col gap-3 mt-auto relative z-20">
-                                <a href="#matricula" class="w-full bg-white hover:bg-lightblue text-navy hover:text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                <!-- Botão de Garantir Vaga com Link Externo -->
+                                <a href="https://hotmart.com/pt-br" target="_blank" class="w-full bg-white hover:bg-lightblue text-navy hover:text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                     Garantir Vaga
+                                </a>
+                                <!-- Novo Botão do Consultor / Whatsapp -->
+                                <a href="https://wa.me/556200000000" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] flex justify-center items-center gap-2">
+                                    <i class="fab fa-whatsapp text-lg"></i> Falar com Consultor
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Curso 3 -->
-                    <div class="glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 hover-lift cursor-pointer group blur-reveal delay-200 border-t-2 border-t-white/30" onclick="window.location.hash='#matricula'">
+                    <div class="glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 hover-lift cursor-pointer group blur-reveal delay-200 border-t-2 border-t-white/30">
                         <div class="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
                             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Defensoria" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40">
                             <div class="absolute top-3 left-3 bg-white/10 border border-white/30 text-gray-200 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">Turma Regular</div>
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span class="bg-white/10 backdrop-blur-md text-white font-bold px-4 py-2 rounded-lg border border-white/20">Ver Arsenal</span>
-                            </div>
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center">
@@ -482,8 +506,13 @@
                             </ul>
                             
                             <div class="flex flex-col gap-3 mt-auto relative z-20">
-                                <a href="#matricula" class="w-full bg-white hover:bg-gray-300 text-navy text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                                <!-- Botão de Garantir Vaga com Link Externo -->
+                                <a href="https://hotmart.com/pt-br" target="_blank" class="w-full bg-white hover:bg-gray-300 text-navy text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                                     Garantir Vaga
+                                </a>
+                                <!-- Novo Botão do Consultor / Whatsapp -->
+                                <a href="https://wa.me/556200000000" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] flex justify-center items-center gap-2">
+                                    <i class="fab fa-whatsapp text-lg"></i> Falar com Consultor
                                 </a>
                             </div>
                         </div>
@@ -496,7 +525,7 @@
         <!-- ============================================== -->
         <!-- PÁGINA 4: CORPO DOCENTE (HOLOGRÁFICO)          -->
         <!-- ============================================== -->
-        <div id="page-docentes" class="page-view hidden min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
+        <div id="page-docentes" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="mb-16 sm:mb-20 text-center blur-reveal px-4 flex flex-col items-center">
                     <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-neon-orange">Prática Real</span>
@@ -506,40 +535,77 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
                     <!-- Docente 1 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal text-center border border-white/10 shadow-premium cursor-crosshair">
+                    <div class="teacher-card rounded-[2.5rem] blur-reveal text-center border border-white/10 shadow-premium">
                         <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-60">
+                            <!-- Retirado o grayscale e aprimorada a opacidade para cores vivas mas legíveis com gradiente -->
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
                             
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center">
+                            <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
                                 <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Carlos Eduardo</h4>
                                 <p class="text-orange text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Procurador do Estado</p>
+                                <!-- Botão direcionando para a nova View Interna SPA -->
+                                <a href="#docente-carlos" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Docente 2 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-100 text-center border border-white/10 shadow-premium cursor-crosshair">
+                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-100 text-center border border-white/10 shadow-premium">
                         <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-60">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
                             
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center">
+                            <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
                                 <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Mariana Silva</h4>
                                 <p class="text-lightblue text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Juíza Federal</p>
+                                <!-- Botão direcionando para a nova View Interna SPA -->
+                                <a href="#docente-mariana" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Docente 3 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-200 text-center border border-white/10 shadow-premium cursor-crosshair sm:col-span-2 md:col-span-1 sm:w-1/2 md:w-full sm:mx-auto">
+                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-200 text-center border border-white/10 shadow-premium sm:col-span-2 md:col-span-1 sm:w-1/2 md:w-full sm:mx-auto">
                         <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-60">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
+                            
+                            <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
+                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Roberto Alves</h4>
+                                <p class="text-gray-300 text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-3 py-1 rounded-md backdrop-blur-md">Advogado da União</p>
+                                <!-- Botão direcionando para a nova View Interna SPA -->
+                                <a href="#docente-roberto" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Docente 2 -->
+                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-100 text-center border border-white/10 shadow-premium">
+                        <div class="w-full aspect-[3/4] relative">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
+                            
+                            <div class="absolute bottom-0 left-0 w-full p-6 text-center">
+                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Mariana Silva</h4>
+                                <p class="text-lightblue text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Juíza Federal</p>
+                                <!-- Botão direcionando para a nova View Interna SPA -->
+                                <a href="#docente-mariana" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-20 relative">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Docente 3 -->
+                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-200 text-center border border-white/10 shadow-premium sm:col-span-2 md:col-span-1 sm:w-1/2 md:w-full sm:mx-auto">
+                        <div class="w-full aspect-[3/4] relative">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
                             
                             <div class="absolute bottom-0 left-0 w-full p-6 text-center">
                                 <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Roberto Alves</h4>
                                 <p class="text-gray-300 text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-3 py-1 rounded-md backdrop-blur-md">Advogado da União</p>
+                                <!-- Botão direcionando para a nova View Interna SPA -->
+                                <a href="#docente-roberto" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-20 relative">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -550,7 +616,7 @@
         <!-- ============================================== -->
         <!-- PÁGINA 5: MATRÍCULA (CHECKOUT)                 -->
         <!-- ============================================== -->
-        <div id="page-matricula" class="page-view hidden min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden w-full">
+        <div id="page-matricula" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden w-full">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="glass-card rounded-[2rem] sm:rounded-[2.5rem] shadow-premium overflow-hidden flex flex-col lg:flex-row blur-reveal">
                     
@@ -614,7 +680,7 @@
         <!-- ============================================== -->
         <!-- PÁGINA 6: FAQ E DÚVIDAS (CENTRALIZADO)         -->
         <!-- ============================================== -->
-        <div id="page-faq" class="page-view hidden min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full">
+        <div id="page-faq" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 sm:mb-16 blur-reveal flex flex-col items-center">
                     <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-[0_0_15px_rgba(95,139,207,0.2)]">Transparência Total</span>
@@ -658,6 +724,144 @@
             </div>
         </div>
 
+        <!-- ============================================== -->
+        <!-- PÁGINA DOCENTE: CARLOS                         -->
+        <!-- ============================================== -->
+        <div id="page-docente-carlos" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <a href="#docentes" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-medium blur-reveal">
+                    <i class="fas fa-arrow-left"></i> Voltar aos Docentes
+                </a>
+                
+                <div class="glass-card rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative overflow-hidden shadow-premium border-t-2 border-t-orange blur-reveal delay-100">
+                    <div class="w-full lg:w-2/5 relative flex-shrink-0">
+                        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-neon-orange border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Carlos Eduardo" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
+                        <span class="inline-block px-4 py-1.5 bg-orange/10 border border-orange/30 text-orange rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">Procurador do Estado</span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white uppercase tracking-tight mb-6">Carlos Eduardo</h1>
+                        
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8">
+                            Especialista consagrado em Direito Administrativo e Constitucional. Com mais de 10 anos de atuação combativa na Procuradoria do Estado, Carlos construiu uma didática baseada na realidade dos tribunais. Ele não ensina apenas a teoria, ele mapeia o comportamento das bancas examinadoras e entrega a jurisprudência decodificada para provas de alta complexidade.
+                        </p>
+
+                        <div class="bg-navyDark/50 p-6 rounded-2xl border border-white/5 mb-8 text-left">
+                            <h3 class="text-white font-heading font-bold uppercase tracking-wide mb-4 text-sm flex items-center gap-2"><i class="fas fa-crosshairs text-orange"></i> Matérias Ministradas</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Administrativo Avançado</li>
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Constitucional</li>
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Peças Práticas para Advocacia Pública</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#matricula" class="hover-lift bg-orange hover:bg-white hover:text-navy text-white text-center py-4 px-8 rounded-xl font-heading font-bold uppercase tracking-wide transition-all shadow-neon-orange w-full sm:w-auto">
+                                Estudar com Carlos
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-orange/10 blur-[100px] rounded-full pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA DOCENTE: MARIANA                        -->
+        <!-- ============================================== -->
+        <div id="page-docente-mariana" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <a href="#docentes" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-medium blur-reveal">
+                    <i class="fas fa-arrow-left"></i> Voltar aos Docentes
+                </a>
+                
+                <div class="glass-card rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative overflow-hidden shadow-premium border-t-2 border-t-lightblue blur-reveal delay-100">
+                    <div class="w-full lg:w-2/5 relative flex-shrink-0">
+                        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Mariana Silva" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
+                        <span class="inline-block px-4 py-1.5 bg-lightblue/10 border border-lightblue/30 text-lightblue rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">Juíza Federal</span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white uppercase tracking-tight mb-6">Mariana Silva</h1>
+                        
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8">
+                            Aprovada nas carreiras mais concorridas da Magistratura Federal antes dos 28 anos, Mariana domina a arte da resolução de questões complexas. Mestre em Direito Público e com vasta vivência em varas criminais e cíveis federais, ela ensina as técnicas exatas para estruturar sentenças irretocáveis sob pressão.
+                        </p>
+
+                        <div class="bg-navyDark/50 p-6 rounded-2xl border border-white/5 mb-8 text-left">
+                            <h3 class="text-white font-heading font-bold uppercase tracking-wide mb-4 text-sm flex items-center gap-2"><i class="fas fa-crosshairs text-lightblue"></i> Matérias Ministradas</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Penal e Processo Penal Federal</li>
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Sentença Penal Condenatória</li>
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Resolução Estratégica de Casos Práticos</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#matricula" class="hover-lift bg-lightblue hover:bg-white hover:text-navy text-white text-center py-4 px-8 rounded-xl font-heading font-bold uppercase tracking-wide transition-all shadow-neon-blue w-full sm:w-auto">
+                                Estudar com Mariana
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-lightblue/10 blur-[100px] rounded-full pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- PÁGINA DOCENTE: ROBERTO                        -->
+        <!-- ============================================== -->
+        <div id="page-docente-roberto" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <a href="#docentes" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-medium blur-reveal">
+                    <i class="fas fa-arrow-left"></i> Voltar aos Docentes
+                </a>
+                
+                <div class="glass-card rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative overflow-hidden shadow-premium border-t-2 border-t-white/30 blur-reveal delay-100">
+                    <div class="w-full lg:w-2/5 relative flex-shrink-0">
+                        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-[0_0_30px_rgba(255,255,255,0.1)] border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Roberto Alves" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
+                        <span class="inline-block px-4 py-1.5 bg-white/10 border border-white/20 text-gray-200 rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">Advogado da União</span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white uppercase tracking-tight mb-6">Roberto Alves</h1>
+                        
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8">
+                            Mente brilhante por trás das defesas da União, Roberto é parecerista e especialista em alta performance nos estudos. Ele foca naquilo que reprova 90% dos candidatos: o entendimento jurisprudencial tributário e cível de forma profunda. No Instituto Sapiens, suas aulas são verdadeiras imersões no raciocínio dos ministros do STF e STJ.
+                        </p>
+
+                        <div class="bg-navyDark/50 p-6 rounded-2xl border border-white/5 mb-8 text-left">
+                            <h3 class="text-white font-heading font-bold uppercase tracking-wide mb-4 text-sm flex items-center gap-2"><i class="fas fa-crosshairs text-gray-400"></i> Matérias Ministradas</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Tributário Definitivo</li>
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Civil (Jurisprudência)</li>
+                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Tutela Coletiva e Direitos Difusos</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#matricula" class="hover-lift bg-white hover:bg-gray-300 text-navy text-center py-4 px-8 rounded-xl font-heading font-bold uppercase tracking-wide transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] w-full sm:w-auto">
+                                Estudar com Roberto
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="bg-[#03060d] text-gray-500 pt-16 sm:pt-20 pb-8 border-t border-white/5 relative z-20 mt-auto w-full">
@@ -666,8 +870,8 @@
                 
                 <div class="md:col-span-5 flex flex-col items-center md:items-start">
                     <div class="flex items-center gap-3 mb-4 sm:mb-6">
-                        <div class="w-10 h-10 bg-navyDark rounded-lg border border-white/10 flex items-center justify-center text-white font-heading font-black text-lg shadow-[0_0_15px_rgba(255,255,255,0.1)]">IS</div>
-                        <span class="font-heading font-black text-xl text-white tracking-tighter uppercase">SAPIENS</span>
+                        <!-- Imagem da logo adicionada em substituição ao texto e forma -->
+                        <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain">
                     </div>
                     <p class="text-xs sm:text-sm text-gray-500 font-light max-w-sm leading-relaxed">Acelerando a aprovação da elite do judiciário brasileiro com engenharia reversa e metodologia preditiva.</p>
                 </div>
