@@ -375,7 +375,7 @@
                     
                     <!-- Tech Card 1 -->
                     <div class="method-card glass-card p-10 rounded-3xl blur-reveal flex flex-col items-center text-center">
-                        <div class="absolute -right-2 -top-2 text-9xl font-serif font-black text-white/[0.02] pointer-events-none">01</div>
+                        <!-- Números de fundo removidos -->
                         <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-orange relative z-10">
                             <i class="fas fa-layer-group"></i>
                         </div>
@@ -385,7 +385,7 @@
                     
                     <!-- Tech Card 2 -->
                     <div class="method-card glass-card p-10 rounded-3xl blur-reveal delay-100 flex flex-col items-center text-center">
-                        <div class="absolute -right-2 -top-2 text-9xl font-serif font-black text-white/[0.02] pointer-events-none">02</div>
+                        <!-- Números de fundo removidos -->
                         <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-lightblue rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-blue relative z-10">
                             <i class="fas fa-gavel"></i>
                         </div>
@@ -395,7 +395,7 @@
                     
                     <!-- Tech Card 3 -->
                     <div class="method-card glass-card p-10 rounded-3xl blur-reveal delay-200 flex flex-col items-center text-center">
-                        <div class="absolute -right-2 -top-2 text-9xl font-serif font-black text-white/[0.02] pointer-events-none">03</div>
+                        <!-- Números de fundo removidos -->
                         <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-orange relative z-10">
                             <i class="fas fa-crosshairs"></i>
                         </div>
@@ -427,8 +427,9 @@
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1">Magistratura</h3>
-                            <p class="font-serif italic text-gray-400 text-sm mb-6 border-b border-white/10 pb-6">Estadual & Federal</p>
+                            <!-- Alinhamento forçado com min-h para garantir simetria independente do tamanho do texto do título -->
+                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center">Magistratura</h3>
+                            <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">Estadual & Federal</p>
                             
                             <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
                                 <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
@@ -460,8 +461,9 @@
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1">Ministério Público</h3>
-                            <p class="font-serif italic text-gray-400 text-sm mb-6 border-b border-white/10 pb-6">MPE & MPF</p>
+                            <!-- Alinhamento forçado com min-h para garantir simetria independente do tamanho do texto do título -->
+                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center">Ministério Público</h3>
+                            <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">MPE & MPF</p>
                             
                             <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
                                 <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
@@ -493,8 +495,9 @@
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1">Defensoria</h3>
-                            <p class="font-serif italic text-gray-400 text-sm mb-6 border-b border-white/10 pb-6">DPE & DPU</p>
+                            <!-- Alinhamento forçado com min-h para garantir simetria independente do tamanho do texto do título -->
+                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center">Defensoria</h3>
+                            <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">DPE & DPU</p>
                             
                             <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
                                 <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
@@ -576,36 +579,6 @@
                                 <p class="text-gray-300 text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-3 py-1 rounded-md backdrop-blur-md">Advogado da União</p>
                                 <!-- Botão direcionando para a nova View Interna SPA -->
                                 <a href="#docente-roberto" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Docente 2 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-100 text-center border border-white/10 shadow-premium">
-                        <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
-                            
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center">
-                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Mariana Silva</h4>
-                                <p class="text-lightblue text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Juíza Federal</p>
-                                <!-- Botão direcionando para a nova View Interna SPA -->
-                                <a href="#docente-mariana" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-20 relative">Ver Detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Docente 3 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-200 text-center border border-white/10 shadow-premium sm:col-span-2 md:col-span-1 sm:w-1/2 md:w-full sm:mx-auto">
-                        <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
-                            
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center">
-                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Roberto Alves</h4>
-                                <p class="text-gray-300 text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-3 py-1 rounded-md backdrop-blur-md">Advogado da União</p>
-                                <!-- Botão direcionando para a nova View Interna SPA -->
-                                <a href="#docente-roberto" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-20 relative">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>
