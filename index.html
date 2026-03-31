@@ -205,26 +205,8 @@
         .method-card:hover { 
             transform: translateY(-12px) scale(1.02); 
             border-color: rgba(255, 255, 255, 0.15); 
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 40px -10px var(--hover-glow, rgba(95, 139, 207, 0.3)); 
-        }
-        
-        /* Luz interna do Método que acende no hover */
-        .method-glow-bg {
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 150px; height: 150px;
-            background: var(--hover-glow);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            filter: blur(60px);
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .method-card:hover .method-glow-bg { 
-            opacity: 0.3; 
-            transform: translate(-50%, -50%) scale(1.2);
+            /* A luz aparece somente aos arredores do card usando var(--hover-glow) */
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 40px -5px var(--hover-glow, rgba(95, 139, 207, 0.3)); 
         }
 
         /* 2. Cursos: Card de Alta Performance */
@@ -237,7 +219,8 @@
         .course-card:hover {
             transform: translateY(-15px) scale(1.02); /* Mais animação no hover */
             border-color: rgba(255,255,255,0.2);
-            box-shadow: 0 35px 60px -15px rgba(0,0,0,0.8), 0 0 60px -10px var(--card-glow, rgba(244, 123, 32, 0.3));
+            /* A luz aparece somente aos arredores do card usando var(--card-glow) */
+            box-shadow: 0 35px 60px -15px rgba(0,0,0,0.8), 0 0 60px -5px var(--card-glow, rgba(244, 123, 32, 0.3));
         }
         
         /* Efeito de zoom e tilt na imagem do Curso */
@@ -435,8 +418,7 @@
                 </div>
             </section>
         </div>
-
-        <!-- ============================================== -->
+ <!-- ============================================== -->
         <!-- PÁGINA 2: METODOLOGIA (TECNOLOGIA APLICADA)    -->
         <!-- ============================================== -->
         <div id="page-metodologia" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
@@ -486,8 +468,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- ============================================== -->
+        
+ <!-- ============================================== -->
         <!-- PÁGINA 3: CURSOS (VITRINE DE ALTA PERFORMANCE) -->
         <!-- ============================================== -->
         <div id="page-conteudo" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
@@ -607,7 +589,6 @@
                 </div>
             </div>
         </div>
-
         <!-- ============================================== -->
         <!-- PÁGINA 4: CORPO DOCENTE (HOLOGRÁFICO)          -->
         <!-- ============================================== -->
@@ -1108,13 +1089,23 @@
             }, 1500);
         });
 
-        // 6. Máscara Automática de WhatsApp (Celular Brasileiro)
+        // 6. Máscara Automática de WhatsApp (Celular Brasileiro) - Correção Definitiva
         const whatsappInput = document.getElementById('whatsappInput');
         if(whatsappInput) {
             whatsappInput.addEventListener('input', function (e) {
-                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
-                if (!x) return;
-                e.target.value = !x ? x : '(' + x + ') ' + x + (x ? '-' + x : '');
+                let value = e.target.value.replace(/\D/g, '');
+                let formattedValue = '';
+                
+                if (value.length > 0) {
+                    formattedValue = '(' + value.substring(0, 2);
+                    if (value.length > 2) {
+                        formattedValue += ') ' + value.substring(2, 7);
+                        if (value.length > 7) {
+                            formattedValue += '-' + value.substring(7, 11);
+                        }
+                    }
+                }
+                e.target.value = formattedValue;
             });
         }
     </script>
