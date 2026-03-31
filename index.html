@@ -181,7 +181,7 @@
             transition: all 0.75s ease;
             pointer-events: none;
         }
-        .shine-effect:hover::before {
+        .shine-effect:hover::before, .shine-effect.is-active::before {
             left: 200%;
             transition: all 0.75s ease;
         }
@@ -198,38 +198,55 @@
 
         /* ===== COMPONENTES VIVOS (MÉTODOS & CURSOS ATUALIZADOS) ===== */
         
-        /* 1. Metodologia: Hover Tecnológico com Profundidade */
+        /* 1. Metodologia: Hover Tecnológico com Profundidade (Sombra Neon Externa) */
         .method-card { 
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
         }
-        .method-card:hover { 
+        .method-card:hover, .method-card.is-active { 
             transform: translateY(-12px) scale(1.02); 
             border-color: rgba(255, 255, 255, 0.15); 
-            /* A luz aparece somente aos arredores do card usando var(--hover-glow) */
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 40px -5px var(--hover-glow, rgba(95, 139, 207, 0.3)); 
         }
 
-        /* 2. Cursos: Card de Alta Performance */
+        /* Efeitos combinados para o Mobile (.is-active simula o :hover do Tailwind) */
+        .method-card.is-active .w-16 { transform: scale(1.25) translateY(-0.5rem) !important; }
+        .method-card.is-active h4 { color: var(--hover-glow) !important; }
+        .method-card.is-active p { color: #d1d5db !important; }
+
+        /* 2. Cursos: Card de Alta Performance com Linha Fina Neon */
         .course-card {
-            position: relative; /* Necessário para conter o brilho e z-index */
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; 
+            transition: all 0.4s ease-out;
             background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.4) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Borda padrão invisível */
             z-index: 1;
         }
-        .course-card:hover {
-            transform: translateY(-15px) scale(1.02); /* Mais animação no hover */
-            border-color: rgba(255,255,255,0.2);
-            /* A luz aparece somente aos arredores do card usando var(--card-glow) */
-            box-shadow: 0 35px 60px -15px rgba(0,0,0,0.8), 0 0 60px -5px var(--card-glow, rgba(244, 123, 32, 0.3));
+        .course-card:hover, .course-card.is-active {
+            transform: translateY(-15px) scale(1.02); /* Animação de elevação */
+            border-color: var(--card-glow); /* A borda inteira acende na cor da variável */
+            /* Fio de neon fino na borda do card */
+            box-shadow: 0 35px 60px -15px rgba(0,0,0,0.9), 
+                        0 0 15px 0px var(--card-glow), 
+                        inset 0 0 10px 0px var(--card-glow);
         }
         
-        /* Efeito de zoom e tilt na imagem do Curso */
+        /* Efeito de zoom e tilt na imagem do Curso (Transição Suave) */
         .course-card .img-container img {
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
         }
-        .course-card:hover .img-container img {
-            transform: scale(1.12) rotate(-2deg);
-            opacity: 0.35;
+        .course-card:hover .img-container img, .course-card.is-active .img-container img {
+            transform: scale(1.12) rotate(-2deg) !important;
+            opacity: 0.35 !important;
+        }
+        
+        /* Efeitos combinados para o Mobile nos Cursos */
+        .course-card.is-active h3 { color: var(--card-glow) !important; }
+        .course-card.is-active .absolute-overlay { opacity: 0.9 !important; }
+
+        /* Ajustes suaves de elevação para não vazar a tela do celular */
+        @media (max-width: 768px) {
+            .method-card:hover, .method-card.is-active { transform: translateY(-5px) scale(1.02); }
+            .course-card:hover, .course-card.is-active { transform: translateY(-5px) scale(1.02); }
         }
         
         /* 3. Corpo Docente: Glint Holográfico */
@@ -380,7 +397,6 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2">
                         
                         <div class="bg-navyDark/60 p-8 sm:p-12 flex flex-col justify-center relative overflow-hidden">
-                            <!-- Luz alterada de Laranjado para Azul Tecnológico -->
                             <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-400 opacity-20 rounded-full blur-[50px] animate-pulse-slow"></div>
                             <div class="relative z-10 text-center lg:text-left">
                                 <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-lightblue/10 text-lightblue border border-lightblue/20 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
@@ -418,7 +434,8 @@
                 </div>
             </section>
         </div>
- <!-- ============================================== -->
+
+        <!-- ============================================== -->
         <!-- PÁGINA 2: METODOLOGIA (TECNOLOGIA APLICADA)    -->
         <!-- ============================================== -->
         <div id="page-metodologia" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
@@ -433,10 +450,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
                     
                     <!-- Tech Card 1 -->
-                    <!-- Adicionado class 'shine-effect' e 'group' e customizado a variavel CSS de glow -->
+                    <!-- Brilho Interno Removido. Efeito de Sombra Neon Externa Configurado. -->
                     <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal flex flex-col items-center text-center group cursor-default" style="--hover-glow: #00d2ff;">
-                        <div class="method-glow-bg"></div> <!-- Fundo que acende no hover -->
-                        
                         <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-orange relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
                             <i class="fas fa-layer-group animate-pulse-slow"></i>
                         </div>
@@ -446,8 +461,6 @@
                     
                     <!-- Tech Card 2 -->
                     <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-100 flex flex-col items-center text-center group cursor-default" style="--hover-glow: #00d2ff;">
-                        <div class="method-glow-bg"></div>
-                        
                         <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-lightblue rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-blue relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
                             <i class="fas fa-gavel animate-pulse-slow"></i>
                         </div>
@@ -457,8 +470,6 @@
                     
                     <!-- Tech Card 3 -->
                     <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-200 flex flex-col items-center text-center group cursor-default" style="--hover-glow: #00d2ff;">
-                        <div class="method-glow-bg"></div>
-                        
                         <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-orange relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
                             <i class="fas fa-crosshairs animate-pulse-slow"></i>
                         </div>
@@ -468,8 +479,8 @@
                 </div>
             </div>
         </div>
-        
- <!-- ============================================== -->
+
+        <!-- ============================================== -->
         <!-- PÁGINA 3: CURSOS (VITRINE DE ALTA PERFORMANCE) -->
         <!-- ============================================== -->
         <div id="page-conteudo" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
@@ -483,19 +494,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
                     
                     <!-- Curso 1 -->
-                    <!-- Adicionado class 'course-card' e removido 'hover-lift' basico, adic 'shine-effect' e variavel CSS de glow -->
-                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal border-t-2 border-t-orange" style="--card-glow: #ffbb00;">
+                    <!-- Brilho holográfico interno removido. Linha Fina Neon Configurada na CSS Class -->
+                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal border-t-2 border-t-orange" style="--card-glow: #f47b20;">
                         
                         <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
                             <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Magistratura" class="w-full h-full object-cover opacity-70">
-                            <!-- Overlay que aumenta no hover para dar foco ao botão fantasma (se houvesse) e melhorar leitura -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 transition-opacity duration-500 absolute-overlay"></div>
                             
                             <div class="absolute top-3 left-3 bg-orange/20 border border-orange/50 text-orange px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-neon-orange z-10">Turmas Abertas</div>
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center relative z-20">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center group-hover:text-orange transition-colors duration-500">Magistratura</h3>
+                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center transition-colors duration-500 title-course">Magistratura</h3>
                             <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">Estadual & Federal</p>
                             
                             <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
@@ -519,17 +529,17 @@
                     </div>
 
                     <!-- Curso 2 -->
-                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal delay-100 border-t-2 border-t-lightblue" style="--card-glow: #00d2ff;">
+                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal delay-100 border-t-2 border-t-lightblue" style="--card-glow: #5f8bcf;">
 
                         <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
                             <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Ministério Público" class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 transition-opacity duration-500 absolute-overlay"></div>
 
                             <div class="absolute top-3 left-3 bg-lightblue/20 border border-lightblue/50 text-lightblue px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-neon-blue z-10">Últimas Vagas</div>
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center relative z-20">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center group-hover:text-lightblue transition-colors duration-500">Ministério Público</h3>
+                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center transition-colors duration-500 title-course">Ministério Público</h3>
                             <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">MPE & MPF</p>
                             
                             <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
@@ -553,17 +563,17 @@
                     </div>
 
                     <!-- Curso 3 -->
-                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal delay-200 border-t-2 border-t-white/30" style="--card-glow: #ffefef;">
+                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal delay-200 border-t-2 border-t-white/30" style="--card-glow: #ffffff;">
 
                         <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
                             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Defensoria" class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 transition-opacity duration-500 absolute-overlay"></div>
 
                             <div class="absolute top-3 left-3 bg-white/10 border border-white/30 text-gray-200 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md z-10">Turma Regular</div>
                         </div>
                         
                         <div class="flex-grow flex flex-col text-center relative z-20">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center group-hover:text-white transition-colors duration-500">Defensoria</h3>
+                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center transition-colors duration-500 title-course">Defensoria</h3>
                             <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">DPE & DPU</p>
                             
                             <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
@@ -589,6 +599,7 @@
                 </div>
             </div>
         </div>
+
         <!-- ============================================== -->
         <!-- PÁGINA 4: CORPO DOCENTE (HOLOGRÁFICO)          -->
         <!-- ============================================== -->
@@ -604,14 +615,12 @@
                     <!-- Docente 1 -->
                     <div class="teacher-card rounded-[2.5rem] blur-reveal text-center border border-white/10 shadow-premium">
                         <div class="w-full aspect-[3/4] relative">
-                            <!-- Retirado o grayscale e aprimorada a opacidade para cores vivas mas legíveis com gradiente -->
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
                             
                             <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
                                 <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Carlos Eduardo</h4>
                                 <p class="text-orange text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Procurador do Estado</p>
-                                <!-- Botão direcionando para a nova View Interna SPA -->
                                 <a href="#docente-carlos" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
                             </div>
                         </div>
@@ -626,7 +635,6 @@
                             <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
                                 <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Mariana Silva</h4>
                                 <p class="text-lightblue text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Juíza Federal</p>
-                                <!-- Botão direcionando para a nova View Interna SPA -->
                                 <a href="#docente-mariana" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
                             </div>
                         </div>
@@ -641,7 +649,6 @@
                             <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
                                 <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Roberto Alves</h4>
                                 <p class="text-gray-300 text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-3 py-1 rounded-md backdrop-blur-md">Advogado da União</p>
-                                <!-- Botão direcionando para a nova View Interna SPA -->
                                 <a href="#docente-roberto" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
                             </div>
                         </div>
@@ -907,7 +914,6 @@
                 
                 <div class="md:col-span-5 flex flex-col items-center md:items-start">
                     <div class="flex items-center gap-3 mb-4 sm:mb-6">
-                        <!-- Imagem da logo adicionada em substituição ao texto e forma -->
                         <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain">
                     </div>
                     <p class="text-xs sm:text-sm text-gray-500 font-light max-w-sm leading-relaxed">Acelerando a aprovação da elite do judiciário brasileiro com engenharia reversa e metodologia preditiva.</p>
@@ -946,12 +952,10 @@
         </div>
     </footer>
 
-    <!-- BOTÃO FLUTUANTE WHATSAPP (ISOLADO PARA GARANTIR Z-INDEX) -->
     <a href="https://wa.me/556200000000" target="_blank" style="z-index: 999999; transform: translateZ(0);" class="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 bg-green-500 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl hover:bg-green-400 transition-transform pulse-btn-green shadow-xl isolate hover-lift">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS DE INTERATIVIDADE, ANIMAÇÃO E ROTAS -->
     <script>
         // 1. SCROLL REVEAL (Animação de decodificação/blur)
         function checkReveal() {
@@ -985,23 +989,19 @@
         function handleNavigation() {
             let hash = window.location.hash || '#home';
             
-            // Ocultar todas as views primeiro - removendo display block
             document.querySelectorAll('.page-view').forEach(page => {
                 page.classList.remove('active');
-                page.style.display = 'none'; // FIX para esconder totalmente a página anterior
+                page.style.display = 'none'; 
                 
-                // Remove a classe active dos animadores para que animem de novo ao voltar
                 page.querySelectorAll('.reveal, .blur-reveal').forEach(el => el.classList.remove('active'));
             });
             
-            // Resetar botões do menu
             document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
                 link.classList.remove('text-orange', 'bg-white/5', 'font-bold');
                 if(link.classList.contains('nav-link')) link.classList.add('text-gray-300');
                 if(link.classList.contains('mobile-nav-link')) link.classList.add('text-gray-300');
             });
 
-            // Encontrar e exibir nova pagina
             const targetPageId = 'page-' + hash.substring(1);
             let targetPage = document.getElementById(targetPageId);
             
@@ -1010,17 +1010,13 @@
                 hash = '#home';
             }
 
-            // Exibir no DOM antes de animar
             targetPage.style.display = 'block';
             
-            // Força o navegador a desenhar a página na memória antes de aplicar a animação (Refluxo do DOM)
             void targetPage.offsetWidth; 
 
-            // Aplica animação
             targetPage.classList.add('active'); 
             setTimeout(() => { checkReveal(); }, 50);
 
-            // Destacar links ativos
             document.querySelectorAll(`a[href="${hash}"]`).forEach(link => {
                 if(link.classList.contains('nav-link')){
                     link.classList.remove('text-gray-300');
@@ -1032,7 +1028,6 @@
                 }
             });
 
-            // Fechar menu mobile e subir a página
             mobileMenu.classList.remove('active-menu');
             mobileMenu.classList.add('hidden-menu');
             window.scrollTo({top: 0, behavior: 'smooth'});
@@ -1070,7 +1065,7 @@
             }
         }
 
-        // 5. Formulário Lead (Simulação de loading avançada)
+        // 5. Formulário Lead
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button[type="submit"]');
@@ -1089,7 +1084,7 @@
             }, 1500);
         });
 
-        // 6. Máscara Automática de WhatsApp (Celular Brasileiro) - Correção Definitiva
+        // 6. Máscara Automática de WhatsApp (Celular Brasileiro)
         const whatsappInput = document.getElementById('whatsappInput');
         if(whatsappInput) {
             whatsappInput.addEventListener('input', function (e) {
@@ -1108,6 +1103,31 @@
                 e.target.value = formattedValue;
             });
         }
+
+        // 7. Destaque Automático de Cards no Mobile (Intersection Observer)
+        const cardsToObserve = document.querySelectorAll('.course-card, .method-card');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-25% 0px -25% 0px', // O card ativa quando chega no meio da tela
+            threshold: 0
+        };
+
+        const autoHoverObserver = new IntersectionObserver((entries) => {
+            if (window.innerWidth > 768) return; // Só roda no Mobile
+            
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-active');
+                } else {
+                    entry.target.classList.remove('is-active');
+                }
+            });
+        }, observerOptions);
+
+        cardsToObserve.forEach(card => {
+            autoHoverObserver.observe(card);
+        });
     </script>
 </body>
 </html>
