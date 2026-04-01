@@ -1104,30 +1104,7 @@
             });
         }
 
-        // 7. Destaque Automático de Cards no Mobile (Intersection Observer)
-        const cardsToObserve = document.querySelectorAll('.course-card, .method-card');
-        
-        const observerOptions = {
-            root: null,
-            rootMargin: '-25% 0px -25% 0px', // O card ativa quando chega no meio da tela
-            threshold: 0
-        };
-
-        const autoHoverObserver = new IntersectionObserver((entries) => {
-            if (window.innerWidth > 768) return; // Só roda no Mobile
-            
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                } else {
-                    entry.target.classList.remove('is-active');
-                }
-            });
-        }, observerOptions);
-
-        cardsToObserve.forEach(card => {
-            autoHoverObserver.observe(card);
-        });
+       
     </script>
 </body>
 </html>
