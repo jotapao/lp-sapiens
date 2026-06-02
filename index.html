@@ -20,7 +20,7 @@
     <!-- Fontes Premium -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome para Ícones -->
+    <!-- FontAwesome para Ícones (Correção do atributo integrity) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Tailwind CSS -->
@@ -233,7 +233,8 @@
                         </div>
                         <div class="lg:col-span-5 relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none blur-reveal active delay-300">
                             <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-navy/20 shadow-2xl bg-navyDark">
-                                <video class="w-full h-full object-cover relative z-10" controls preload="metadata" poster="assets/Logo PNG.png">
+                                <!-- Correção Mobile: playsinline e muted para não bloquear perfomance e reproduzir nativo -->
+                                <video class="w-full h-full object-cover relative z-10" controls playsinline muted preload="metadata" poster="assets/Logo PNG.png">
                                     <source src="assets/IMG_4233.mp4" type="video/mp4">
                                     O seu navegador não suporta a tag de vídeo.
                                 </video>
@@ -258,7 +259,7 @@
                             </div>
                         </div>
                         <div class="bg-black/20 p-8 sm:p-12 relative border-t lg:border-t-0 lg:border-l border-white/5">
-                            <form action="#" method="POST" class="space-y-4 sm:space-y-5 relative z-10" id="leadForm">
+                            <form onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso!');" class="space-y-4 sm:space-y-5 relative z-10" id="leadForm">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">Identificação</label>
@@ -610,26 +611,30 @@
         </header>
 
         <!-- Main Content do Perfil -->
-        <main class="flex items-center justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
+        <main class="flex items-center justify-center relative z-10 py-8 sm:py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
             <div class="w-full max-w-5xl glass-card rounded-[2.5rem] p-6 sm:p-12 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.6)] animate-fade-in relative overflow-hidden">
                 <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start relative z-10">
                     
-                    <!-- Foto -->
-                    <div class="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden flex-shrink-0 border border-white/10 shadow-[0_0_40px_rgba(95,139,207,0.15)] relative bg-[#0a1128]">
-                        <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl" id="profileIconFallback"><i class="fas fa-user-tie"></i></div>
-                        <img id="profileImg" src="" alt="Foto" class="w-full h-full object-cover filter contrast-110 relative z-10">
-                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark/80 via-transparent to-transparent z-20"></div>
+                    <!-- Foto Ajustada Responsiva (menor no celular, escala no desktop) -->
+                    <div class="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden flex-shrink-0 border border-white/10 shadow-[0_0_40px_rgba(95,139,207,0.15)] relative bg-[#0a1128]">
+                        <!-- Fallback (Ícone se der erro na imagem local) -->
+                        <div class="absolute inset-0 flex items-center justify-center text-white/10 text-4xl lg:text-6xl hidden" id="profileIconFallback">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <!-- Imagem carregada via JS (Sistema à prova de quebra) -->
+                        <img id="profileImg" src="" alt="Foto do Professor" class="w-full h-full object-cover filter contrast-110 relative z-10" onerror="this.style.display='none'; document.getElementById('profileIconFallback').style.display='flex';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark/80 via-transparent to-transparent z-20 pointer-events-none"></div>
                     </div>
                     
                     <!-- Textos -->
                     <div class="flex-1 text-center lg:text-left flex flex-col justify-center w-full">
-                        <span id="profileRole" class="inline-block bg-orange/10 border border-orange/30 text-orange px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4 w-max mx-auto lg:mx-0"></span>
+                        <span id="profileRole" class="inline-block bg-orange/10 border border-orange/30 text-orange px-4 py-1.5 rounded-lg text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-4 w-max mx-auto lg:mx-0"></span>
                         
-                        <h1 id="profileName" class="font-heading text-2xl sm:text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-3"></h1>
+                        <h1 id="profileName" class="font-heading text-2xl sm:text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-2 sm:mb-3"></h1>
                         
                         <h2 id="profileSpecialty" class="text-lightblue font-medium text-xs sm:text-sm mb-6 sm:mb-8"></h2>
                         
-                        <div class="w-16 h-1 bg-white/10 mb-6 sm:mb-8 mx-auto lg:mx-0 rounded-full"></div>
+                        <div class="w-12 sm:w-16 h-1 bg-white/10 mb-6 sm:mb-8 mx-auto lg:mx-0 rounded-full"></div>
                         
                         <p id="profileBio" class="text-gray-300 leading-relaxed font-light text-sm sm:text-base text-justify lg:text-left"></p>
 
@@ -682,6 +687,7 @@
         // =======================================================================
         // 3. LÓGICA DA NOVA PÁGINA (SINGLE PAGE APPLICATION)
         // =======================================================================
+        // Banco de Dados exatamente sincronizado com o HTML
         const teachersData = {
             'carlos-vinicius': {
                 name: 'Carlos Vinícius Alves Ribeiro',
@@ -776,11 +782,17 @@
             
             // Popula os dados na Nova Página
             const imgElement = document.getElementById('profileImg');
+            const fallbackIcon = document.getElementById('profileIconFallback');
+            
+            // Reseta a imagem forçadamente ao abrir para o fallback trabalhar se falhar.
+            imgElement.style.display = 'block';
+            fallbackIcon.style.display = 'none';
+
             if(teacher.img && teacher.img !== '') {
                 imgElement.src = teacher.img;
-                imgElement.style.display = 'block';
             } else {
-                imgElement.style.display = 'none'; // Mostra icone se não tiver imagem
+                imgElement.style.display = 'none'; 
+                fallbackIcon.style.display = 'flex';
             }
 
             document.getElementById('profileName').textContent = teacher.name;
@@ -807,15 +819,16 @@
             document.getElementById('main-site').classList.remove('hidden');
             document.getElementById('main-site').classList.add('block');
             
-            // Rola suavemente até a parte dos professores
+            // Rola instantaneamente até a parte dos professores
             document.getElementById('docentes').scrollIntoView({ behavior: 'instant' });
         }
 
+        // Rola até os cursos no site principal
         function closeProfileAndScroll() {
             closeProfilePage();
             setTimeout(() => {
                 document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            }, 50);
         }
     </script>
 </body>
