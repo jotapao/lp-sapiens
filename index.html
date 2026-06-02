@@ -11,13 +11,17 @@
     <meta name="description" content="Acelere sua aprovação na Elite Jurídica com o Instituto Sapiens. Engenharia reversa e metodologia preditiva para Magistratura, Ministério Público e Defensoria.">
     <link rel="canonical" href="https://institutosapiens.com.br/">
     
-    <!-- Fontes Premium -->
+    <!-- Otimização de Performance (Preconnect & Dns-Prefetch) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- Fontes Premium -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <!-- FontAwesome para Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -108,6 +112,7 @@
         .blur-reveal {
             opacity: 0; filter: blur(10px); transform: translateY(30px) scale(0.95);
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform, filter;
         }
         .blur-reveal.active { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
         .delay-100 { transition-delay: 100ms; }
@@ -183,7 +188,7 @@
                         </a>
                     </div>
                     <div class="md:hidden flex items-center">
-                        <button id="mobileMenuBtn" class="text-navy hover:text-orange focus:outline-none p-2 transition-colors">
+                        <button id="mobileMenuBtn" aria-label="Menu" class="text-navy hover:text-orange focus:outline-none p-2 transition-colors">
                             <i class="fas fa-bars text-2xl"></i>
                         </button>
                     </div>
@@ -218,7 +223,7 @@
                                 Abandone o estudo amador. Nós aplicamos engenharia reversa nas maiores bancas do país para entregar exatamente o que decide a sua posse.
                             </p>
                             <div class="blur-reveal active delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
-                                <a href="https://wa.me/556200000000" target="_blank" class="hover-lift bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] flex items-center justify-center gap-3 group w-full sm:w-auto">
+                                <a href="https://wa.me/556200000000" target="_blank" rel="noopener noreferrer" class="hover-lift bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] flex items-center justify-center gap-3 group w-full sm:w-auto">
                                     <i class="fab fa-whatsapp text-xl group-hover:scale-125 transition-transform duration-300"></i> Falar com Especialista
                                 </a>
                                 <a href="#conteudo" class="hover-lift bg-navy hover:bg-navyDark text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all flex items-center justify-center gap-3 w-full sm:w-auto group shadow-lg">
@@ -293,7 +298,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
-                            <img src="assets/sede 1.png" alt="Sede" class="w-full h-full object-cover opacity-60">
+                            <img src="assets/sede 1.png" alt="Sede" class="w-full h-full object-cover opacity-60" loading="lazy" decoding="async">
                             <div class="absolute inset-0 bg-gradient-to-tr from-navyDark to-transparent"></div>
                             <div class="absolute bottom-8 left-8">
                                 <h3 class="font-heading text-2xl font-black text-white uppercase">Sede Tecnológica</h3>
@@ -344,7 +349,7 @@
                         <!-- Magistratura -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer border-t-2 border-t-orange">
                             <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
-                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Magistratura" class="w-full h-full object-cover opacity-70">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Magistratura" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-70">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
                             <div class="flex-grow flex flex-col text-center">
@@ -356,7 +361,7 @@
                         <!-- Ministério Público -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer border-t-2 border-t-lightblue">
                             <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
-                                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Ministério Público" class="w-full h-full object-cover opacity-70">
+                                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Ministério Público" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-70">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
                             <div class="flex-grow flex flex-col text-center">
@@ -368,7 +373,7 @@
                         <!-- Analista -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer border-t-2 border-t-green-500">
                             <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
-                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Analista" class="w-full h-full object-cover opacity-70 filter hue-rotate-90">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Analista" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-70 filter hue-rotate-90">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
                             <div class="flex-grow flex flex-col text-center">
@@ -395,8 +400,8 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 blur-reveal">
                         <!-- Card: Carlos Vinicius -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Carlos Vinicius.JPG.jpeg" alt="" class="w-full h-full object-cover">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Carlos Vinicius.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Carlos Vinícius</h4>
@@ -408,8 +413,8 @@
 
                         <!-- Card: Carlos André -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Carlos Andre.JPG.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Carlos Andre.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Carlos André</h4>
@@ -421,20 +426,21 @@
 
                         <!-- Card: Reinaldo Alves -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Reinaldo.JPG.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Reinaldo.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Reinaldo Alves</h4>
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
-<button onclick="openProfilePage('reinaldo-alves')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>                                </div>
+                                    <button onclick="openProfilePage('reinaldo-alves')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Card: Wilson da Silva -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Wilson Dias.JPG.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Wilson Dias.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Wilson da Silva</h4>
@@ -448,8 +454,8 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 blur-reveal">
                         <!-- Card: Guilherme Carreira -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Guilherme.JPG.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Guilherme.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Guilherme Carreira</h4>
@@ -461,8 +467,8 @@
 
                         <!-- Card: Danyllo Luiz -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Danyllo.JPG.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Danyllo.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Danyllo Luiz</h4>
@@ -474,8 +480,8 @@
 
                         <!-- Card: Thiago Henrique -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Thiago Henrique Teles Lopes.jpg (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Thiago Henrique Teles Lopes.jpg (1).jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Thiago Henrique</h4>
@@ -487,8 +493,8 @@
 
                         <!-- Card: Giovanni Machado -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/Giovanni Machado.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Giovanni Machado.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Giovanni Machado</h4>
@@ -499,11 +505,11 @@
                         </div>
                     </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 blur-reveal">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 blur-reveal">
                         <!-- Card: Amanda Neves -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
-                                <img src="assets/Amanda.JPG.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <img src="assets/Amanda.JPG.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Amanda Neves</h4>
@@ -513,10 +519,10 @@
                             </div>
                         </div>
 
-                        <!-- Card: Aldo Guilherme -->
+                        <!-- Card: Aldo Guilherme (Sabino) -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
-                                <img src="assets/Aldo Sabino.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <img src="assets/Aldo Sabino.jpg.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Aldo Guilherme</h4>
@@ -529,7 +535,7 @@
                         <!-- Card: Vinicius Borges -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
-                                <img src="assets/vi" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <img src="assets/vi" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Vinicius Borges</h4>
@@ -542,7 +548,7 @@
                         <!-- Card: Wild Afonso -->
                         <div class="teacher-card glass-card rounded-3xl text-center">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
-                                <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" loading="lazy" decoding="async" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Wild Afonso</h4>
@@ -565,7 +571,7 @@
                         <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 invert mb-4">
                         <p class="text-xs text-gray-500 font-light max-w-sm leading-relaxed">Acelerando a aprovação da elite do judiciário brasileiro com engenharia reversa e metodologia preditiva.</p>
                     </div>
-                    <div class="md:col-span-7">
+                    <div class="md:col-span-7 flex items-center justify-center md:justify-start">
                         <p class="text-xs text-gray-500 font-light">&copy; 2026 Instituto Sapiens de Ensino. Todos os direitos reservados.</p>
                     </div>
                 </div>
@@ -573,7 +579,7 @@
         </footer>
 
         <!-- Botão WhatsApp -->
-        <a href="https://wa.me/556200000000" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl hover:bg-green-400 transition-transform pulse-btn-green shadow-xl z-50">
+        <a href="https://wa.me/556200000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl hover:bg-green-400 transition-transform pulse-btn-green shadow-xl z-50">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div> <!-- Fim do #main-site -->
@@ -586,8 +592,8 @@
     <div id="profile-page" class="hidden w-full min-h-screen bg-[#050914] text-white">
         <!-- Background Effect -->
         <div class="fixed inset-0 pointer-events-none z-0">
-            <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-orange/5 blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-lightblue/10 blur-[120px] rounded-full"></div>
+            <div class="absolute top-0 right-0 w-[20rem] sm:w-[40rem] h-[20rem] sm:h-[40rem] bg-orange/5 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 left-0 w-[20rem] sm:w-[40rem] h-[20rem] sm:h-[40rem] bg-lightblue/10 blur-[120px] rounded-full"></div>
         </div>
 
         <!-- Header do Perfil -->
@@ -599,36 +605,36 @@
                     </div>
                     <span class="font-bold text-xs uppercase tracking-wider hidden sm:block">Voltar aos Professores</span>
                 </button>
-                <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-8 invert opacity-90">
+                <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-6 sm:h-8 invert opacity-90">
             </div>
         </header>
 
         <!-- Main Content do Perfil -->
         <main class="flex items-center justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
-            <div class="w-full max-w-5xl glass-card rounded-[2.5rem] p-8 sm:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.6)] animate-fade-in relative overflow-hidden">
-                <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative z-10">
+            <div class="w-full max-w-5xl glass-card rounded-[2.5rem] p-6 sm:p-12 lg:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.6)] animate-fade-in relative overflow-hidden">
+                <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start relative z-10">
                     
                     <!-- Foto -->
-                    <div class="w-48 h-48 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden flex-shrink-0 border border-white/10 shadow-[0_0_40px_rgba(95,139,207,0.15)] relative bg-[#0a1128]">
+                    <div class="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden flex-shrink-0 border border-white/10 shadow-[0_0_40px_rgba(95,139,207,0.15)] relative bg-[#0a1128]">
                         <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl" id="profileIconFallback"><i class="fas fa-user-tie"></i></div>
                         <img id="profileImg" src="" alt="Foto" class="w-full h-full object-cover filter contrast-110 relative z-10">
                         <div class="absolute inset-0 bg-gradient-to-t from-navyDark/80 via-transparent to-transparent z-20"></div>
                     </div>
                     
                     <!-- Textos -->
-                    <div class="flex-1 text-center lg:text-left flex flex-col justify-center">
+                    <div class="flex-1 text-center lg:text-left flex flex-col justify-center w-full">
                         <span id="profileRole" class="inline-block bg-orange/10 border border-orange/30 text-orange px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4 w-max mx-auto lg:mx-0"></span>
                         
-                        <h1 id="profileName" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-3"></h1>
+                        <h1 id="profileName" class="font-heading text-2xl sm:text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-3"></h1>
                         
-                        <h2 id="profileSpecialty" class="text-lightblue font-medium text-sm mb-8"></h2>
+                        <h2 id="profileSpecialty" class="text-lightblue font-medium text-xs sm:text-sm mb-6 sm:mb-8"></h2>
                         
-                        <div class="w-16 h-1 bg-white/10 mb-8 mx-auto lg:mx-0 rounded-full"></div>
+                        <div class="w-16 h-1 bg-white/10 mb-6 sm:mb-8 mx-auto lg:mx-0 rounded-full"></div>
                         
-                        <p id="profileBio" class="text-gray-300 leading-relaxed font-light text-base text-justify"></p>
+                        <p id="profileBio" class="text-gray-300 leading-relaxed font-light text-sm sm:text-base text-justify lg:text-left"></p>
 
-                        <div class="mt-12">
-                            <button onclick="closeProfileAndScroll()" class="inline-flex items-center justify-center gap-3 bg-white text-navy hover:bg-orange hover:text-white px-8 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_20px_rgba(244,123,32,0.4)]">
+                        <div class="mt-8 sm:mt-12 flex justify-center lg:justify-start">
+                            <button onclick="closeProfileAndScroll()" class="inline-flex items-center justify-center gap-3 bg-white text-navy hover:bg-orange hover:text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_20px_rgba(244,123,32,0.4)] w-full sm:w-auto">
                                 Ver Cursos <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
@@ -682,85 +688,84 @@
                 role: 'Promotor de Justiça - MPGO',
                 specialty: 'Especialista em Direito Administrativo e Direito de Estado',
                 bio: 'Promotor de Justiça do Ministério Público do Estado de Goiás (MPGO), com ampla atuação acadêmica e em órgãos de cúpula do Ministério Público brasileiro. Doutor e Mestre em Direito Administrativo pela Universidade de São Paulo (USP), com foco no Direito de Estado.',
-                img: 'assets/Carlos Vinicius.JPG.jpeg' // <--- CAMINHO CORRIGIDO
-            
+                img: 'assets/Carlos Vinicius.JPG.jpeg' 
             },
-     'carlos-andre': {
+            'carlos-andre': {
                 name: 'Carlos André',
                 role: 'Fundador Instituto Carlos André',
                 specialty: 'Especialista em Língua Portuguesa e Redação para Concursos',
                 bio: 'Advogado, linguista e professor de língua portuguesa e de redação. Fundador do Instituto Carlos André, maior instituição de ensino especializada em português e em redação para concursos públicos no Centro-Oeste do Brasil.',
-                img: 'assets/Carlos Andre.JPG.jpeg' // <--- Sem acento e igual ao card
+                img: 'assets/Carlos Andre.JPG.jpeg' 
             },
             'reinaldo-alves': {
                 name: 'Reinaldo Alves',
                 role: 'Desembargador - TJGO',
                 specialty: 'Especialista em Direito Empresarial',
                 bio: 'Desembargador no Tribunal de Justiça do Estado de Goiás. Mestre em Direito Empresarial pela Universidade de Franca, com sólida trajetória na magistratura estadual e reconhecida contribuição para o desenvolvimento do Direito Empresarial na região.',
-                img: 'assets/Reinaldo.JPG.jpeg' // <--- Caminho corrigido para ficar idêntico ao do card
+                img: 'assets/Reinaldo.JPG.jpeg' 
             },
             'wilson-silva': {
                 name: 'Wilson da Silva Dias',
                 role: 'Desembargador - TJGO',
                 specialty: 'Especialista em Direito Processual Penal',
                 bio: 'Desembargador do Tribunal de Justiça do Estado de Goiás (TJGO). Professor de Direito Processual Penal. Mestre em Direito, Relações Internacionais e Desenvolvimento pela PUC/GO e Mestre em Defesa e Segurança Hemisférica pelo Inter-American Defense College em Washington DC, EUA.',
-                img: 'assets/Wilson da Silva.jpg.jpeg'
+                img: 'assets/Wilson Dias.JPG.jpeg'
             },
             'guilherme-carreira': {
                 name: 'Guilherme Carreira',
                 role: 'Juiz de Direito - TJ/GO',
                 specialty: 'Especialista em Direito Processual Civil',
                 bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás. Mestre em Direito Processual Civil pela PUC/SP. Membro da Associação Brasileira de Direito Processual (ABDPro), com relevante contribuição doutrinária e pedagógica na área processual.',
-                img: 'assets/Guilherme Carreira.jpg.jpeg'
+                img: 'assets/Guilherme.JPG.jpeg'
             },
             'danyllo-luiz': {
                 name: 'Danyllo Luiz Guimarães',
                 role: 'Assessor Jurídico - TJGO',
                 specialty: 'Especialista em Direito Penal e Processual Penal',
                 bio: 'Professor de Direito com ênfase em Direito Penal, Processual Penal, Constitucional e Administrativo. Assessor jurídico de Desembargador do TJGO. Especialista em Direito Penal e Processual Penal e Pós-Graduando em Processo Civil pela EJUG.',
-                img: 'assets/Danyllo Luiz.jpg.jpeg'
+                img: 'assets/Danyllo.JPG.jpeg'
             },
             'thiago-henrique': {
                 name: 'Thiago Henrique Teles Lopes',
                 role: 'Juiz de Direito - TJ/SP',
                 specialty: 'Especialista em Direito Processual Civil',
                 bio: 'Juiz de Direito do Tribunal de Justiça do Estado de São Paulo. Doutor em Direito Processual Civil pela Universidade de São Paulo - USP (2024). Mestre em Direito pela Universidade Metodista de Piracicaba (2018). Especialista em Direito Notarial e Registral e em Direito Processual Civil.',
-                img: 'assets/Thiago Henrique.jpg.jpeg'
+                img: 'assets/Thiago Henrique Teles Lopes.jpg (1).jpeg'
             },
             'giovanni-machado': {
                 name: 'Giovanni Machado',
                 role: 'Advogado / Vice-Pres. TED/OAB-GO',
                 specialty: 'Especialista em Direito Civil e Processo Civil',
                 bio: 'Advogado e vice-presidente do Tribunal de Ética e Disciplina da OAB-GO. Especialista em Direito Civil e Processo Civil. Mestrando em Ciências Jurídicas pela Faculdade Autônoma de Portugal, com atuação destacada no campo da ética profissional e do contencioso cível.',
-                img: 'assets/Giovanni Machado.jpg.jpeg'
+                img: 'assets/Giovanni Machado.jpeg'
             },
             'amanda-neves': {
                 name: 'Amanda Neves',
                 role: 'Assessora de Desembargador - TJGO',
                 specialty: 'Especialista em Direito Civil e Processo Civil',
                 bio: 'Analista Judiciária do Tribunal de Justiça do Estado de Goiás, com sólida atuação na área cível em gabinete de Desembargador. Pós-graduada em Direito Civil e Processo Civil, aprofundou sua formação como mentoranda em Família e Sucessões. Atua como professora e mentora na área de assessoria em gabinetes cíveis.',
-                img: '' 
+                img: 'assets/Amanda.JPG.jpeg' 
             },
-            'aldo-guilherme': {
+            'aldo-sabino': {
                 name: 'Aldo Guilherme Saad',
                 role: 'Juiz de Direito - TJGO',
                 specialty: 'Especialista em Direito Civil e Processo Civil',
                 bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás, especializado em Direito Civil e Processo Civil. Atua na preparação para carreiras jurídicas com foco na aprovação para Magistratura, Ministério Público e outras carreiras.',
-                img: '' 
+                img: 'assets/Aldo Sabino.jpg.jpeg' 
             },
             'vinicius-borges': {
                 name: 'Vinicius de Castro Borges',
                 role: 'Juiz de Direito - TJGO',
                 specialty: 'Especialista em Direito Penal e Direito Processual Civil',
                 bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás. Especialista em Direito Penal e em Direito Processual Civil, com atuação jurisdicional que alia rigor técnico e experiência prática, contribuindo para a formação de profissionais voltados às carreiras jurídicas.',
-                img: '' 
+                img: 'assets/vi' 
             },
             'wild-afonso': {
                 name: 'Wild Afonso',
                 role: 'Desembargador - TJGO',
                 specialty: 'Especialista em Direito Penal e Direito Público',
                 bio: 'Desembargador do Tribunal de Justiça do Estado de Goiás (TJGO). Especialista em Direito Penal e Mestre em Direito Público, com longa e destacada trajetória na magistratura goiana, contribuindo para o desenvolvimento da jurisprudência penal e para a formação de novos operadores do direito.',
-                img: '' 
+                img: 'assets/Wilson da Silva Dias.jpg.jpeg' 
             }
         };
 
