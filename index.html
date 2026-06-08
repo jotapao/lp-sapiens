@@ -9,32 +9,9 @@
     <!-- ============================================== -->
     <title>Instituto Sapiens de Ensino | A Elite Jurídica</title>
     <meta name="description" content="Acelere sua aprovação na Elite Jurídica com o Instituto Sapiens. Engenharia reversa e metodologia preditiva para Magistratura, Ministério Público e Defensoria.">
-    <meta name="keywords" content="Instituto Sapiens, Concursos Jurídicos, Magistratura, Ministério Público, Defensoria, Aprovação, Engenharia Reversa, Direito">
-    <meta name="author" content="Instituto Sapiens de Ensino">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://institutosapiens.com.br/">
     
-    <!-- Open Graph / Redes Sociais -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://institutosapiens.com.br/">
-    <meta property="og:title" content="Instituto Sapiens de Ensino | A Elite Jurídica">
-    <meta property="og:description" content="Abandone o estudo amador. O sistema de ensino mais letal e focado do mercado jurídico brasileiro.">
-    <meta property="og:image" content="https://institutosapiens.com.br/assets/logo_sem_fundo.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://institutosapiens.com.br/">
-    <meta property="twitter:title" content="Instituto Sapiens de Ensino | A Elite Jurídica">
-    <meta property="twitter:description" content="Abandone o estudo amador. O sistema de ensino mais letal e focado do mercado jurídico brasileiro.">
-    <meta property="twitter:image" content="https://institutosapiens.com.br/assets/logo_sem_fundo.png">
-    
-    <!-- Segurança Avançada -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <!-- ============================================== -->
-    
-    <!-- Fontes Premium: Inter (Leitura), Montserrat (Tech/Títulos), Playfair (Tradição/Autoridade) -->
+    <!-- Fontes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -51,49 +28,24 @@
                 extend: {
                     colors: {
                         navy: '#0f1c3f',
-                        navyDark: '#050914', /* Ainda mais escuro e imersivo */
+                        navyDark: '#050914', 
                         lightblue: '#5f8bcf', 
                         orange: '#f47b20',    
-                        orangeHover: '#d96a1a',
-                        lightbg: '#f4f7f9',
+                        lightbg: '#ffffff', 
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Montserrat', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                     },
-                    boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(15, 28, 63, 0.5)',
-                        'premium': '0 20px 50px -10px rgba(0, 0, 0, 0.6)',
-                        'neon-orange': '0 0 30px rgba(244, 123, 32, 0.4)',
-                        'neon-blue': '0 0 30px rgba(95, 139, 207, 0.4)',
-                    },
                     animation: {
-                        'float': 'float 8s ease-in-out infinite',
-                        'float-delayed': 'float 8s ease-in-out infinite 4s',
-                        'grid-move': 'gridMove 20s linear infinite',
-                        'scan': 'scanline 2s linear infinite',
-                        'glint': 'glint 3s infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
-                            '50%': { transform: 'translateY(-20px) scale(1.05)' },
-                        },
-                        gridMove: {
-                            '0%': { backgroundPosition: '0 0' },
-                            '100%': { backgroundPosition: '50px 50px' },
-                        },
-                        scanline: {
-                            '0%': { top: '-10%', opacity: 0 },
-                            '10%': { opacity: 1 },
-                            '90%': { opacity: 1 },
-                            '100%': { top: '110%', opacity: 0 },
-                        },
-                        glint: {
-                            '0%, 100%': { left: '-100%' },
-                            '50%': { left: '200%' },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
                 }
@@ -102,91 +54,57 @@
     </script>
 
     <style>
-        /* ===== FIXES GLOBAIS & VIBE TECH ===== */
+        /* ===== FIXES GLOBAIS ===== */
         html, body { 
-            /* Adicionado um gradiente radial para focar a visão no centro e aprofundar o design */
-            background: radial-gradient(circle at 50% 0%, #0a1128 0%, #050914 80%);
-            background-color: #050914; 
-            color: #ffffff;
+            background-color: #ffffff; 
+            color: #0f1c3f; 
             overflow-x: hidden !important; 
             width: 100%;
             position: relative;
-            min-height: 100vh;
         }
         
         ::selection { background-color: #f47b20; color: #fff; }
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #050914; }
-        ::-webkit-scrollbar-thumb { background: #5f8bcf; border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: #ffffff; }
+        ::-webkit-scrollbar-thumb { background: #0f1c3f; border-radius: 4px; }
 
-        /* Fundo Tech Animado Melhorado */
         .tech-bg {
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
-            background-image: 
-                linear-gradient(rgba(95, 139, 207, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(95, 139, 207, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: gridMove 20s linear infinite;
-            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            background-color: #ffffff;
         }
 
-        /* Proteção de Largura para as Páginas SPA e Fix do Display */
-        .page-view {
-            width: 100%; max-width: 100vw; overflow-x: hidden;
-            display: none; opacity: 0; transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .page-view.active { display: block; opacity: 1; transform: translateY(0); }
-
-        /* ===== EFFECTS & GLASSMORPHISM ===== */
         .gradient-text {
             background: linear-gradient(to right, #f47b20, #ffb347, #5f8bcf);
             background-size: 200% auto;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: textGradient 4s linear infinite;
         }
         @keyframes textGradient { to { background-position: 200% center; } }
 
         .glass-nav {
-            background: rgba(5, 9, 20, 0.80);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(15, 28, 63, 0.05);
         }
         
         .glass-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            background: linear-gradient(145deg, #0f1c3f 0%, #050914 100%);
+            color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: inset 0 0 20px rgba(255,255,255,0.01);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
-        /* Efeito Holográfico Global (Shine) para os Cards Novos */
-        .shine-effect {
-            position: relative;
-            overflow: hidden;
-        }
+        .shine-effect { position: relative; overflow: hidden; }
         .shine-effect::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 50%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
             background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-25deg);
-            z-index: 10;
-            transition: all 0.75s ease;
-            pointer-events: none;
+            transform: skewX(-25deg); z-index: 10; transition: all 0.75s ease; pointer-events: none;
         }
-        .shine-effect:hover::before, .shine-effect.is-active::before {
-            left: 200%;
-            transition: all 0.75s ease;
-        }
+        .shine-effect:hover::before, .shine-effect.is-active::before { left: 200%; transition: all 0.75s ease; }
 
-        /* ===== ANIMATIONS REVEAL AVANÇADAS ===== */
         .blur-reveal {
             opacity: 0; filter: blur(10px); transform: translateY(30px) scale(0.95);
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -196,192 +114,120 @@
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
 
-        /* ===== COMPONENTES VIVOS (MÉTODOS & CURSOS ATUALIZADOS) ===== */
-        
-        /* 1. Metodologia: Hover Tecnológico com Profundidade (Sombra Neon Externa) */
-        .method-card { 
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        .method-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .method-card:hover, .method-card.is-active { 
             transform: translateY(-12px) scale(1.02); 
             border-color: rgba(255, 255, 255, 0.15); 
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 40px -5px var(--hover-glow, rgba(95, 139, 207, 0.3)); 
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4), 0 0 40px -5px var(--hover-glow, rgba(95, 139, 207, 0.3)); 
         }
 
-        /* Efeitos combinados para o Mobile (.is-active simula o :hover do Tailwind) */
-        .method-card.is-active .w-16 { transform: scale(1.25) translateY(-0.5rem) !important; }
-        .method-card.is-active h4 { color: var(--hover-glow) !important; }
-        .method-card.is-active p { color: #d1d5db !important; }
-
-        /* 2. Cursos: Card de Alta Performance com Linha Fina Neon */
         .course-card {
-            position: relative; 
-            transition: all 0.4s ease-out;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.4) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.05); /* Borda padrão invisível */
-            z-index: 1;
+            position: relative; transition: all 0.4s ease-out;
+            background: linear-gradient(180deg, #0f1c3f 0%, #050914 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05); z-index: 1;
         }
-        .course-card:hover, .course-card.is-active {
-            transform: translateY(-15px) scale(1.02); /* Animação de elevação */
-            border-color: var(--card-glow); /* A borda inteira acende na cor da variável */
-            /* Fio de neon fino na borda do card */
-            box-shadow: 0 35px 60px -15px rgba(0,0,0,0.9), 
-                        0 0 15px 0px var(--card-glow), 
-                        inset 0 0 10px 0px var(--card-glow);
+        .course-card:hover {
+            transform: translateY(-15px) scale(1.02); border-color: var(--card-glow); 
+            box-shadow: 0 35px 60px -15px rgba(0,0,0,0.5), 0 0 15px 0px var(--card-glow), inset 0 0 10px 0px var(--card-glow); 
         }
-        
-        /* Efeito de zoom e tilt na imagem do Curso (Transição Suave) */
-        .course-card .img-container img {
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
-        }
-        .course-card:hover .img-container img, .course-card.is-active .img-container img {
-            transform: scale(1.12) rotate(-2deg) !important;
-            opacity: 0.35 !important;
-        }
-        
-        /* Efeitos combinados para o Mobile nos Cursos */
-        .course-card.is-active h3 { color: var(--card-glow) !important; }
-        .course-card.is-active .absolute-overlay { opacity: 0.9 !important; }
+        .course-card .img-container img { transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease; }
+        .course-card:hover .img-container img { transform: scale(1.12) rotate(-2deg) !important; opacity: 0.35 !important; }
 
-        /* Ajustes suaves de elevação para não vazar a tela do celular */
-        @media (max-width: 768px) {
-            .method-card:hover, .method-card.is-active { transform: translateY(-5px) scale(1.02); }
-            .course-card:hover, .course-card.is-active { transform: translateY(-5px) scale(1.02); }
-        }
-        
-        /* 3. Corpo Docente: Glint Holográfico */
         .teacher-card { position: relative; overflow: hidden; transition: all 0.5s ease; }
-        .teacher-card::after {
-            content: ''; position: absolute; top: 0; width: 50%; height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-25deg); opacity: 0; transition: opacity 0.3s; z-index: 20;
-            pointer-events: none; 
-        }
         .teacher-card:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(244, 123, 32, 0.2); border-color: #f47b20; }
-        .teacher-card:hover::after { opacity: 1; animation: glint 1.5s infinite; }
         
-        /* 4. Hover Elevado Padrão */
         .hover-lift { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -10px rgba(244, 123, 32, 0.4); }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2); }
         
-        /* 5. Botão Pulsante WhatsApp */
         .pulse-btn-green {
             box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
             animation: pulse-green 2s infinite cubic-bezier(0.66, 0, 0, 1);
         }
         @keyframes pulse-green { to { box-shadow: 0 0 0 25px rgba(34, 197, 94, 0); } }
 
-        /* Menu Mobile */
         #mobileMenu { transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; transform-origin: top; }
         #mobileMenu.hidden-menu { opacity: 0; transform: scaleY(0.95); visibility: hidden; pointer-events: none; height: 0; }
         #mobileMenu.active-menu { opacity: 1; transform: scaleY(1); visibility: visible; pointer-events: auto; height: auto; }
         
-        /* Custom Video Player Styles */
-        video {
-            border-radius: 2rem;
-            outline: none;
-        }
-        video::-webkit-media-controls-panel {
-            background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-        }
+        .custom-scroll-content::-webkit-scrollbar { width: 4px; }
+        .custom-scroll-content::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
     </style>
 </head>
-<body class="font-sans text-gray-300 antialiased flex flex-col min-h-screen">
+<body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen relative">
 
-    <!-- Fundo Grid Vivo -->
     <div class="tech-bg"></div>
 
-    <!-- CABEÇALHO (NAVBAR) -->
-    <header class="fixed w-full z-50 top-0 sm:top-4 px-0 sm:px-6 lg:px-8 transition-all duration-300" id="navbar">
-        <div class="max-w-6xl mx-auto glass-nav sm:rounded-2xl shadow-glass border-b sm:border border-white/10 relative">
-            <div class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-6">
-                
-                <a href="#home" class="flex-shrink-0 flex items-center gap-3 group hover:opacity-80 transition-opacity">
-                    <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                </a>
-                
-                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="#home" class="nav-link px-3 lg:px-4 py-2 rounded-lg text-orange font-bold transition-all text-sm bg-white/5 backdrop-blur-sm">INÍCIO</a>
-                    <a href="#metodologia" class="nav-link px-3 lg:px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">MÉTODOS</a>
-                    <a href="#conteudo" class="nav-link px-3 lg:px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">CURSOS</a>
-                    <a href="#docentes" class="nav-link px-3 lg:px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">PROFESSORES</a>
-                    <a href="#faq" class="nav-link px-3 lg:px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">DÚVIDAS</a>
-                </nav>
-
-                <div class="hidden md:flex">
-                    <a href="#matricula" class="inline-block bg-white hover:bg-orange text-navy hover:text-white px-5 lg:px-6 py-2.5 rounded-xl font-heading font-bold transition-all duration-300 text-xs lg:text-sm uppercase tracking-wider shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-neon-orange group hover-lift">
-                        Matrículas <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+    <!-- ========================================================================= -->
+    <!-- SITE PRINCIPAL (HOME) -->
+    <!-- ========================================================================= -->
+    <div id="main-site" class="block w-full">
+        <!-- CABEÇALHO -->
+        <header class="fixed w-full z-50 top-0 sm:top-4 px-0 sm:px-6 lg:px-8 transition-all duration-300" id="navbar">
+            <div class="max-w-6xl mx-auto glass-nav sm:rounded-2xl shadow-glass relative">
+                <div class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-6">
+                    <a href="#home" class="flex-shrink-0 flex items-center gap-3 group hover:opacity-80 transition-opacity">
+                        <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105 invert">
                     </a>
+                    <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                        <a href="#home" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold">INÍCIO</a>
+                        <a href="#sobre" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold">SOBRE O ISE</a>
+                        <a href="#metodologia" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold">MÉTODOS</a>
+                        <a href="#conteudo" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold">CURSOS</a>
+                        <a href="#docentes" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold">PROFESSORES</a>
+                    </nav>
+                    <div class="hidden md:flex">
+                        <a href="#matricula" class="inline-block bg-navy hover:bg-orange text-white px-4 xl:px-6 py-2.5 rounded-xl font-heading font-bold transition-all duration-300 text-xs uppercase tracking-wider hover:shadow-neon-orange group hover-lift">
+                            Matrículas <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobileMenuBtn" class="text-navy hover:text-orange focus:outline-none p-2 transition-colors">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
-
-                <div class="md:hidden flex items-center">
-                    <button id="mobileMenuBtn" class="text-white hover:text-orange focus:outline-none p-2 transition-colors">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                <div id="mobileMenu" class="hidden-menu absolute top-full left-0 w-full mt-1 glass-nav sm:rounded-2xl overflow-hidden shadow-premium border-t sm:border border-navy/10 z-50">
+                    <div class="p-3 flex flex-col gap-1 text-center">
+                        <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold">Início</a>
+                        <a href="#sobre" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold">Sobre o ISE</a>
+                        <a href="#metodologia" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold">O Método</a>
+                        <a href="#conteudo" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold">Cursos</a>
+                        <a href="#docentes" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold">Professores</a>
+                        <a href="#matricula" class="block mt-2 px-4 py-3 rounded-xl bg-orange text-white font-bold uppercase tracking-wider">Garantir Vaga</a>
+                    </div>
                 </div>
             </div>
-            
-            <div id="mobileMenu" class="hidden-menu absolute top-full left-0 w-full mt-1 glass-nav sm:rounded-2xl overflow-hidden shadow-premium border-t sm:border border-white/10 z-50">
-                <div class="p-3 flex flex-col gap-1 text-center">
-                    <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl bg-white/10 text-orange font-bold">Início</a>
-                    <a href="#metodologia" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-300 font-medium">O Método</a>
-                    <a href="#conteudo" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-300 font-medium">Cursos</a>
-                    <a href="#docentes" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-300 font-medium">Docentes</a>
-                    <a href="#faq" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-300 font-medium">Dúvidas</a>
-                    <a href="#matricula" class="block mt-2 px-4 py-3 rounded-xl bg-orange text-white font-bold uppercase tracking-wider">Garantir Vaga</a>
-                </div>
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="flex-grow pt-0 w-full relative z-10" id="main-content">
-
-        <!-- ============================================== -->
-        <!-- PÁGINA 1: INÍCIO (HERO + LEADS VIVOS)          -->
-        <!-- ============================================== -->
-        <div id="page-home" class="page-view active w-full">
-            
-            <section class="relative pt-32 pb-32 sm:pt-40 sm:pb-40 lg:pt-48 lg:pb-48 w-full">
-                <!-- Luzes Pulsantes de Fundo -->
-                <div class="absolute top-[10%] right-[10%] w-[300px] h-[300px] bg-lightblue/30 rounded-full blur-[120px] animate-float pointer-events-none"></div>
-                <div class="absolute bottom-[-10%] left-[10%] w-[250px] h-[250px] bg-orange/20 rounded-full blur-[120px] animate-float-delayed pointer-events-none"></div>
-
+        <main class="w-full relative z-10" id="main-content">
+            <!-- HERO SECTION -->
+            <section id="home" class="w-full pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-48 lg:pb-32 relative">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center text-center lg:text-left">
-                        
                         <div class="lg:col-span-7">
-                            <div class="blur-reveal active inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8">
-                                <span class="w-2 h-2 rounded-full bg-orange animate-pulse shadow-[0_0_10px_#f47b20]"></span> 
-                                <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-gray-200 uppercase">Sistema Online - Turmas 2026</span>
+                            <div class="blur-reveal active inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-navy/10 bg-navy/5 mb-6 sm:mb-8">
+                                <span class="w-2 h-2 rounded-full bg-orange animate-pulse"></span> 
+                                <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-navy uppercase">Sistema Online - Turmas 2026</span>
                             </div>
-                            
-                            <h1 class="blur-reveal active delay-100 font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] tracking-tighter mb-4 sm:mb-6 uppercase">
+                            <h1 class="blur-reveal active delay-100 font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-navy leading-[1.1] tracking-tighter mb-4 sm:mb-6 uppercase">
                                 Sua aprovação <br>exige <span class="gradient-text">domínio.</span>
                             </h1>
-                            
-                            <p class="blur-reveal active delay-200 text-sm sm:text-base lg:text-lg text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            <p class="blur-reveal active delay-200 text-sm sm:text-base lg:text-lg text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
                                 Abandone o estudo amador. Nós aplicamos engenharia reversa nas maiores bancas do país para entregar exatamente o que decide a sua posse.
                             </p>
-                            
                             <div class="blur-reveal active delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
                                 <a href="https://wa.me/556200000000" target="_blank" class="hover-lift bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] flex items-center justify-center gap-3 group w-full sm:w-auto">
                                     <i class="fab fa-whatsapp text-xl group-hover:scale-125 transition-transform duration-300"></i> Falar com Especialista
                                 </a>
-                                <a href="#conteudo" class="hover-lift bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all flex items-center justify-center gap-3 backdrop-blur-sm w-full sm:w-auto group">
+                                <a href="#conteudo" class="hover-lift bg-navy hover:bg-navyDark text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all flex items-center justify-center gap-3 w-full sm:w-auto group shadow-lg">
                                     Acessar Cursos <i class="fas fa-arrow-right opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"></i>
                                 </a>
                             </div>
                         </div>
-
-                        <!-- VÍDEO HIGH TECH REAL -->
                         <div class="lg:col-span-5 relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none blur-reveal active delay-300">
-                            <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/20 shadow-[0_0_40px_rgba(95,139,207,0.2)] bg-navyDark">
-                                
-                                <video 
-                                    class="w-full h-full object-cover relative z-10" 
-                                    controls 
-                                    preload="metadata"
-                                    poster="assets/Logo PNG.png">
+                            <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-navy/20 shadow-2xl bg-navyDark">
+                                <video class="w-full h-full object-cover relative z-10" controls preload="metadata" poster="assets/Logo PNG.png">
                                     <source src="assets/IMG_4233.mp4" type="video/mp4">
                                     O seu navegador não suporta a tag de vídeo.
                                 </video>
@@ -391,40 +237,315 @@
                 </div>
             </section>
 
-            <!-- Captação de Leads (Tech Form) -->
-            <section class="relative z-20 -mt-16 sm:-mt-24 lg:-mt-28 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 w-full">
-                <div class="max-w-5xl mx-auto glass-card shine-effect rounded-[2rem] shadow-premium overflow-hidden blur-reveal active border border-white/10">
-                    <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- SOBRE -->
+            <section id="sobre" class="w-full py-16 sm:py-24 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="glass-card rounded-[3rem] p-8 sm:p-16 mb-20 blur-reveal flex flex-col lg:flex-row items-center gap-12 border-t-2 border-t-lightblue">
+                        <div class="lg:w-1/2 relative">
+                            <div class="absolute -top-10 -left-10 w-40 h-40 bg-lightblue/20 blur-[60px] rounded-full"></div>
+                            <h2 class="font-heading text-3xl sm:text-5xl font-black text-white uppercase tracking-tight leading-none mb-6">Quem <span class="text-lightblue">Somos</span></h2>
+                            <div class="space-y-4 text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+                                <p>O Instituto Sapiens de Ensino (ISE), fundado em 2026, é mais do que um curso de aulas online (EAD) voltado à preparação de seus alunos aos concursos públicos mais disputados do país. Composto por professores com ampla experiência nesse ramo de atuação, o ISE é um projeto moderno e sofisticado que nasce com uma nova proposta e uma filosofia clara: a excelência no ensino como caminho mais seguro à aprovação.</p>
+                                <p>Aqui, não poupamos fôlego para sonhar junto com nossos alunos — porque conhecemos de perto a realidade das carreiras que eles almejam e nos comprometemos integralmente com cada etapa dessa jornada.</p>
+                                <p>Muito além de aulas online e híbridas, o Instituto Sapiens de Ensino é composto pela mais moderna e tecnológica plataforma virtual de ensino, aliada a ferramentas de interatividade e metodologias didáticas inéditas no mercado.</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
+                            <img src="assets/sede.jpeg" alt="Sede" class="w-full h-full object-cover opacity-60">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-navyDark to-transparent"></div>
+                            <div class="absolute bottom-8 left-8">
+                                <h3 class="font-heading text-2xl font-black text-white uppercase">Sede Tecnológica</h3>
+                                <p class="text-lightblue font-bold text-xs uppercase tracking-widest mt-1">Goiânia / GO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- METODOLOGIA -->
+            <section id="metodologia" class="w-full py-16 sm:py-24 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 blur-reveal">
+                        <span class="inline-block px-4 py-1.5 bg-orange/10 border border-orange/20 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">Algoritmo Pedagógico</span>
+                        <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-navy uppercase tracking-tight leading-none mb-6">Engenharia Reversa</h2>
+                        <p class="text-gray-600 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto">Você não estuda para aprender tudo. Você estuda hoje exatamente o padrão comportamental da banca que vai avaliar a sua prova amanhã.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+                        <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal text-center" style="--hover-glow: #f47b20;">
+                            <div class="w-16 h-16 mx-auto bg-[#0a1128] border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-layer-group"></i></div>
+                            <h4 class="font-heading text-xl sm:text-2xl font-black text-white mb-4">Doutrina Vertical</h4>
+                            <p class="text-gray-400 font-light text-sm">Resumos de 2000 páginas não aprovam. Sintetizamos a doutrina focando na alta incidência de dados do edital.</p>
+                        </div>
+                        <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-100 text-center" style="--hover-glow: #5f8bcf;">
+                            <div class="w-16 h-16 mx-auto bg-[#0a1128] border border-white/20 text-lightblue rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-gavel"></i></div>
+                            <h4 class="font-heading text-xl sm:text-2xl font-black text-white mb-4">Código Preditivo</h4>
+                            <p class="text-gray-400 font-light text-sm">Teóricos falham. Nossas aulas são estruturadas por algoritmos humanos que vivem o direito: Procuradores e Juízes ativos.</p>
+                        </div>
+                        <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-200 text-center" style="--hover-glow: #f47b20;">
+                            <div class="w-16 h-16 mx-auto bg-[#0a1128] border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-crosshairs"></i></div>
+                            <h4 class="font-heading text-xl sm:text-2xl font-black text-white mb-4">Simulação Hacker</h4>
+                            <p class="text-gray-400 font-light text-sm">Treinamento exaustivo com questões inéditas, hackeando o perfil neuro-linguístico exato das bancas (CESPE/FGV).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CURSOS -->
+            <section id="conteudo" class="w-full py-16 sm:py-24 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-10 blur-reveal flex flex-col items-center">
+                        <span class="inline-block px-4 py-1.5 bg-lightblue/10 border border-lightblue/20 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">O Arsenal Sapiens</span>
+                        <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-navy uppercase tracking-tight leading-none mb-6">Carreiras Jurídicas</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 blur-reveal">
+                        <!-- Magistratura -->
+                        <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer border-t-2 border-t-orange">
+                            <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Magistratura" class="w-full h-full object-cover opacity-70">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+                            </div>
+                            <div class="flex-grow flex flex-col text-center">
+                                <h3 class="font-heading text-2xl font-black text-white uppercase mb-1">Magistratura</h3>
+                                <p class="text-gray-400 text-xs tracking-wider uppercase mb-6 pb-6 border-b border-white/10">Estadual & Federal</p>
+                                <a href="#" class="w-full bg-white hover:bg-orange text-navy hover:text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto">Garantir Vaga</a>
+                            </div>
+                        </div>
+                        <!-- Ministério Público -->
+                        <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer border-t-2 border-t-lightblue">
+                            <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Ministério Público" class="w-full h-full object-cover opacity-70">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+                            </div>
+                            <div class="flex-grow flex flex-col text-center">
+                                <h3 class="font-heading text-2xl font-black text-white uppercase mb-1">Ministério Público</h3>
+                                <p class="text-gray-400 text-xs tracking-wider uppercase mb-6 pb-6 border-b border-white/10">MPE & MPF</p>
+                                <a href="#" class="w-full bg-white hover:bg-lightblue text-navy hover:text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto">Garantir Vaga</a>
+                            </div>
+                        </div>
+                        <!-- Analista -->
+                        <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer border-t-2 border-t-green-500">
+                            <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Analista" class="w-full h-full object-cover opacity-70 filter hue-rotate-90">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+                            </div>
+                            <div class="flex-grow flex flex-col text-center">
+                                <h3 class="font-heading text-2xl font-black text-white uppercase mb-1">Analista Tribunais</h3>
+                                <p class="text-gray-400 text-xs tracking-wider uppercase mb-6 pb-6 border-b border-white/10">Ênfase no TJGO</p>
+                                <a href="#" class="w-full bg-white hover:bg-green-600 text-navy hover:text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto">Garantir Vaga</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- SEÇÃO 5: CORPO DOCENTE                         -->
+            <!-- ============================================== -->
+            <!-- Background alterado para herdar a cor branca e os títulos ajustados para dark text -->
+            <section id="docentes" class="w-full py-16 sm:py-24 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="mb-16 sm:mb-20 text-center blur-reveal px-4 flex flex-col items-center">
+                        <span class="inline-block px-4 py-1.5 bg-orange/10 border border-orange/20 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">Prática Real</span>
+                        <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-navy leading-none mb-6">A Elite Ensina</h2>
+                        <p class="text-gray-600 text-sm sm:text-base font-light max-w-2xl">Teóricos apenas escrevem. Nossas autoridades aprovam alunos e assinam o seu termo de posse.</p>
+                    </div>
+
+                    <!-- Grid único para todos os professores -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 blur-reveal">
                         
-                        <div class="bg-navyDark/60 p-8 sm:p-12 flex flex-col justify-center relative overflow-hidden">
+                        <!-- Card: Carlos Vinicius -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/" alt="" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Carlos Vinícius</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Promotor - MP/GO</p>
+                                    <button onclick="openProfilePage('carlos-vinicius')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Carlos André -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Carlos André.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Carlos André</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Fundador Inst. Carlos André</p>
+                                    <button onclick="openProfilePage('carlos-andre')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Reinaldo Alves -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Reinaldo Alves Ferreira.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Reinaldo Alves</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
+                                    <button onclick="openProfilePage('reinaldo-alves')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Wilson da Silva -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Wilson da Silva</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
+                                    <button onclick="openProfilePage('wilson-silva')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Guilherme Carreira -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Guilherme Carreira.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Guilherme Carreira</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJ/GO</p>
+                                    <button onclick="openProfilePage('guilherme-carreira')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Danyllo Luiz -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Danyllo Luiz.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Danyllo Luiz</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessor Jurídico - TJ/GO</p>
+                                    <button onclick="openProfilePage('danyllo-luiz')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Thiago Henrique -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Thiago Henrique Teles Lopes.jpg (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Thiago Henrique</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJ/SP</p>
+                                    <button onclick="openProfilePage('thiago-henrique')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Giovanni Machado -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+                                <img src="assets/Giovanni Machado.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Giovanni Machado</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Vice-Pres. TED/OAB-GO</p>
+                                    <button onclick="openProfilePage('giovanni-machado')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Amanda Neves -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Amanda Neves.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Amanda Neves</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessora - TJ/GO</p>
+                                    <button onclick="openProfilePage('amanda-neves')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Aldo Guilherme -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Aldo Sabino.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Aldo Guilherme</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJ/GO</p>
+                                    <button onclick="openProfilePage('aldo-sabino')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Vinicius Borges -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/vi" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Vinicius Borges</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJ/GO</p>
+                                    <button onclick="openProfilePage('vinicius-borges')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Wild Afonso -->
+                        <div class="teacher-card glass-card rounded-3xl text-center">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Wild Afonso</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
+                                    <button onclick="openProfilePage('wild-afonso')" class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- CAPTAÇÃO DE LEADS (Movida para baixo dos Docentes com Design Original Escuro/Glow) -->
+            <section class="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative z-20">
+                <div class="max-w-5xl mx-auto glass-card shine-effect rounded-[2.5rem] shadow-2xl overflow-hidden blur-reveal active">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="p-8 sm:p-12 flex flex-col justify-center relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-400 opacity-20 rounded-full blur-[50px] animate-pulse-slow"></div>
                             <div class="relative z-10 text-center lg:text-left">
                                 <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-lightblue/10 text-lightblue border border-lightblue/20 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
                                     <i class="fas fa-lock text-xs"></i> Acesso Restrito
                                 </span>
-                                <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">Atendimento <br class="hidden lg:block">Especializado</h3>
-                                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">Conecte-se com um especialista. Receba orientação de carreira, descontos de lote e conteúdos analíticos focados na sua banca.</p>
+                                <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight leading-none mb-4">Atendimento <br class="hidden lg:block">Estratégico</h3>
+                                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">Conecte-se com um especialista. Receba orientação de carreira, descontos de lote e conteúdos analíticos focados na sua banca.</p>
                             </div>
                         </div>
-                        
-                        <div class="bg-[rgba(10,15,30,0.8)] p-8 sm:p-12 relative border-t lg:border-t-0 lg:border-l border-white/5">
+                        <div class="bg-black/20 p-8 sm:p-12 relative border-t lg:border-t-0 lg:border-l border-white/5">
                             <form action="#" method="POST" class="space-y-4 sm:space-y-5 relative z-10" id="leadForm">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">Identificação</label>
-                                        <input type="text" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition-all text-sm shadow-inner" placeholder="Seu nome" required>
+                                        <input type="text" class="w-full bg-[#0a1128] border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:border-cyan-400 outline-none transition-all text-sm" placeholder="Seu nome" required>
                                     </div>
                                     <div>
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">WhatsApp</label>
-                                        <input type="tel" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition-all text-sm shadow-inner" placeholder="(00) 00000-0000" maxlength="15" id="whatsappInput" required>
+                                        <input type="tel" class="w-full bg-[#0a1128] border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:border-cyan-400 outline-none transition-all text-sm" placeholder="(00) 00000-0000" maxlength="15" id="whatsappInput" required>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">E-mail de Contato</label>
-                                    <input type="email" class="w-full bg-navyDark border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:bg-navyDark focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition-all text-sm shadow-inner" placeholder="Seu melhor e-mail" required>
+                                    <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">E-mail</label>
+                                    <input type="email" class="w-full bg-[#0a1128] border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:border-cyan-400 outline-none transition-all text-sm" placeholder="Seu melhor e-mail" required>
                                 </div>
                                 <div class="w-full mt-2 hover-lift">
-                                    <button type="submit" class="w-full bg-lightblue hover:bg-white hover:text-navy text-white font-heading font-bold uppercase tracking-wider py-4 sm:py-5 rounded-xl shadow-[0_0_20px_rgba(95,139,207,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-300 flex items-center justify-center gap-3 text-[11px] sm:text-sm group">
+                                    <button type="submit" class="w-full bg-lightblue hover:bg-white hover:text-navy text-white font-heading font-bold uppercase tracking-wider py-4 sm:py-5 rounded-xl shadow-[0_0_20px_rgba(95,139,207,0.3)] transition-all duration-300 flex items-center justify-center gap-3 text-[11px] sm:text-sm group">
                                         Solicitar Contato Especializado <i class="fas fa-satellite-dish group-hover:rotate-12 transition-transform"></i>
                                     </button>
                                 </div>
@@ -433,678 +554,318 @@
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!-- ============================================== -->
-        <!-- PÁGINA 2: METODOLOGIA (TECNOLOGIA APLICADA)    -->
-        <!-- ============================================== -->
-        <div id="page-metodologia" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
-                <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 blur-reveal">
-                    <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-[0_0_15px_rgba(244,123,32,0.2)]">Algoritmo Pedagógico</span>
-                    <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none mb-6">Engenharia Reversa</h2>
-                    <p class="text-gray-400 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto">Você não estuda para aprender tudo. Você estuda hoje exatamente o padrão comportamental da banca que vai avaliar a sua prova amanhã.</p>
-                </div>
+        </main>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
-                    
-                    <!-- Tech Card 1 -->
-                    <!-- Brilho Interno Removido. Efeito de Sombra Neon Externa Configurado. -->
-                    <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal flex flex-col items-center text-center group cursor-default" style="--hover-glow: #00d2ff;">
-                        <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-orange relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
-                            <i class="fas fa-layer-group animate-pulse-slow"></i>
-                        </div>
-                        <h4 class="font-heading text-xl sm:text-2xl font-black text-white mb-4 relative z-10 group-hover:text-orange transition-colors duration-500">Doutrina Vertical</h4>
-                        <p class="text-gray-400 leading-relaxed font-light text-sm relative z-10 group-hover:text-gray-300 transition-colors duration-500">Resumos de 2000 páginas não aprovam. Nosso sistema sintetiza a doutrina focando estritamente na alta incidência de dados do edital.</p>
-                    </div>
-                    
-                    <!-- Tech Card 2 -->
-                    <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-100 flex flex-col items-center text-center group cursor-default" style="--hover-glow: #00d2ff;">
-                        <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-lightblue rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-blue relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
-                            <i class="fas fa-gavel animate-pulse-slow"></i>
-                        </div>
-                        <h4 class="font-heading text-xl sm:text-2xl font-black text-white mb-4 relative z-10 group-hover:text-lightblue transition-colors duration-500">Código Preditivo</h4>
-                        <p class="text-gray-400 leading-relaxed font-light text-sm relative z-10 group-hover:text-gray-300 transition-colors duration-500">Teóricos falham. Nossas aulas são estruturadas por algoritmos humanos que vivem o direito: Procuradores, Juízes e Defensores ativos.</p>
-                    </div>
-                    
-                    <!-- Tech Card 3 -->
-                    <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-200 flex flex-col items-center text-center group cursor-default" style="--hover-glow: #00d2ff;">
-                        <div class="w-16 h-16 mx-auto bg-navyDark border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-neon-orange relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
-                            <i class="fas fa-crosshairs animate-pulse-slow"></i>
-                        </div>
-                        <h4 class="font-heading text-xl sm:text-2xl font-black text-white mb-4 relative z-10 group-hover:text-orange transition-colors duration-500">Simulação Hacker</h4>
-                        <p class="text-gray-400 leading-relaxed font-light text-sm relative z-10 group-hover:text-gray-300 transition-colors duration-500">Treinamento exaustivo com questões inéditas, hackeando o perfil neuro-linguístico exato das bancas examinadoras (CESPE/FGV).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA 3: CURSOS (VITRINE DE ALTA PERFORMANCE) -->
-        <!-- ============================================== -->
-        <div id="page-conteudo" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16 blur-reveal flex flex-col items-center">
-                    <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-[0_0_15px_rgba(95,139,207,0.2)]">O Arsenal Sapiens</span>
-                    <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none mb-6">Sua Jurisdição</h2>
-                    <p class="text-gray-400 text-sm sm:text-base font-light max-w-2xl">Programas de preparação estruturados em alta performance para o esgotamento do edital e sua aprovação definitiva.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-                    
-                    <!-- Curso 1 -->
-                    <!-- Brilho holográfico interno removido. Linha Fina Neon Configurada na CSS Class -->
-                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal border-t-2 border-t-orange" style="--card-glow: #f47b20;">
-                        
-                        <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
-                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Magistratura" class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 transition-opacity duration-500 absolute-overlay"></div>
-                            
-                            <div class="absolute top-3 left-3 bg-orange/20 border border-orange/50 text-orange px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-neon-orange z-10">Turmas Abertas</div>
-                        </div>
-                        
-                        <div class="flex-grow flex flex-col text-center relative z-20">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center transition-colors duration-500 title-course">Magistratura</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">Estadual & Federal</p>
-                            
-                            <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
-                                <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
-                                    <i class="fas fa-check text-green-400 mt-1 text-xs"></i> <span>Sentenças cíveis e penais.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
-                                    <i class="fas fa-check text-green-400 mt-1 text-xs"></i> <span>Mapeamento STF/STJ.</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="flex flex-col gap-3 mt-auto relative z-20">
-                                <a href="https://hotmart.com/pt-br" target="_blank" class="w-full bg-white hover:bg-orange text-navy hover:text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                                    Garantir Vaga
-                                </a>
-                                <a href="https://wa.me/556200000000" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] flex justify-center items-center gap-2">
-                                    <i class="fab fa-whatsapp text-lg"></i> Falar com Consultor
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Curso 2 -->
-                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal delay-100 border-t-2 border-t-lightblue" style="--card-glow: #5f8bcf;">
-
-                        <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
-                            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Ministério Público" class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 transition-opacity duration-500 absolute-overlay"></div>
-
-                            <div class="absolute top-3 left-3 bg-lightblue/20 border border-lightblue/50 text-lightblue px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md shadow-neon-blue z-10">Últimas Vagas</div>
-                        </div>
-                        
-                        <div class="flex-grow flex flex-col text-center relative z-20">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center transition-colors duration-500 title-course">Ministério Público</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">MPE & MPF</p>
-                            
-                            <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
-                                <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
-                                    <i class="fas fa-check text-green-400 mt-1 text-xs"></i> <span>Doutrina institucional.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
-                                    <i class="fas fa-check text-green-400 mt-1 text-xs"></i> <span>Peças práticas rigorosas.</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="flex flex-col gap-3 mt-auto relative z-20">
-                                <a href="https://hotmart.com/pt-br" target="_blank" class="w-full bg-white hover:bg-lightblue text-navy hover:text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                                    Garantir Vaga
-                                </a>
-                                <a href="https://wa.me/556200000000" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] flex justify-center items-center gap-2">
-                                    <i class="fab fa-whatsapp text-lg"></i> Falar com Consultor
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Curso 3 -->
-                    <div class="course-card glass-card shine-effect flex flex-col rounded-[2rem] p-6 sm:p-8 cursor-pointer group blur-reveal delay-200 border-t-2 border-t-white/30" style="--card-glow: #ffffff;">
-
-                        <div class="img-container w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden relative bg-navyDark flex-shrink-0 border border-white/10 mb-6">
-                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Defensoria" class="w-full h-full object-cover opacity-70">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent opacity-60 transition-opacity duration-500 absolute-overlay"></div>
-
-                            <div class="absolute top-3 left-3 bg-white/10 border border-white/30 text-gray-200 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md z-10">Turma Regular</div>
-                        </div>
-                        
-                        <div class="flex-grow flex flex-col text-center relative z-20">
-                            <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase mb-1 min-h-[4rem] flex items-center justify-center transition-colors duration-500 title-course">Defensoria</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm tracking-wider uppercase mb-6 border-b border-white/10 pb-6">DPE & DPU</p>
-                            
-                            <ul class="space-y-3 mb-8 flex-grow text-left mx-auto">
-                                <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
-                                    <i class="fas fa-check text-green-400 mt-1 text-xs"></i> <span>Foco em direitos humanos.</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-sm text-gray-300 font-light">
-                                    <i class="fas fa-check text-green-400 mt-1 text-xs"></i> <span>Teses defensivas completas.</span>
-                                </li>
-                            </ul>
-                            
-                            <div class="flex flex-col gap-3 mt-auto relative z-20">
-                                <a href="https://hotmart.com/pt-br" target="_blank" class="w-full bg-white hover:bg-gray-300 text-navy text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                                    Garantir Vaga
-                                </a>
-                                <a href="https://wa.me/556200000000" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white text-center py-3.5 rounded-xl font-heading font-bold text-sm uppercase tracking-wide transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] flex justify-center items-center gap-2">
-                                    <i class="fab fa-whatsapp text-lg"></i> Falar com Consultor
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA 4: CORPO DOCENTE (HOLOGRÁFICO)          -->
-        <!-- ============================================== -->
-        <div id="page-docentes" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="mb-16 sm:mb-20 text-center blur-reveal px-4 flex flex-col items-center">
-                    <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-neon-orange">Prática Real</span>
-                    <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-none mb-6">A Elite Ensina</h2>
-                    <p class="text-gray-400 text-sm sm:text-base font-light max-w-2xl">Teóricos apenas escrevem. Nossas autoridades aprovam alunos e assinam o seu termo de posse.</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
-                    <!-- Docente 1 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal text-center border border-white/10 shadow-premium">
-                        <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
-                            
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
-                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Carlos Eduardo</h4>
-                                <p class="text-orange text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Procurador do Estado</p>
-                                <a href="#docente-carlos" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Docente 2 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-100 text-center border border-white/10 shadow-premium">
-                        <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
-                            
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
-                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Mariana Silva</h4>
-                                <p class="text-lightblue text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-3 py-1 rounded-md backdrop-blur-md">Juíza Federal</p>
-                                <a href="#docente-mariana" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Docente 3 -->
-                    <div class="teacher-card rounded-[2.5rem] blur-reveal delay-200 text-center border border-white/10 shadow-premium sm:col-span-2 md:col-span-1 sm:w-1/2 md:w-full sm:mx-auto">
-                        <div class="w-full aspect-[3/4] relative">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Prof" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/60 to-transparent opacity-100"></div>
-                            
-                            <div class="absolute bottom-0 left-0 w-full p-6 text-center z-30">
-                                <h4 class="font-heading font-black text-2xl text-white uppercase tracking-wide">Roberto Alves</h4>
-                                <p class="text-gray-300 text-[10px] font-bold tracking-[0.2em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-3 py-1 rounded-md backdrop-blur-md">Advogado da União</p>
-                                <a href="#docente-roberto" class="mt-4 block border border-white/20 bg-white/5 hover:bg-white/20 backdrop-blur-md px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors text-white z-50 relative pointer-events-auto">Ver Detalhes</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA 5: MATRÍCULA (CHECKOUT)                 -->
-        <!-- ============================================== -->
-        <div id="page-matricula" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden w-full">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="glass-card rounded-[2rem] sm:rounded-[2.5rem] shadow-premium overflow-hidden flex flex-col lg:flex-row blur-reveal">
-                    
-                    <div class="lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center bg-[rgba(7,13,30,0.4)]">
-                        <span class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 bg-orange/10 text-orange font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-lg mb-6 sm:mb-8 border border-orange/30 w-max shadow-neon-orange">
-                            <span class="w-2 h-2 rounded-full bg-orange animate-pulse"></span> Lote 1 Ativo
-                        </span>
-                        <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-4 sm:mb-6 uppercase tracking-tight">
-                            A Decisão <br><span class="gradient-text">Final.</span>
-                        </h2>
-                        <p class="text-gray-400 mb-8 sm:mb-10 text-sm sm:text-base font-light leading-relaxed">Acesso imediato e irrestrito ao sistema de ensino mais letal e focado do mercado jurídico brasileiro.</p>
-                        
-                        <div class="space-y-4 sm:space-y-5">
-                            <div class="flex items-center gap-3 sm:gap-4 bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10 backdrop-blur-sm">
-                                <div class="w-10 h-10 rounded-lg bg-orange/20 text-orange flex items-center justify-center shadow-sm flex-shrink-0 border border-orange/30"><i class="fas fa-video text-lg"></i></div>
-                                <div>
-                                    <h4 class="font-heading font-bold text-white text-sm sm:text-base">Plataforma Dark Mode</h4>
-                                    <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5">+300 horas de aulas sem distrações.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 sm:gap-4 bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10 backdrop-blur-sm">
-                                <div class="w-10 h-10 rounded-lg bg-lightblue/20 text-lightblue flex items-center justify-center shadow-sm flex-shrink-0 border border-lightblue/30"><i class="fas fa-file-pdf text-lg"></i></div>
-                                <div>
-                                    <h4 class="font-heading font-bold text-white text-sm sm:text-base">Raio-X em PDF</h4>
-                                    <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5">Doutrina e Jurisprudência decodificadas.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:w-1/2 bg-[rgba(5,9,20,0.8)] p-8 sm:p-12 lg:p-16 text-white flex flex-col justify-center relative overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
-                        <div class="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-orange blur-[80px] sm:blur-[120px] opacity-20 rounded-full pointer-events-none"></div>
-                        
-                        <div class="relative z-10">
-                            <div class="flex justify-between items-center mb-4">
-                                <h3 class="font-heading text-2xl sm:text-3xl font-black uppercase tracking-wide">Passe Anual</h3>
-                                <i class="fas fa-crown text-orange text-xl sm:text-2xl drop-shadow-[0_0_10px_rgba(244,123,32,0.8)]"></i>
-                            </div>
-                            <p class="text-lightblue mb-8 sm:mb-10 font-medium text-sm sm:text-base">Acesso Vip por 12 Meses.</p>
-                            
-                            <div class="mb-8 sm:mb-10 bg-navyDark/50 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-inner">
-                                <span class="text-gray-500 line-through text-xs sm:text-sm mb-1 sm:mb-2 block font-medium">De R$ 2.997,00</span>
-                                <div class="flex items-start gap-1 sm:gap-2 text-white">
-                                    <span class="text-xl sm:text-2xl font-bold mt-1 sm:mt-2 text-orange">12x</span>
-                                    <span class="font-heading text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tighter drop-shadow-md">149<span class="text-2xl sm:text-3xl text-gray-400">,90</span></span>
-                                </div>
-                                <p class="text-xs sm:text-sm text-lightblue mt-3 sm:mt-4 border-t border-white/10 pt-3 sm:pt-4">Ou R$ 1.497,00 à vista no PIX.</p>
-                            </div>
-
-                            <div class="w-full hover-lift">
-                                <button class="w-full bg-orange hover:bg-white hover:text-navy text-white py-4 sm:py-5 rounded-xl font-heading font-black text-base sm:text-lg transition-all shadow-[0_0_30px_rgba(244,123,32,0.4)] flex items-center justify-center gap-2 sm:gap-3 uppercase tracking-wider group">
-                                    <i class="fas fa-lock group-hover:scale-110 transition-transform"></i> Desbloquear Acesso
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA 6: FAQ E DÚVIDAS (CENTRALIZADO)         -->
-        <!-- ============================================== -->
-        <div id="page-faq" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 w-full">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 sm:mb-16 blur-reveal flex flex-col items-center">
-                    <span class="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4 shadow-[0_0_15px_rgba(95,139,207,0.2)]">Transparência Total</span>
-                    <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none mb-6">Central de Dúvidas</h2>
-                    <p class="text-gray-400 text-sm sm:text-base font-light max-w-xl">Respondemos as perguntas mais frequentes para você tomar sua decisão com total segurança do algoritmo Sapiens.</p>
-                </div>
-
-                <div class="space-y-4 blur-reveal">
-                    <div class="glass-card rounded-2xl overflow-hidden hover:border-lightblue transition-colors group">
-                        <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-navyDark/30" onclick="toggleFaq('faq1')">
-                            <span class="font-bold text-white text-base sm:text-lg font-heading pr-4 group-hover:text-lightblue transition-colors">Por quanto tempo terei acesso ao sistema?</span>
-                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 flex-shrink-0 transition-transform">
-                                <i id="icon-faq1" class="fas fa-plus text-orange text-sm"></i>
-                            </div>
-                        </button>
-                        <div id="faq1" class="hidden px-6 pb-6 text-gray-400 font-light text-sm sm:text-base border-t border-white/5 pt-4 bg-navyDark/30">O acesso é válido por 12 meses (1 ano) corridos a partir da aprovação do pagamento, com todas as atualizações preditivas inclusas.</div>
-                    </div>
-                    
-                    <div class="glass-card rounded-2xl overflow-hidden hover:border-lightblue transition-colors group">
-                        <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-navyDark/30" onclick="toggleFaq('faq2')">
-                            <span class="font-bold text-white text-base sm:text-lg font-heading pr-4 group-hover:text-lightblue transition-colors">Como funciona a garantia de risco zero?</span>
-                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 flex-shrink-0 transition-transform">
-                                <i id="icon-faq2" class="fas fa-plus text-orange text-sm"></i>
-                            </div>
-                        </button>
-                        <div id="faq2" class="hidden px-6 pb-6 text-gray-400 font-light text-sm sm:text-base border-t border-white/5 pt-4 bg-navyDark/30">Se em até 7 dias você achar que a engenharia reversa Sapiens não é para você, devolvemos 100% do seu investimento sem burocracia.</div>
-                    </div>
-                </div>
-
-                <div class="mt-16 text-center glass-card p-10 sm:p-14 rounded-[2rem] blur-reveal text-white shadow-premium relative overflow-hidden flex flex-col items-center">
-                    <div class="absolute right-[5%] top-[-20%] text-9xl text-white/5 rotate-12 pointer-events-none"><i class="fab fa-whatsapp"></i></div>
-                    <h3 class="font-heading font-black text-2xl sm:text-3xl mb-4 relative z-10 uppercase tracking-tight text-white drop-shadow-md">Fale com um Consultor</h3>
-                    <p class="text-gray-400 font-light mb-8 relative z-10 text-sm sm:text-base max-w-md">Precisa de um plano customizado? Fale agora com nosso time de estrategistas pelo WhatsApp.</p>
-                    
-                    <div class="hover-lift">
-                        <a href="https://wa.me/556200000000" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-white hover:text-green-600 text-white px-8 py-4 rounded-xl font-bold transition-all relative z-10 text-sm sm:text-base shadow-[0_0_30px_rgba(34,197,94,0.4)] uppercase tracking-wider">
-                            <i class="fab fa-whatsapp text-2xl"></i> Central de Atendimento
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA DOCENTE: CARLOS                         -->
-        <!-- ============================================== -->
-        <div id="page-docente-carlos" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <a href="#docentes" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-medium blur-reveal">
-                    <i class="fas fa-arrow-left"></i> Voltar aos Docentes
-                </a>
-                
-                <div class="glass-card rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative overflow-hidden shadow-premium border-t-2 border-t-orange blur-reveal delay-100">
-                    <div class="w-full lg:w-2/5 relative flex-shrink-0">
-                        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-neon-orange border border-white/10">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Carlos Eduardo" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent"></div>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
-                        <span class="inline-block px-4 py-1.5 bg-orange/10 border border-orange/30 text-orange rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">Procurador do Estado</span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white uppercase tracking-tight mb-6">Carlos Eduardo</h1>
-                        
-                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8">
-                            Especialista consagrado em Direito Administrativo e Constitucional. Com mais de 10 anos de atuação combativa na Procuradoria do Estado, Carlos construiu uma didática baseada na realidade dos tribunais. Ele não ensina apenas a teoria, ele mapeia o comportamento das bancas examinadoras e entrega a jurisprudência decodificada para provas de alta complexidade.
-                        </p>
-
-                        <div class="bg-navyDark/50 p-6 rounded-2xl border border-white/5 mb-8 text-left">
-                            <h3 class="text-white font-heading font-bold uppercase tracking-wide mb-4 text-sm flex items-center gap-2"><i class="fas fa-crosshairs text-orange"></i> Matérias Ministradas</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Administrativo Avançado</li>
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Constitucional</li>
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Peças Práticas para Advocacia Pública</li>
-                            </ul>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#matricula" class="hover-lift bg-orange hover:bg-white hover:text-navy text-white text-center py-4 px-8 rounded-xl font-heading font-bold uppercase tracking-wide transition-all shadow-neon-orange w-full sm:w-auto">
-                                Estudar com Carlos
-                            </a>
+        <!-- FOOTER NOVO (Completo e Profissional) -->
+        <footer class="bg-[#050914] text-gray-400 pt-20 pb-8 border-t border-white/5 relative z-20 w-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Top Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    <!-- Brand -->
+                    <div>
+                        <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-12 invert mb-6 opacity-90 transition-opacity hover:opacity-100">
+                        <p class="text-sm font-light leading-relaxed mb-8">Acelerando a aprovação da elite do judiciário brasileiro com engenharia reversa e metodologia preditiva. Estude com quem faz.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange hover:text-white transition-all shadow-lg"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/556200000000" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all shadow-lg"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-lightblue hover:text-white transition-all shadow-lg"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-lg"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     
-                    <div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-orange/10 blur-[100px] rounded-full pointer-events-none"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA DOCENTE: MARIANA                        -->
-        <!-- ============================================== -->
-        <div id="page-docente-mariana" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <a href="#docentes" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-medium blur-reveal">
-                    <i class="fas fa-arrow-left"></i> Voltar aos Docentes
-                </a>
-                
-                <div class="glass-card rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative overflow-hidden shadow-premium border-t-2 border-t-lightblue blur-reveal delay-100">
-                    <div class="w-full lg:w-2/5 relative flex-shrink-0">
-                        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Mariana Silva" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent"></div>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
-                        <span class="inline-block px-4 py-1.5 bg-lightblue/10 border border-lightblue/30 text-lightblue rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">Juíza Federal</span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white uppercase tracking-tight mb-6">Mariana Silva</h1>
-                        
-                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8">
-                            Aprovada nas carreiras mais concorridas da Magistratura Federal antes dos 28 anos, Mariana domina a arte da resolução de questões complexas. Mestre em Direito Público e com vasta vivência em varas criminais e cíveis federais, ela ensina as técnicas exatas para estruturar sentenças irretocáveis sob pressão.
-                        </p>
-
-                        <div class="bg-navyDark/50 p-6 rounded-2xl border border-white/5 mb-8 text-left">
-                            <h3 class="text-white font-heading font-bold uppercase tracking-wide mb-4 text-sm flex items-center gap-2"><i class="fas fa-crosshairs text-lightblue"></i> Matérias Ministradas</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Penal e Processo Penal Federal</li>
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Sentença Penal Condenatória</li>
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Resolução Estratégica de Casos Práticos</li>
-                            </ul>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#matricula" class="hover-lift bg-lightblue hover:bg-white hover:text-navy text-white text-center py-4 px-8 rounded-xl font-heading font-bold uppercase tracking-wide transition-all shadow-neon-blue w-full sm:w-auto">
-                                Estudar com Mariana
-                            </a>
-                        </div>
+                    <!-- Links Rápidos -->
+                    <div>
+                        <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Navegação</h4>
+                        <ul class="space-y-3 text-sm font-light">
+                            <li><a href="#home" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Início</a></li>
+                            <li><a href="#sobre" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Sobre o ISE</a></li>
+                            <li><a href="#metodologia" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Metodologia</a></li>
+                            <li><a href="#docentes" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Corpo Docente</a></li>
+                        </ul>
                     </div>
                     
-                    <div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-lightblue/10 blur-[100px] rounded-full pointer-events-none"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- PÁGINA DOCENTE: ROBERTO                        -->
-        <!-- ============================================== -->
-        <div id="page-docente-roberto" class="page-view min-h-screen pt-32 pb-16 sm:pt-40 sm:pb-24 relative w-full">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <a href="#docentes" class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-medium blur-reveal">
-                    <i class="fas fa-arrow-left"></i> Voltar aos Docentes
-                </a>
-                
-                <div class="glass-card rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative overflow-hidden shadow-premium border-t-2 border-t-white/30 blur-reveal delay-100">
-                    <div class="w-full lg:w-2/5 relative flex-shrink-0">
-                        <div class="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-[0_0_30px_rgba(255,255,255,0.1)] border border-white/10">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Roberto Alves" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-transparent to-transparent"></div>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
-                        <span class="inline-block px-4 py-1.5 bg-white/10 border border-white/20 text-gray-200 rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-sm">Advogado da União</span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white uppercase tracking-tight mb-6">Roberto Alves</h1>
-                        
-                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light mb-8">
-                            Mente brilhante por trás das defesas da União, Roberto é parecerista e especialista em alta performance nos estudos. Ele foca naquilo que reprova 90% dos candidatos: o entendimento jurisprudencial tributário e cível de forma profunda. No Instituto Sapiens, suas aulas são verdadeiras imersões no raciocínio dos ministros do STF e STJ.
-                        </p>
-
-                        <div class="bg-navyDark/50 p-6 rounded-2xl border border-white/5 mb-8 text-left">
-                            <h3 class="text-white font-heading font-bold uppercase tracking-wide mb-4 text-sm flex items-center gap-2"><i class="fas fa-crosshairs text-gray-400"></i> Matérias Ministradas</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Tributário Definitivo</li>
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Direito Civil (Jurisprudência)</li>
-                                <li class="flex items-start gap-3 text-sm text-gray-400"><i class="fas fa-check-circle text-green-500 mt-0.5"></i> Tutela Coletiva e Direitos Difusos</li>
-                            </ul>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#matricula" class="hover-lift bg-white hover:bg-gray-300 text-navy text-center py-4 px-8 rounded-xl font-heading font-bold uppercase tracking-wide transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] w-full sm:w-auto">
-                                Estudar com Roberto
-                            </a>
-                        </div>
+                    <!-- Cursos -->
+                    <div>
+                        <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Carreiras Jurídicas</h4>
+                        <ul class="space-y-3 text-sm font-light">
+                            <li><a href="#conteudo" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Magistratura Estadual</a></li>
+                            <li><a href="#conteudo" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Ministério Público</a></li>
+                            <li><a href="#conteudo" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Analista de Tribunais</a></li>
+                            <li><a href="#conteudo" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Defensoria Pública</a></li>
+                        </ul>
                     </div>
                     
-                    <div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <footer class="bg-[#03060d] text-gray-500 pt-16 sm:pt-20 pb-8 border-t border-white/5 relative z-20 mt-auto w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 mb-12 sm:mb-16 text-center md:text-left">
-                
-                <div class="md:col-span-5 flex flex-col items-center md:items-start">
-                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
-                        <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain">
+                    <!-- Contato -->
+                    <div>
+                        <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Fale Conosco</h4>
+                        <ul class="space-y-4 text-sm font-light">
+                            <li class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-orange"></i></div>
+                                <span class="pt-1.5">Goiânia, GO<br>Sede Tecnológica de Gravações</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-orange"></i></div>
+                                <span>contato@institutosapiens.com.br</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fas fa-phone-alt text-orange"></i></div>
+                                <span>(62) 90000-0000</span>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-xs sm:text-sm text-gray-500 font-light max-w-sm leading-relaxed">Acelerando a aprovação da elite do judiciário brasileiro com engenharia reversa e metodologia preditiva.</p>
                 </div>
                 
-                <div class="md:col-span-3">
-                    <h4 class="text-white font-bold mb-4 sm:mb-6 font-heading tracking-widest text-[10px] sm:text-xs uppercase">Mapa Tático</h4>
-                    <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm font-light flex flex-col items-center md:items-start">
-                        <li><a href="#home" class="hover:text-orange transition-colors">Início</a></li>
-                        <li><a href="#metodologia" class="hover:text-orange transition-colors">O Método</a></li>
-                        <li><a href="#conteudo" class="hover:text-orange transition-colors">Arsenal</a></li>
-                        <li><a href="#docentes" class="hover:text-orange transition-colors">A Elite</a></li>
-                        <li><a href="#faq" class="hover:text-orange transition-colors">Dúvidas</a></li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-4">
-                    <h4 class="text-white font-bold mb-4 sm:mb-6 font-heading tracking-widest text-[10px] sm:text-xs uppercase">Transparência Fiscal</h4>
-                    <ul class="space-y-3 sm:space-y-4 text-xs sm:text-sm font-light text-gray-500 flex flex-col items-center md:items-start">
-                        <li class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4">
-                            <i class="fas fa-building mt-1 text-white/20 hidden md:block"></i>
-                            <span><strong class="text-gray-400">INSTITUTO SAPIENS DE ENSINO LTDA</strong><br>CNPJ: 65.353.165/0001-92</span>
-                        </li>
-                        <li class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4">
-                            <i class="fas fa-map-marker-alt mt-1 text-white/20 hidden md:block"></i>
-                            <span>R BEIJUACU, 62, Quadra 172 Lote 04<br>Prq Amazônia, Goiânia - GO</span>
-                        </li>
-                    </ul>
+                <!-- Bottom Section -->
+                <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light">
+                    <p>&copy; 2026 Instituto Sapiens de Ensino. Todos os direitos reservados.</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                        <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="border-t border-white/5 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] sm:text-xs font-light text-gray-600 text-center md:text-left gap-2 sm:gap-0">
-                <p>&copy; 2026 Instituto Sapiens de Ensino. Reservados os direitos.</p>
-                <p>Engenharia Digital por <strong class="text-gray-300">JottaDev</strong></p>
-            </div>
+        </footer>
+
+        <!-- Botão WhatsApp -->
+        <a href="https://wa.me/556200000000" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl hover:bg-green-400 transition-transform pulse-btn-green shadow-xl z-50">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div> <!-- Fim do #main-site -->
+
+
+    <!-- ========================================================================= -->
+    <!-- NOVA PÁGINA (PERFIL DO PROFESSOR) -->
+    <!-- Funciona como uma Single Page Application. Quando ativada, o resto some. -->
+    <!-- ========================================================================= -->
+    <div id="profile-page" class="hidden w-full min-h-screen bg-white text-navy">
+        <!-- Background Effect ajustado para o modo claro -->
+        <div class="fixed inset-0 pointer-events-none z-0">
+            <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-orange/5 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-lightblue/10 blur-[120px] rounded-full"></div>
         </div>
-    </footer>
 
-    <a href="https://wa.me/556200000000" target="_blank" style="z-index: 999999; transform: translateZ(0);" class="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 bg-green-500 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl hover:bg-green-400 transition-transform pulse-btn-green shadow-xl isolate hover-lift">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        <!-- Header do Perfil em modo claro -->
+        <header class="w-full relative z-10 py-6 px-4 sm:px-6 lg:px-12 border-b border-navy/5 bg-white/80 backdrop-blur-md sticky top-0">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <button onclick="closeProfilePage()" class="flex items-center gap-3 text-gray-500 hover:text-navy transition-colors group">
+                    <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center border border-navy/10 group-hover:bg-navy/10 transition-colors cursor-pointer">
+                        <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                    </div>
+                    <span class="font-bold text-xs uppercase tracking-wider hidden sm:block">Voltar aos Professores</span>
+                </button>
+                <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-8 invert opacity-90">
+            </div>
+        </header>
 
+        <!-- Main Content do Perfil -->
+        <main class="flex items-center justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
+            <div class="w-full max-w-5xl glass-card text-white rounded-[2.5rem] p-8 sm:p-16 shadow-[0_30px_60px_rgba(15,28,63,0.3)] animate-fade-in relative overflow-hidden">
+                <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative z-10">
+                    
+                    <!-- Foto -->
+                    <div class="w-48 h-48 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden flex-shrink-0 border border-white/10 shadow-[0_0_40px_rgba(95,139,207,0.15)] relative bg-[#0a1128]">
+                        <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl" id="profileIconFallback"><i class="fas fa-user-tie"></i></div>
+                        <img id="profileImg" src="" alt="Foto" class="w-full h-full object-cover filter contrast-110 relative z-10">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navyDark/80 via-transparent to-transparent z-20"></div>
+                    </div>
+                    
+                    <!-- Textos -->
+                    <div class="flex-1 text-center lg:text-left flex flex-col justify-center">
+                        <span id="profileRole" class="inline-block bg-orange/10 border border-orange/30 text-orange px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4 w-max mx-auto lg:mx-0"></span>
+                        
+                        <h1 id="profileName" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-3"></h1>
+                        
+                        <h2 id="profileSpecialty" class="text-lightblue font-medium text-sm mb-8"></h2>
+                        
+                        <div class="w-16 h-1 bg-white/10 mb-8 mx-auto lg:mx-0 rounded-full"></div>
+                        
+                        <p id="profileBio" class="text-gray-300 leading-relaxed font-light text-base text-justify"></p>
+
+                        <div class="mt-12">
+                            <button onclick="closeProfileAndScroll()" class="inline-flex items-center justify-center gap-3 bg-white text-navy hover:bg-orange hover:text-white px-8 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_20px_rgba(244,123,32,0.4)]">
+                                Ver Cursos <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> <!-- Fim do #profile-page -->
+
+
+    <!-- SCRIPTS GERAIS -->
     <script>
-        // 1. SCROLL REVEAL (Animação de decodificação/blur)
+        // 1. SCROLL REVEAL BÁSICO
         function checkReveal() {
-            var reveals = document.querySelectorAll('.blur-reveal, .reveal');
+            var reveals = document.querySelectorAll('.blur-reveal');
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 30; 
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < windowHeight - 30) {
                     reveals[i].classList.add('active');
                 }
             }
         }
         window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
 
-        // 2. EFEITO NAVBAR (Glassmorphism dinâmico)
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.glass-nav');
-            if(window.scrollY > 50) {
-                nav.style.background = 'rgba(5, 9, 20, 0.95)';
-                nav.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-            } else {
-                nav.style.background = 'rgba(5, 9, 20, 0.80)';
-                nav.style.border = '1px solid rgba(255, 255, 255, 0.05)';
-            }
-        });
-
-        // 3. ROUTER SPA C/ FIX DISPLAY DE REFLUXO DOM
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        function handleNavigation() {
-            let hash = window.location.hash || '#home';
-            
-            document.querySelectorAll('.page-view').forEach(page => {
-                page.classList.remove('active');
-                page.style.display = 'none'; 
-                
-                page.querySelectorAll('.reveal, .blur-reveal').forEach(el => el.classList.remove('active'));
-            });
-            
-            document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
-                link.classList.remove('text-orange', 'bg-white/5', 'font-bold');
-                if(link.classList.contains('nav-link')) link.classList.add('text-gray-300');
-                if(link.classList.contains('mobile-nav-link')) link.classList.add('text-gray-300');
-            });
-
-            const targetPageId = 'page-' + hash.substring(1);
-            let targetPage = document.getElementById(targetPageId);
-            
-            if (!targetPage) {
-                targetPage = document.getElementById('page-home');
-                hash = '#home';
-            }
-
-            targetPage.style.display = 'block';
-            
-            void targetPage.offsetWidth; 
-
-            targetPage.classList.add('active'); 
-            setTimeout(() => { checkReveal(); }, 50);
-
-            document.querySelectorAll(`a[href="${hash}"]`).forEach(link => {
-                if(link.classList.contains('nav-link')){
-                    link.classList.remove('text-gray-300');
-                    link.classList.add('text-orange', 'bg-white/5');
-                }
-                if(link.classList.contains('mobile-nav-link')) {
-                    link.classList.remove('text-gray-300');
-                    link.classList.add('text-orange', 'font-bold', 'bg-white/10');
-                }
-            });
-
-            mobileMenu.classList.remove('active-menu');
-            mobileMenu.classList.add('hidden-menu');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        window.addEventListener('hashchange', handleNavigation);
-        
-        window.addEventListener('load', () => {
-            handleNavigation();
-            setTimeout(checkReveal, 300); 
-        });
-
-        // 4. INTERAÇÕES DE MENU E FAQ
+        // 2. MENU MOBILE & NAVBAR
         document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            if(mobileMenu.classList.contains('hidden-menu')) {
-                mobileMenu.classList.remove('hidden-menu');
-                mobileMenu.classList.add('active-menu');
+            const menu = document.getElementById('mobileMenu');
+            if(menu.classList.contains('hidden-menu')) {
+                menu.classList.remove('hidden-menu');
+                menu.classList.add('active-menu');
             } else {
-                mobileMenu.classList.remove('active-menu');
-                mobileMenu.classList.add('hidden-menu');
+                menu.classList.remove('active-menu');
+                menu.classList.add('hidden-menu');
             }
         });
-
-        function toggleFaq(id) {
-            const content = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.classList.remove('fa-plus');
-                icon.classList.add('fa-minus', 'rotate-180');
-            } else {
-                content.classList.add('hidden');
-                icon.classList.remove('fa-minus', 'rotate-180');
-                icon.classList.add('fa-plus');
-            }
-        }
-
-        // 5. Formulário Lead
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Estabelecendo conexão...';
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i> Acesso Liberado!';
-                btn.classList.replace('bg-lightblue', 'bg-green-500');
-                btn.classList.replace('shadow-[0_0_20px_rgba(95,139,207,0.3)]', 'shadow-[0_0_20px_rgba(34,197,94,0.5)]');
-                this.reset();
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.replace('bg-green-500', 'bg-lightblue');
-                    btn.classList.replace('shadow-[0_0_20px_rgba(34,197,94,0.5)]', 'shadow-[0_0_20px_rgba(95,139,207,0.3)]');
-                }, 3000);
-            }, 1500);
-        });
-
-        // 6. Máscara Automática de WhatsApp (Celular Brasileiro)
-        const whatsappInput = document.getElementById('whatsappInput');
-        if(whatsappInput) {
-            whatsappInput.addEventListener('input', function (e) {
-                let value = e.target.value.replace(/\D/g, '');
-                let formattedValue = '';
-                
-                if (value.length > 0) {
-                    formattedValue = '(' + value.substring(0, 2);
-                    if (value.length > 2) {
-                        formattedValue += ') ' + value.substring(2, 7);
-                        if (value.length > 7) {
-                            formattedValue += '-' + value.substring(7, 11);
-                        }
-                    }
-                }
-                e.target.value = formattedValue;
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden-menu');
+                document.getElementById('mobileMenu').classList.remove('active-menu');
             });
+        });
+
+        // =======================================================================
+        // 3. LÓGICA DA NOVA PÁGINA (SINGLE PAGE APPLICATION)
+        // =======================================================================
+        const teachersData = {
+            'carlos-vinicius': {
+                name: 'Carlos Vinícius Alves Ribeiro',
+                role: 'Promotor de Justiça - MPGO',
+                specialty: 'Especialista em Direito Administrativo e Direito de Estado',
+                bio: 'Promotor de Justiça do Ministério Público do Estado de Goiás (MPGO), com ampla atuação acadêmica e em órgãos de cúpula do Ministério Público brasileiro. Doutor e Mestre em Direito Administrativo pela Universidade de São Paulo (USP), com foco no Direito de Estado.',
+                img: 'assets/car'
+            },
+            'carlos-andre': {
+                name: 'Carlos André',
+                role: 'Fundador Instituto Carlos André',
+                specialty: 'Especialista em Língua Portuguesa e Redação para Concursos',
+                bio: 'Advogado, linguista e professor de língua portuguesa e de redação. Fundador do Instituto Carlos André, maior instituição de ensino especializada em português e em redação para concursos públicos no Centro-Oeste do Brasil.',
+                img: 'assets/Carlos André.jpg.jpeg'
+            },
+            'reinaldo-alves': {
+                name: 'Reinaldo Alves',
+                role: 'Desembargador - TJGO',
+                specialty: 'Especialista em Direito Empresarial',
+                bio: 'Desembargador no Tribunal de Justiça do Estado de Goiás. Mestre em Direito Empresarial pela Universidade de Franca, com sólida trajetória na magistratura estadual e reconhecida contribuição para o desenvolvimento do Direito Empresarial na região.',
+                img: 'assets/Reinaldo Alves Ferreira.jpg.jpeg'
+            },
+            'wilson-silva': {
+                name: 'Wilson da Silva Dias',
+                role: 'Desembargador - TJGO',
+                specialty: 'Especialista em Direito Processual Penal',
+                bio: 'Desembargador do Tribunal de Justiça do Estado de Goiás (TJGO). Professor de Direito Processual Penal. Mestre em Direito, Relações Internacionais e Desenvolvimento pela PUC/GO e Mestre em Defesa e Segurança Hemisférica pelo Inter-American Defense College em Washington DC, EUA.',
+                img: 'assets/Wilson da Silva Dias.jpg.jpeg'
+            },
+            'guilherme-carreira': {
+                name: 'Guilherme Carreira',
+                role: 'Juiz de Direito - TJ/GO',
+                specialty: 'Especialista em Direito Processual Civil',
+                bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás. Mestre em Direito Processual Civil pela PUC/SP. Membro da Associação Brasileira de Direito Processual (ABDPro), com relevante contribuição doutrinária e pedagógica na área processual.',
+                img: 'assets/Guilherme Carreira.jpg.jpeg'
+            },
+            'danyllo-luiz': {
+                name: 'Danyllo Luiz Guimarães',
+                role: 'Assessor Jurídico - TJGO',
+                specialty: 'Especialista em Direito Penal e Processual Penal',
+                bio: 'Professor de Direito com ênfase em Direito Penal, Processual Penal, Constitucional e Administrativo. Assessor jurídico de Desembargador do TJGO. Especialista em Direito Penal e Processual Penal e Pós-Graduando em Processo Civil pela EJUG.',
+                img: 'assets/Danyllo Luiz.jpg.jpeg'
+            },
+            'thiago-henrique': {
+                name: 'Thiago Henrique Teles Lopes',
+                role: 'Juiz de Direito - TJ/SP',
+                specialty: 'Especialista em Direito Processual Civil',
+                bio: 'Juiz de Direito do Tribunal de Justiça do Estado de São Paulo. Doutor em Direito Processual Civil pela Universidade de São Paulo - USP (2024). Mestre em Direito pela Universidade Metodista de Piracicaba (2018). Especialista em Direito Notarial e Registral e em Direito Processual Civil.',
+                img: 'assets/Thiago Henrique Teles Lopes.jpg (1).jpeg'
+            },
+            'giovanni-machado': {
+                name: 'Giovanni Machado',
+                role: 'Advogado / Vice-Pres. TED/OAB-GO',
+                specialty: 'Especialista em Direito Civil e Processo Civil',
+                bio: 'Advogado e vice-presidente do Tribunal de Ética e Disciplina da OAB-GO. Especialista em Direito Civil e Processo Civil. Mestrando em Ciências Jurídicas pela Faculdade Autônoma de Portugal, com atuação destacada no campo da ética profissional e do contencioso cível.',
+                img: 'assets/Giovanni Machado.jpeg'
+            },
+            'amanda-neves': {
+                name: 'Amanda Neves',
+                role: 'Assessora de Desembargador - TJGO',
+                specialty: 'Especialista em Direito Civil e Processo Civil',
+                bio: 'Analista Judiciária do Tribunal de Justiça do Estado de Goiás, com sólida atuação na área cível em gabinete de Desembargador. Pós-graduada em Direito Civil e Processo Civil, aprofundou sua formação como mentoranda em Família e Sucessões. Atua como professora e mentora na área de assessoria em gabinetes cíveis.',
+                img: 'assets/Amanda Neves.jpg.jpeg' 
+            },
+            'aldo-sabino': {
+                name: 'Aldo Guilherme Saad',
+                role: 'Juiz de Direito - TJGO',
+                specialty: 'Especialista em Direito Civil e Processo Civil',
+                bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás, especializado em Direito Civil e Processo Civil. Atua na preparação para carreiras jurídicas com foco na aprovação para Magistratura, Ministério Público e outras carreiras.',
+                img: 'assets/Aldo Sabino.jpg.jpeg' 
+            },
+            'vinicius-borges': {
+                name: 'Vinicius de Castro Borges',
+                role: 'Juiz de Direito - TJGO',
+                specialty: 'Especialista em Direito Penal e Direito Processual Civil',
+                bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás. Especialista em Direito Penal e em Direito Processual Civil, com atuação jurisdicional que alia rigor técnico e experiência prática, contribuindo para a formação de profissionais voltados às carreiras jurídicas.',
+                img: 'assets/vi' 
+            },
+            'wild-afonso': {
+                name: 'Wild Afonso',
+                role: 'Desembargador - TJGO',
+                specialty: 'Especialista em Direito Penal e Direito Público',
+                bio: 'Desembargador do Tribunal de Justiça do Estado de Goiás (TJGO). Especialista em Direito Penal e Mestre em Direito Público, com longa e destacada trajetória na magistratura goiana, contribuindo para o desenvolvimento da jurisprudência penal e para a formação de novos operadores do direito.',
+                img: 'assets/Wilson da Silva Dias.jpg.jpeg' 
+            }
+        };
+
+        // Função que esconde o site inteiro e mostra A NOVA PÁGINA
+        function openProfilePage(id) {
+            const teacher = teachersData[id];
+            if(!teacher) return;
+            
+            // Popula os dados na Nova Página
+            const imgElement = document.getElementById('profileImg');
+            if(teacher.img && teacher.img !== '') {
+                imgElement.src = teacher.img;
+                imgElement.style.display = 'block';
+            } else {
+                imgElement.style.display = 'none'; // Mostra icone se não tiver imagem
+            }
+
+            document.getElementById('profileName').textContent = teacher.name;
+            document.getElementById('profileRole').textContent = teacher.role;
+            document.getElementById('profileSpecialty').textContent = teacher.specialty;
+            document.getElementById('profileBio').textContent = teacher.bio;
+            
+            // Lógica de "Nova Página": Esconde o site velho, mostra o site novo
+            document.getElementById('main-site').classList.remove('block');
+            document.getElementById('main-site').classList.add('hidden');
+            
+            document.getElementById('profile-page').classList.remove('hidden');
+            document.getElementById('profile-page').classList.add('block');
+            
+            // Vai para o topo da nova página
+            window.scrollTo(0, 0);
         }
 
-       
+        // Função para voltar ao site original
+        function closeProfilePage() {
+            document.getElementById('profile-page').classList.remove('block');
+            document.getElementById('profile-page').classList.add('hidden');
+            
+            document.getElementById('main-site').classList.remove('hidden');
+            document.getElementById('main-site').classList.add('block');
+            
+            // Rola suavemente até a parte dos professores
+            document.getElementById('docentes').scrollIntoView({ behavior: 'instant' });
+        }
+
+        function closeProfileAndScroll() {
+            closeProfilePage();
+            setTimeout(() => {
+                document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
     </script>
 </body>
 </html>
