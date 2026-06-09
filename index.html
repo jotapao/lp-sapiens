@@ -133,7 +133,7 @@
         .course-card .img-container img { transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease; }
         .course-card:hover .img-container img { transform: scale(1.12) rotate(-2deg) !important; opacity: 0.35 !important; }
 
-        .teacher-card { position: relative; overflow: hidden; transition: all 0.5s ease; }
+        .teacher-card { position: relative; overflow: hidden; transition: all 0.5s ease; cursor: pointer; }
         .teacher-card:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(244, 123, 32, 0.2); border-color: #f47b20; }
         
         .hover-lift { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease; }
@@ -148,6 +148,16 @@
         #mobileMenu { transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; transform-origin: top; }
         #mobileMenu.hidden-menu { opacity: 0; transform: scaleY(0.95); visibility: hidden; pointer-events: none; height: 0; }
         #mobileMenu.active-menu { opacity: 1; transform: scaleY(1); visibility: visible; pointer-events: auto; height: auto; }
+
+        .custom-scroll-content::-webkit-scrollbar { width: 6px; }
+        .custom-scroll-content::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 8px; }
+        .custom-scroll-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 8px; }
+        .custom-scroll-content::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+
+        /* FAQ Accordion */
+        .faq-content { transition: max-height 0.4s ease-out, padding 0.4s ease; max-height: 0; overflow: hidden; }
+        .faq-item.active .faq-content { max-height: 500px; padding-bottom: 1.5rem; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
     </style>
 </head>
 <body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen relative">
@@ -174,7 +184,6 @@
                         <a href="#contato" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Contato</a>
                     </nav>
                     <div class="hidden md:flex">
-                        <!-- Substituído MATRÍCULAS por QUERO ELEVAR MINHA CARREIRA -->
                         <a href="https://gasctv.com.br" target="_blank" class="inline-block bg-navy hover:bg-orange text-white px-4 xl:px-6 py-2.5 rounded-xl font-heading font-bold transition-all duration-300 text-[10px] xl:text-xs uppercase tracking-wider hover:shadow-neon-orange group hover-lift">
                             Quero elevar minha carreira <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
                         </a>
@@ -242,14 +251,12 @@
                     <div class="glass-card rounded-[3rem] p-8 sm:p-16 mb-20 blur-reveal flex flex-col lg:flex-row items-center gap-12 border-t-2 border-t-lightblue">
                         <div class="lg:w-1/2 relative">
                             <div class="absolute -top-10 -left-10 w-40 h-40 bg-lightblue/20 blur-[60px] rounded-full"></div>
-                            <!-- Título Alterado -->
                             <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none mb-6">O próximo nível da sua carreira jurídica <span class="text-lightblue">começa agora.</span></h2>
                             
                             <div class="space-y-4 text-gray-300 font-light text-sm sm:text-base leading-relaxed">
                                 <p>O mercado jurídico exige muito mais do que conhecimento teórico. Exige estratégia, posicionamento e excelência técnica.</p>
                                 <p>Nossa metodologia foi desenvolvida para profissionais que desejam atuar com mais segurança, autoridade e resultados.</p>
                                 
-                                <!-- Lista de Benefícios/Autoridade -->
                                 <ul class="space-y-4 mt-6 text-white font-medium">
                                     <li class="flex items-start gap-3">
                                         <i class="fas fa-check-circle text-orange mt-1"></i>
@@ -271,10 +278,8 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 w-full h-[450px] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
-                            <!-- Imagem genérica placeholder de alta qualidade caso "assets/sede.jpeg" não exista -->
                             <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" alt="Profissionais do Direito" class="w-full h-full object-cover opacity-70">
                             <div class="absolute inset-0 bg-gradient-to-tr from-navyDark to-transparent"></div>
-                            <!-- Título da Imagem Removido conforme solicitado -->
                         </div>
                     </div>
                 </div>
@@ -307,7 +312,7 @@
                         </div>
                     </div>
 
-                    <!-- NOVA SEÇÃO DE BENEFÍCIOS DENTRO DE MÉTODOS -->
+                    <!-- SEÇÃO DE BENEFÍCIOS DENTRO DE MÉTODOS -->
                     <div class="glass-card rounded-[3rem] p-8 sm:p-12 lg:p-16 blur-reveal border-t-2 border-t-green-500 relative overflow-hidden">
                         <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-green-500/10 blur-[80px] rounded-full"></div>
                         <div class="text-center max-w-3xl mx-auto mb-10 relative z-10">
@@ -356,12 +361,11 @@
                         <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-navy uppercase tracking-tight leading-none mb-6">Nossos Cursos</h2>
                     </div>
 
-                    <!-- Alterado para 4 Cursos (Grid 2x2 no Desktop) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 blur-reveal">
                         
                         <!-- Curso 1 -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-orange">
-                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-anpp')">
                                 <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" alt="ANPP" class="w-full h-full object-cover opacity-60">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
@@ -377,7 +381,7 @@
 
                         <!-- Curso 2 -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-lightblue">
-                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-execucao')">
                                 <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80" alt="Execução Penal" class="w-full h-full object-cover opacity-60">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
@@ -393,14 +397,14 @@
 
                         <!-- Curso 3 -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-green-500">
-                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-eleitoral')">
                                 <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=800&q=80" alt="Direito Eleitoral" class="w-full h-full object-cover opacity-60 filter hue-rotate-90">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
                             <div class="flex-grow flex flex-col">
                                 <h3 class="font-heading text-xl lg:text-2xl font-black text-white uppercase mb-2">Direito Eleitoral na Prática</h3>
                                 <p class="text-green-400 text-xs tracking-wider uppercase mb-4 font-bold">Do Registro ao Mandato</p>
-                                <p class="text-gray-400 text-sm mb-6 flex-grow">Da elegibilidade às contas eleitorais. Um curso completo para advogados, candidatos e assessores que precisam navegar com segurança por todas as fases do processo eleitoral, da filiação partidária à diplomação.</p>
+                                <p class="text-gray-400 text-sm mb-6 flex-grow">Da elegibilidade às contas eleitorais. Um curso completo para advogados, candidatos e assessores que precisam navegar com segurança por todas as fases do processo eleitoral.</p>
                                 <button onclick="openCoursePage('curso-eleitoral')" class="w-full bg-white/10 border border-white/20 hover:bg-white hover:text-navy text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto flex items-center justify-center gap-2">
                                     Resumo de Informações <i class="fas fa-info-circle"></i>
                                 </button>
@@ -409,14 +413,14 @@
 
                         <!-- Curso 4 -->
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-purple-500">
-                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6">
+                            <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-tjgo')">
                                 <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Analista TJGO" class="w-full h-full object-cover opacity-60">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
                             </div>
                             <div class="flex-grow flex flex-col">
                                 <h3 class="font-heading text-xl lg:text-2xl font-black text-white uppercase mb-2">Analista Judiciário TJGO</h3>
                                 <p class="text-purple-400 text-xs tracking-wider uppercase mb-4 font-bold">Aprovação do Zero ao Cargo</p>
-                                <p class="text-gray-400 text-sm mb-6 flex-grow">Todas as matérias do edital em um só lugar. Um curso estruturado para quem quer entrar no Tribunal de Justiça de Goiás com preparo real, de português e raciocínio lógico ao direito.</p>
+                                <p class="text-gray-400 text-sm mb-6 flex-grow">Todas as matérias do edital em um só lugar. Um curso estruturado para quem quer entrar no Tribunal de Justiça de Goiás com preparo real.</p>
                                 <button onclick="openCoursePage('curso-tjgo')" class="w-full bg-white/10 border border-white/20 hover:bg-white hover:text-navy text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto flex items-center justify-center gap-2">
                                     Resumo de Informações <i class="fas fa-info-circle"></i>
                                 </button>
@@ -438,8 +442,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 blur-reveal">
-                        
-                        <!-- Card: Carlos Vinicius -->
+                        <!-- Cards Professores mantidos iguais -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('carlos-vinicius')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/carlos_vinicius.jpg" alt="Prof" class="w-full h-full object-cover">
@@ -452,7 +455,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Carlos André -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('carlos-andre')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Carlos André.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -465,7 +467,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Reinaldo Alves -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('reinaldo-alves')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Reinaldo Alves Ferreira.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -478,7 +479,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Wilson da Silva -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('wilson-silva')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -491,7 +491,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Guilherme Carreira -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('guilherme-carreira')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Guilherme Carreira.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -504,7 +503,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Danyllo Luiz -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('danyllo-luiz')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Danyllo Luiz.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -517,7 +515,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Thiago Henrique -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('thiago-henrique')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Thiago Henrique Teles Lopes.jpg (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -530,7 +527,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Giovanni Machado -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('giovanni-machado')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Giovanni Machado.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -543,7 +539,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Amanda Neves -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('amanda-neves')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <img src="assets/Amanda Neves.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -556,7 +551,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Aldo Guilherme -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('aldo-sabino')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <img src="assets/Aldo Sabino.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -569,7 +563,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Vinicius Borges -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('vinicius-borges')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <img src="assets/vinicius_borges.jpg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -582,7 +575,6 @@
                             </div>
                         </div>
 
-                        <!-- Card: Wild Afonso -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('wild-afonso')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -595,6 +587,62 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+
+            <!-- DÚVIDAS FREQUENTES (FAQ) -->
+            <section id="faq" class="w-full py-16 sm:py-24 relative bg-lightbg">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-12 blur-reveal">
+                        <span class="inline-block px-4 py-1.5 bg-lightblue/10 border border-lightblue/20 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">Informações Importantes</span>
+                        <h2 class="font-heading text-4xl sm:text-5xl font-black text-navy uppercase tracking-tight leading-none mb-6">Dúvidas Frequentes</h2>
+                    </div>
+
+                    <div class="space-y-4 blur-reveal delay-100">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                            <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+                                <h4 class="font-heading font-bold text-white text-sm sm:text-base">Como funcionam as aulas?</h4>
+                                <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon"></i>
+                            </div>
+                            <div class="faq-content px-6 bg-[#050914]">
+                                <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Nossas aulas são 100% online e gravadas com alta qualidade audiovisual. Todo o material é disponibilizado em nossa plataforma tecnológica para que você possa estudar de onde estiver e no horário que preferir.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                            <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+                                <h4 class="font-heading font-bold text-white text-sm sm:text-base">Por quanto tempo terei acesso ao curso?</h4>
+                                <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon"></i>
+                            </div>
+                            <div class="faq-content px-6 bg-[#050914]">
+                                <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Nossos cursos fechados de alta performance oferecem <strong>Acesso Vitalício</strong>. Você adquire hoje e o material será seu para sempre, servindo como base de consulta para o seu dia a dia profissional.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                            <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+                                <h4 class="font-heading font-bold text-white text-sm sm:text-base">O Instituto emite certificado?</h4>
+                                <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon"></i>
+                            </div>
+                            <div class="faq-content px-6 bg-[#050914]">
+                                <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Sim! Todos os cursos garantem emissão de certificado digital compatível com os exigidos pela OAB e instituições públicas, contendo a respectiva carga horária do conteúdo assistido.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+                            <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+                                <h4 class="font-heading font-bold text-white text-sm sm:text-base">E se eu não me adaptar à metodologia?</h4>
+                                <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon"></i>
+                            </div>
+                            <div class="faq-content px-6 bg-[#050914]">
+                                <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Acreditamos tanto na excelência do nosso ensino que oferecemos <strong>7 dias de garantia incondicional</strong>. Se por qualquer motivo você não se adaptar, basta um e-mail para nossa equipe que devolveremos 100% do valor investido, sem burocracia.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -643,7 +691,7 @@
 
         </main>
 
-        <!-- FOOTER NOVO (Completo e Profissional) -->
+        <!-- FOOTER NOVO -->
         <footer class="bg-[#050914] text-gray-400 pt-20 pb-8 border-t border-white/5 relative z-20 w-full">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Top Section -->
@@ -668,6 +716,7 @@
                             <li><a href="#sobre" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Sobre o Sapiens</a></li>
                             <li><a href="#metodologia" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Metodologia</a></li>
                             <li><a href="#docentes" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Corpo Docente</a></li>
+                            <li><a href="#faq" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Dúvidas (FAQ)</a></li>
                         </ul>
                     </div>
                     
@@ -675,10 +724,10 @@
                     <div>
                         <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Carreiras Jurídicas</h4>
                         <ul class="space-y-3 text-sm font-light">
-                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i>Acordo de Não Persecução Penal</a></li>
-                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i>Execução Penal</a></li>
-                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Direito Eleitoral na Prática</a></li>
-                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Analista Judiciário TJGO</a></li>
+                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Acordo de Não Persecução</a></li>
+                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Execução Penal</a></li>
+                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Direito Eleitoral</a></li>
+                            <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/30"></i> Analista TJGO</a></li>
                         </ul>
                     </div>
                     
@@ -722,7 +771,6 @@
 
     <!-- ========================================================================= -->
     <!-- NOVA PÁGINA (PERFIL DO PROFESSOR) -->
-    <!-- Funciona como uma Single Page Application. Quando ativada, o resto some. -->
     <!-- ========================================================================= -->
     <div id="profile-page" class="hidden w-full min-h-screen bg-white text-navy">
         <div class="fixed inset-0 pointer-events-none z-0">
@@ -769,7 +817,7 @@
 
 
     <!-- ========================================================================= -->
-    <!-- NOVA PÁGINA (RESUMO DO CURSO) -->
+    <!-- NOVA PÁGINA (RESUMO DO CURSO DETALHADO) -->
     <!-- ========================================================================= -->
     <div id="course-page" class="hidden w-full min-h-screen bg-white text-navy">
         <div class="fixed inset-0 pointer-events-none z-0">
@@ -777,7 +825,7 @@
             <div class="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-lightblue/10 blur-[120px] rounded-full"></div>
         </div>
 
-        <header class="w-full relative z-10 py-6 px-4 sm:px-6 lg:px-12 border-b border-navy/5 bg-white/80 backdrop-blur-md sticky top-0">
+        <header class="w-full relative z-10 py-6 px-4 sm:px-6 lg:px-12 border-b border-navy/5 bg-white/80 backdrop-blur-md sticky top-0 z-50">
             <div class="max-w-7xl mx-auto flex justify-between items-center">
                 <button onclick="closeSpaPage('cursos')" class="flex items-center gap-3 text-gray-500 hover:text-navy transition-colors group">
                     <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center border border-navy/10 group-hover:bg-navy/10 transition-colors cursor-pointer">
@@ -789,26 +837,66 @@
             </div>
         </header>
 
-        <main class="flex items-center justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
-            <div class="w-full max-w-4xl glass-card text-white rounded-[2.5rem] p-8 sm:p-16 shadow-[0_30px_60px_rgba(15,28,63,0.3)] animate-fade-in relative overflow-hidden text-center">
-                <div class="relative z-10">
-                    <span id="courseSubtitle" class="inline-block bg-lightblue/10 border border-lightblue/30 text-lightblue px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-6"></span>
-                    <h1 id="courseTitle" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-8"></h1>
-                    <div class="w-24 h-1 bg-white/10 mb-8 mx-auto rounded-full"></div>
-                    <p id="courseDesc" class="text-gray-300 leading-relaxed font-light text-base lg:text-lg max-w-2xl mx-auto mb-12"></p>
-                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://wa.me/5562992457304" target="_blank" class="inline-flex items-center justify-center gap-3 bg-orange text-white hover:bg-white hover:text-navy px-10 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(244,123,32,0.4)]">
-                            Garantir Minha Vaga <i class="fas fa-check-circle"></i>
-                        </a>
+        <main class="flex items-start justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
+            <!-- Container Principal do Curso -->
+            <div class="w-full max-w-5xl glass-card text-white rounded-[2.5rem] shadow-[0_30px_60px_rgba(15,28,63,0.3)] animate-fade-in relative overflow-hidden flex flex-col max-h-[85vh]">
+                
+                <!-- Conteúdo Interno Rolável -->
+                <div class="p-8 sm:p-12 lg:p-16 overflow-y-auto custom-scroll-content flex-1">
+                    <div class="text-center relative z-10">
+                        <span id="courseSubtitle" class="inline-block bg-lightblue/10 border border-lightblue/30 text-lightblue px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4"></span>
+                        <h1 id="courseTitle" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-6"></h1>
+                        <p id="courseDesc" class="text-gray-300 leading-relaxed font-light text-base lg:text-lg max-w-3xl mx-auto mb-8"></p>
+                        
+                        <!-- Tags dinâmicas (horas, certificados) -->
+                        <div id="courseTags" class="flex flex-wrap justify-center gap-3 mb-12"></div>
+                    </div>
+
+                    <div class="w-full h-px bg-white/10 mb-12"></div>
+
+                    <!-- Seção: O que você vai aprender -->
+                    <div class="mb-12">
+                        <h3 class="font-heading text-2xl font-black text-white uppercase mb-6 flex items-center gap-3">
+                            <i class="fas fa-bullseye text-orange"></i> O que você vai aprender
+                        </h3>
+                        <div id="courseLearnings" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+                    </div>
+
+                    <!-- Seção: Grade do Curso -->
+                    <div class="mb-12">
+                        <h3 class="font-heading text-2xl font-black text-white uppercase mb-6 flex items-center gap-3">
+                            <i class="fas fa-list-ul text-lightblue"></i> Grade do Curso
+                        </h3>
+                        <div id="courseModules" class="space-y-4"></div>
+                    </div>
+
+                    <!-- Seção: Para quem é -->
+                    <div class="mb-12">
+                        <h3 class="font-heading text-2xl font-black text-white uppercase mb-6 flex items-center gap-3">
+                            <i class="fas fa-users text-green-400"></i> Para quem é este curso
+                        </h3>
+                        <div id="courseAudience" class="flex flex-wrap gap-3"></div>
                     </div>
                 </div>
+
+                <!-- Footer do Card (Fixo ao rolar) -->
+                <div class="bg-[#050914] p-6 sm:p-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+                    <div class="text-center sm:text-left">
+                        <p class="text-sm text-gray-400 font-light mb-1">Acesso Imediato + 7 dias de garantia</p>
+                        <p class="text-white font-bold text-lg">Inscrições Abertas</p>
+                    </div>
+                    <a href="https://wa.me/5562992457304" target="_blank" class="inline-flex items-center justify-center gap-3 bg-orange text-white hover:bg-white hover:text-navy px-10 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(244,123,32,0.4)] whitespace-nowrap">
+                        Garantir Minha Vaga <i class="fas fa-check-circle"></i>
+                    </a>
+                </div>
+
             </div>
         </main>
     </div> <!-- Fim do #course-page -->
 
     <!-- SCRIPTS GERAIS -->
     <script>
-        // 1. SCROLL REVEAL BÁSICO
+        // 1. SCROLL REVEAL E FAQ BÁSICO
         function checkReveal() {
             var reveals = document.querySelectorAll('.blur-reveal');
             for (var i = 0; i < reveals.length; i++) {
@@ -821,6 +909,10 @@
         }
         window.addEventListener('scroll', checkReveal);
         window.addEventListener('load', checkReveal);
+
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
 
         // 2. MENU MOBILE & NAVBAR
         document.getElementById('mobileMenuBtn').addEventListener('click', () => {
@@ -841,7 +933,7 @@
         });
 
         // =======================================================================
-        // 3. LÓGICA DA NOVA PÁGINA (SINGLE PAGE APPLICATION) - PROFESSORES E CURSOS
+        // 3. DADOS DAS SINGLE PAGE APPLICATIONS (PROFESSORES E CURSOS)
         // =======================================================================
         const teachersData = {
             'carlos-vinicius': {
@@ -932,24 +1024,103 @@
 
         const coursesData = {
             'curso-anpp': {
-                title: 'Acordo de Não Persecução Penal',
-                subtitle: 'Teoria, Prática e Estratégia',
-                desc: 'Do requisito legal à homologação judicial. Um curso construído para advogados que precisam dominar o ANPP como instrumento real de defesa, não apenas como conceito. Entenda o funcionamento estratégico para garantir os melhores resultados para seus clientes.'
+                title: 'Acordo de Não Persecução Penal: teoria, prática e estratégia',
+                subtitle: 'DIREITO PENAL NEGOCIAL',
+                tags: ['12 horas de conteúdo', 'Certificado OAB-compatible', 'Acesso vitalício', '3.200+ alunos'],
+                desc: 'Do requisito legal à homologação judicial. Um curso construído para advogados que precisam dominar o ANPP como instrumento real de defesa, não apenas como conceito.',
+                learnings: [
+                    { title: 'Requisitos e vedações', text: 'Análise cirúrgica do art. 28-A do CPP. Quem pode pleitear, quem está excluído e como argumentar nas zonas cinzentas.' },
+                    { title: 'Redação do acordo', text: 'Cláusulas essenciais, condições negociáveis e armadilhas contratuais. Modelos comentados com análise de casos reais.' },
+                    { title: 'Homologação e recusa', text: 'Como se comportar na audiência. Fundamentos para impugnar recusas ministeriais e estratégias recursais.' },
+                    { title: 'Rescisão e cumprimento', text: 'Execução das condições, descumprimento e seus efeitos. Como preservar o cliente em caso de controvérsia superveniente.' }
+                ],
+                modules: [
+                    { id: 'M1', title: 'Origem e fundamentos constitucionais', text: 'Justiça negocial no sistema acusatório. O ANPP entre o princípio da obrigatoriedade e a discricionariedade regrada.' },
+                    { id: 'M2', title: 'Pressupostos objetivos e subjetivos', text: 'Pena mínima, crimes excluídos, violência doméstica, reincidência e personalidade do agente. Análise jurisprudencial aprofundada.' },
+                    { id: 'M3', title: 'A negociação com o Ministério Público', text: 'Técnica de abordagem, momento ideal e como construir o contexto favorável antes de sentar à mesa.' },
+                    { id: 'M4', title: 'Redação e cláusulas do acordo', text: 'Workshop prático com modelos. Condições mínimas, condições facultativas e como redigir para proteger o investigado.' },
+                    { id: 'M5', title: 'Audiência de homologação e atuação judicial', text: 'Papel do juiz, recusa fundamentada, recurso cabível e legitimidade do investigado para impugnar recusa ministerial.' },
+                    { id: 'M6', title: 'Execução, descumprimento e efeitos', text: 'Cumprimento integral, extinção da punibilidade, rescisão e retomada da persecução. STJ e STF: estado atual da jurisprudência.' },
+                    { id: 'M7', title: 'Casos práticos e simulações', text: 'Três estudos de caso com peças reais anonimizadas. Simulação de negociação e audiência com feedback gravado.' }
+                ],
+                audience: ['Advogados criminalistas', 'Defensores públicos', 'Advogados que atuam pontualmente em penal', 'Pós-graduandos em direito penal', 'Membros do MP que querem o outro lado', 'Assessores jurídicos']
             },
             'curso-execucao': {
-                title: 'Execução Penal',
-                subtitle: 'Da Sentença ao Livramento',
-                desc: 'LEP na prática. Um curso para advogados que atuam na fase mais negligenciada do processo penal e precisam dominar cada etapa da execução da pena com segurança técnica. Saiba como atuar com precisão nos cálculos e requerimentos.'
+                title: 'Execução Penal: da sentença ao livramento',
+                subtitle: 'DIREITO PENAL – FASE PÓS-CONDENATÓRIA',
+                tags: ['14 horas de conteúdo', 'Certificado OAB-compatible', 'Acesso vitalício', '2.800+ alunos'],
+                desc: 'LEP na prática. Um curso para advogados que atuam na fase mais negligenciada do processo penal e precisam dominar cada etapa da execução da pena com segurança técnica.',
+                learnings: [
+                    { title: 'Progressão de regime', text: 'Requisitos objetivos e subjetivos, exame criminológico, decisões contraditórias e como construir o pedido que o juiz aprova.' },
+                    { title: 'Livramento condicional', text: 'Pressupostos legais, causas de revogação obrigatória e facultativa, e estratégias de defesa na audiência admonitória.' },
+                    { title: 'Remição e benefícios', text: 'Remição por trabalho e estudo, saída temporária, regime aberto e prisão domiciliar. Mapeamento das hipóteses e dos recursos cabíveis.' },
+                    { title: 'Incidentes e recursos', text: 'Agravo em execução, habeas corpus, conversão de pena, unificação de penas e reconhecimento de prescrição da pretensão executória.' }
+                ],
+                modules: [
+                    { id: 'M1', title: 'A Lei de Execução Penal e o juízo da execução', text: 'Competência, estrutura do juízo, legitimidade para requerer e o papel do MP, da defesa e do condenado no processo de execução.' },
+                    { id: 'M2', title: 'Regimes de cumprimento de pena', text: 'Fechado, semiaberto e aberto. Estabelecimentos penais, direitos do preso e obrigações do Estado. O que fazer quando a vaga não existe.' },
+                    { id: 'M3', title: 'Progressão de regime na prática', text: 'Fração aplicável, crimes hediondos, réu primário e reincidente. Exame criminológico: quando é exigível e como impugnar a exigência indevida.' },
+                    { id: 'M4', title: 'Remição por trabalho e por estudo', text: 'Cálculo, documentação necessária, extensão ao ensino superior e às atividades culturais. Súmulas do STJ e jurisprudência atual.' },
+                    { id: 'M5', title: 'Saída temporária e prisão domiciliar', text: 'Requisitos, monitoração eletrônica, revogação e reestabelecimento. Prisão domiciliar humanitária: doenças, maternidade e idade avançada.' },
+                    { id: 'M6', title: 'Livramento condicional e sursis', text: 'Distinção, requisitos, condições impostas, prorrogação e extinção da pena. Defesa na audiência de revogação.' },
+                    { id: 'M7', title: 'Incidentes de execução', text: 'Falta disciplinar grave, regressão cautelar, unificação de penas e detração. Como agir em cada fase e quais provas reunir.' },
+                    { id: 'M8', title: 'Recursos e habeas corpus em execução', text: 'Agravo em execução: prazo, cabimento e efeito suspensivo. HC como via alternativa. Revisão criminal e seus limites.' },
+                    { id: 'M9', title: 'Casos práticos e peças comentadas', text: 'Pedido de progressão, agravo em execução e HC em casos reais anonimizados. Análise de erros comuns e estratégias que funcionam.' }
+                ],
+                audience: ['Advogados criminalistas', 'Defensores públicos', 'Advogados que atendem familiares de presos', 'Pós-graduandos em direito penal', 'Servidores do sistema penitenciário', 'Assessores jurídicos']
             },
             'curso-eleitoral': {
-                title: 'Direito Eleitoral na Prática',
-                subtitle: 'Do Registro ao Mandato',
-                desc: 'Da elegibilidade às contas eleitorais. Um curso completo para advogados, candidatos e assessores que precisam navegar com segurança por todas as fases do processo eleitoral, da filiação partidária à diplomação, garantindo a lisura do pleito.'
+                title: 'Direito Eleitoral na prática: do registro ao mandato',
+                subtitle: 'DIREITO ELEITORAL',
+                tags: ['16 horas de conteúdo', 'Certificado OAB-compatible', 'Acesso vitalício', '2.400+ alunos'],
+                desc: 'Da elegibilidade às contas eleitorais. Um curso completo para advogados, candidatos e assessores que precisam navegar com segurança por todas as fases do processo eleitoral — da filiação partidária à diplomação.',
+                learnings: [
+                    { title: 'Elegibilidade e registro', text: 'Condições de elegibilidade, causas de inelegibilidade, impugnação de registro de candidatura e a jurisprudência recente do TSE.' },
+                    { title: 'Propaganda eleitoral', text: 'Regras de veiculação, propaganda antecipada, uso da internet e redes sociais, e como identificar e responder a infrações.' },
+                    { title: 'Financiamento e prestação de contas', text: 'Fontes lícitas, limites de gastos, SPCE, irregularidades mais comuns e defesa em processos de prestação de contas.' },
+                    { title: 'Crimes eleitorais e contencioso', text: 'Tipos penais eleitorais, competência da Justiça Eleitoral, AIJE, AIME, RCD e os recursos cabíveis em cada fase.' }
+                ],
+                modules: [
+                    { id: 'M1', title: 'Sistema eleitoral brasileiro e competências', text: 'Estrutura da Justiça Eleitoral, competência dos TREs e TSE, prazos eleitorais e o calendário que todo advogado precisa dominar.' },
+                    { id: 'M2', title: 'Filiação partidária e domicílio eleitoral', text: 'Requisitos, prazo mínimo, desfiliação e seus efeitos. Domicílio eleitoral como conceito autônomo e sua comprovação na prática.' },
+                    { id: 'M3', title: 'Elegibilidade e inelegibilidades', text: 'Condições constitucionais e infraconstitucionais. Lei da Ficha Limpa: hipóteses, prazo de incidência e jurisprudência atual do TSE e STF.' },
+                    { id: 'M4', title: 'Registro de candidatura e impugnação (AIRC)', text: 'Pedido de registro, documentação, causas de indeferimento e estratégia de defesa na AIRC. Prazos e recursos.' },
+                    { id: 'M5', title: 'Propaganda eleitoral: regras e infrações', text: 'Propaganda antecipada, irregular e negativa. Redes sociais, impulsionamento pago e desinformação. Representações e multas.' },
+                    { id: 'M6', title: 'Financiamento eleitoral e SPCE', text: 'Doações permitidas, teto de gastos, escrituração no SPCE e os erros que levam à rejeição de contas. Defesa no processo de contas.' },
+                    { id: 'M7', title: 'Crimes eleitorais', text: 'Tipos penais da legislação eleitoral, competência, inquérito policial eleitoral, denúncia e defesa. Prescrição e extinção da punibilidade.' },
+                    { id: 'M8', title: 'Ação de Investigação Judicial Eleitoral (AIJE)', text: 'Abuso de poder econômico e político, uso indevido de meios de comunicação. Legitimidade, provas e cassação do diploma.' },
+                    { id: 'M9', title: 'Ação de Impugnação de Mandato Eletivo (AIME)', text: 'Distinção em relação à AIJE, fundamentos constitucionais, prazo decadencial, legitimidade e efeitos da procedência.' },
+                    { id: 'M10', title: 'Recursos eleitorais e diplomação', text: 'Recurso contra expedição de diploma (RCD), recursos ordinário e especial eleitoral. Diplomação, posse e perda de mandato.' },
+                    { id: 'M11', title: 'Casos práticos e peças comentadas', text: 'Defesa em AIRC, representação por propaganda irregular e contestação de contas em casos reais anonimizados. Análise de estratégias e erros frequentes.' }
+                ],
+                audience: ['Advogados que querem atuar em direito eleitoral', 'Advogados de partidos e coligações', 'Candidatos e pré-candidatos', 'Assessores e coordenadores de campanha', 'Pós-graduandos em direito público', 'Servidores da Justiça Eleitoral']
             },
             'curso-tjgo': {
-                title: 'Analista Judiciário TJGO',
-                subtitle: 'Aprovação do Zero ao Cargo',
-                desc: 'Todas as matérias do edital em um só lugar. Um curso estruturado para quem quer entrar no Tribunal de Justiça de Goiás com preparo real. Da língua portuguesa e raciocínio lógico ao direito aprofundado, tudo sob a ótica da nossa engenharia reversa.'
+                title: 'Analista Judiciário TJGO: aprovação do zero ao cargo',
+                subtitle: 'CONCURSO PÚBLICO – TJGO | EDITAL 02/2021',
+                tags: ['Prova objetiva + discursiva', 'Certificado de conclusão', 'Acesso vitalício', '2.100+ alunos'],
+                desc: 'Todas as matérias do edital em um só lugar. Curso estruturado para as duas áreas — Judiciária e Apoio Judiciário e Administrativo — com foco no conteúdo exigido pela banca UFG/CS.',
+                learnings: [
+                    { title: 'Língua Portuguesa', text: 'Interpretação textual, gramática, coesão e coerência. Gêneros textuais oficiais e redação no padrão exigido pela banca. 15 questões na prova.' },
+                    { title: 'História e Geografia de Goiás', text: 'Aspectos históricos, econômicos, políticos e culturais de Goiás. Atualidades goianas. 5 questões de alto aproveitamento com preparação correta.' },
+                    { title: 'Legislação Complementar', text: 'Regimento Interno do TJGO, Lei 9.129/81, Resolução CNJ 325/2020, Constituição Estadual e Código de Organização Judiciária. 10 questões com peso 2.' },
+                    { title: 'Conhecimentos Específicos', text: 'Direito Constitucional, Administrativo, Civil, Proc. Civil, Penal e Proc. Penal ou Administração Pública. 30 questões com peso 2.' }
+                ],
+                modules: [
+                    { id: 'M1', title: 'Língua Portuguesa', text: 'Leitura e análise de textos. Mecanismos de produção de sentidos. Gêneros textuais oficiais: ofício, memorando, e-mail. Morfossintaxe, concordância, regência, ortografia e acentuação.' },
+                    { id: 'M2', title: 'História e Geografia de Goiás', text: 'História social, econômica e política de Goiás. Aspectos físicos: hidrografia, clima, relevo e vegetação. Atualidades goianas.' },
+                    { id: 'M3', title: 'Legislação Complementar', text: 'Regimento Interno do TJGO. Lei Estadual 9.129/81. Resolução CNJ 325/2020. Constituição do Estado de Goiás. Código de Organização Judiciária de Goiás.' },
+                    { id: 'M4', title: 'Direito Constitucional (Área Judiciária)', text: 'Constitucionalismo brasileiro. Controle de constitucionalidade. Direitos e garantias fundamentais. Organização dos Poderes. Poder Judiciário: estrutura, competências, CNJ.' },
+                    { id: 'M5', title: 'Direito Administrativo (Área Judiciária)', text: 'Princípios constitucionais. Poderes da Administração. Atos administrativos. Servidores públicos (Lei 20.756/2020). Licitação e contratos (Lei 14.133/2021). Improbidade.' },
+                    { id: 'M6', title: 'Direito Civil (Área Judiciária)', text: 'LINDB. Pessoas, bens e fatos jurídicos. Negócio jurídico. Prescrição e decadência. Obrigações e contratos. Responsabilidade civil. Direitos reais.' },
+                    { id: 'M7', title: 'Direito Processual Civil (Área Judiciária)', text: 'Normas e competência. Litisconsórcio. Tutela provisória. Petição inicial e resposta. Provas e audiência. Sentença e recursos. Cumprimento de sentença.' },
+                    { id: 'M8', title: 'Direito Penal (Área Judiciária)', text: 'Princípios penais. Teoria do crime e culpabilidade. Penas. Crimes em espécie. Legislação especial: hediondos, violência doméstica, organizações criminosas.' },
+                    { id: 'M9', title: 'Direito Processual Penal (Área Judiciária)', text: 'Princípios. Inquérito policial. Provas e prisões cautelares. Procedimentos ordinário e sumário. Tribunal do Júri. Recursos e habeas corpus. Execução Penal.' },
+                    { id: 'M10', title: 'Noções de Direito Const. e Adm. (Área de Apoio)', text: 'Direitos e garantias fundamentais. Princípios constitucionais. Poder Judiciário. Atos administrativos. Contratos e licitação.' },
+                    { id: 'M11', title: 'Noções de Administração Pública (Área de Apoio)', text: 'Paradigmas da Administração Pública. Governança e accountability. Planejamento (PPA, LDO, LOA). Transparência e acesso à informação. Gestão por processos.' },
+                    { id: 'M12', title: 'Prova Discursiva e Simulados', text: 'Técnica de redação dissertativo-argumentativa. Simulações com feedback. Simulados completos no padrão do edital com gabarito comentado.' }
+                ],
+                audience: ['Bacharéis em direito (Área Judiciária)', 'Graduados em qualquer área (Área de Apoio)', 'Candidatos sem experiência em concurso', 'Candidatos que já tentaram e querem refazer a preparação', 'Servidores comissionados buscando estabilidade', 'Recém-formados que querem ingressar no TJGO']
             }
         };
 
@@ -992,7 +1163,7 @@
             }, 100);
         }
 
-        // Funções específicas de abertura
+        // Funções específicas de abertura (Professores)
         function openProfilePage(id) {
             const teacher = teachersData[id];
             if(!teacher) return;
@@ -1013,13 +1184,54 @@
             openSpaPage('profile-page');
         }
 
+        // Funções específicas de abertura (Cursos Avançado)
         function openCoursePage(id) {
             const course = coursesData[id];
             if(!course) return;
 
+            // Textos Básicos
             document.getElementById('courseTitle').textContent = course.title;
             document.getElementById('courseSubtitle').textContent = course.subtitle;
             document.getElementById('courseDesc').textContent = course.desc;
+
+            // Renderizar Tags
+            const tagsContainer = document.getElementById('courseTags');
+            tagsContainer.innerHTML = '';
+            course.tags.forEach(tag => {
+                tagsContainer.innerHTML += `<span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-1.5 rounded-full text-xs font-medium"><i class="fas fa-check text-orange mr-2"></i>${tag}</span>`;
+            });
+
+            // Renderizar O Que Vai Aprender
+            const learningsContainer = document.getElementById('courseLearnings');
+            learningsContainer.innerHTML = '';
+            course.learnings.forEach(l => {
+                learningsContainer.innerHTML += `
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-left">
+                        <h4 class="font-bold text-white mb-2">${l.title}</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">${l.text}</p>
+                    </div>`;
+            });
+
+            // Renderizar Módulos
+            const modulesContainer = document.getElementById('courseModules');
+            modulesContainer.innerHTML = '';
+            course.modules.forEach(m => {
+                modulesContainer.innerHTML += `
+                    <div class="bg-[#050914] border border-white/10 rounded-xl p-5 text-left flex gap-4 items-start">
+                        <div class="bg-white/10 text-orange font-bold px-3 py-1 rounded-lg text-xs mt-1 shrink-0">${m.id}</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm mb-1">${m.title}</h4>
+                            <p class="text-gray-400 text-xs leading-relaxed">${m.text}</p>
+                        </div>
+                    </div>`;
+            });
+
+            // Renderizar Público Alvo
+            const audienceContainer = document.getElementById('courseAudience');
+            audienceContainer.innerHTML = '';
+            course.audience.forEach(a => {
+                audienceContainer.innerHTML += `<span class="bg-[#050914] border border-white/10 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium shrink-0 flex-grow text-center">${a}</span>`;
+            });
 
             openSpaPage('course-page');
         }
