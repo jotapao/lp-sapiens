@@ -173,6 +173,7 @@
             <div class="max-w-6xl mx-auto glass-nav sm:rounded-2xl shadow-glass relative">
                 <div class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-6">
                     <a href="#home" class="flex-shrink-0 flex items-center gap-3 group hover:opacity-80 transition-opacity">
+                        <!-- Logo sem o filtro invert -->
                         <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                     </a>
                     <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
@@ -278,7 +279,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 w-full h-[450px] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
-                            <img src="assets//ChatGPT Image 1 de jun. de 2026, 15_04_55.png" alt="Profissionais do Direito" class="w-full h-full object-cover opacity-70">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" alt="Profissionais do Direito" class="w-full h-full object-cover opacity-70">
                             <div class="absolute inset-0 bg-gradient-to-tr from-navyDark to-transparent"></div>
                         </div>
                     </div>
@@ -442,7 +443,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 blur-reveal">
-                        <!-- Cards Professores mantidos iguais -->
+                        <!-- Carlos Vinicius -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('carlos-vinicius')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/CARLOS VINICIUS.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover">
@@ -455,6 +456,7 @@
                             </div>
                         </div>
 
+                        <!-- Carlos Andre -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('carlos-andre')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/CARLOS ANDRE.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -467,6 +469,7 @@
                             </div>
                         </div>
 
+                        <!-- Reinaldo Alves -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('reinaldo-alves')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/REINALDO.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -479,6 +482,7 @@
                             </div>
                         </div>
 
+                        <!-- Wilson da Silva -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('wilson-silva')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/WILSON.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -491,6 +495,7 @@
                             </div>
                         </div>
 
+                        <!-- Guilherme Carreira -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('guilherme-carreira')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/GUILHERME.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -503,10 +508,12 @@
                             </div>
                         </div>
 
+                        <!-- Danyllo Luiz -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('danyllo-luiz')">
-                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
-                                <img src="assets/DANYLLO.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
-                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <img src="assets/DANYLLO.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Danyllo Luiz</h4>
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessor Jurídico - TJ/GO</p>
@@ -515,6 +522,7 @@
                             </div>
                         </div>
 
+                        <!-- Thiago Henrique -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('thiago-henrique')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Thiago Henrique Teles Lopes.jpg (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -527,6 +535,7 @@
                             </div>
                         </div>
 
+                        <!-- Giovanni Machado -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('giovanni-machado')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
                                 <img src="assets/Giovanni Machado.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -539,10 +548,12 @@
                             </div>
                         </div>
 
+                        <!-- Amanda Neves -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('amanda-neves')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
-                                <img src="assets/AMANDA.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
-                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <img src="assets/AMANDA.JPG (1).jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Amanda Neves</h4>
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessora - TJ/GO</p>
@@ -551,9 +562,10 @@
                             </div>
                         </div>
 
+                        <!-- Aldo Sabino -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('aldo-sabino')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
-                                <img src="assets/aldo (2).JPG" alt="Prof" class="w-full h-full object-cover filter contrast-125">
+                                <img src="assets/Aldo Sabino.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Aldo Guilherme</h4>
@@ -563,6 +575,7 @@
                             </div>
                         </div>
 
+                        <!-- Vinicius Borges -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('vinicius-borges')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <img src="assets/vinicius_borges.jpg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -575,6 +588,7 @@
                             </div>
                         </div>
 
+                        <!-- Wild Afonso -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('wild-afonso')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <img src="assets/Wilson da Silva Dias.jpg.jpeg" alt="Prof" class="w-full h-full object-cover filter contrast-125">
@@ -582,6 +596,136 @@
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
                                     <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Wild Afonso</h4>
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lucas Fernandes -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('lucas-fernandes')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Lucas Fernandes</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Advogado</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Patricia Bretas -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('patricia-bretas')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Patrícia Bretas</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juíza de Direito</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jesus Crisostomo -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('jesus-crisostomo')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Jesus Crisóstomo</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Juiz Federal</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marcelo Lopes -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('marcelo-lopes')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Marcelo Lopes</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juiz de Direito</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Fernando Samuel -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('fernando-samuel')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Fernando Samuel</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJGO</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ana Claudia -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('ana-claudia')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Ana Claudia</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juíza de Direito - TJGO</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vanessa Nogueira -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('vanessa-nogueira')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Vanessa Nogueira</h4>
+                                    <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juíza de Direito - TJGO</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Michele Riad -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('michele-riad')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Michele Riad</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessora Jurídica</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pedro Ivo -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('pedro-ivo')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Pedro Ivo</h4>
+                                    <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessor Jurídico</p>
+                                    <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Abrao Amisy -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('abrao-amisy')">
+                            <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+                                <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie"></i></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+                                <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+                                    <h4 class="font-heading font-black text-xl text-white uppercase tracking-wide">Abrão Amisy</h4>
+                                    <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Procurador de Justiça</p>
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
                                 </div>
                             </div>
@@ -802,7 +946,7 @@
         </main>
     </div>
 
-    <!-- COURSE PAGE ADICIONADA A IMAGEM NO TOPO -->
+    <!-- COURSE PAGE -->
     <div id="course-page" class="hidden w-full min-h-screen bg-white text-navy">
         <div class="fixed inset-0 pointer-events-none z-0">
             <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-orange/5 blur-[120px] rounded-full"></div>
@@ -824,13 +968,12 @@
         <main class="flex items-start justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
             <div class="w-full max-w-5xl glass-card text-white rounded-[2.5rem] shadow-[0_30px_60px_rgba(15,28,63,0.3)] animate-fade-in relative overflow-hidden flex flex-col max-h-[85vh]">
                 
-                <!-- IMAGEM RESTAURADA NO TOPO DO CARD DE CURSOS -->
                 <div class="w-full h-48 sm:h-64 relative bg-[#0a1128] border-b border-white/10 shrink-0">
                     <img id="courseImg" src="" alt="Capa do Curso" class="w-full h-full object-cover opacity-60">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050914] to-transparent"></div>
                 </div>
                 
-                <div class="p-8 sm:p-12 lg:p-16 overflow-y-auto custom-scroll-content flex-1 -mt-20 relative z-10">
+                <div class="p-8 sm:p-12 lg:p-16 overflow-y-auto custom-scroll-content flex-1 relative z-10">
                     <div class="text-center relative z-10">
                         <span id="courseSubtitle" class="inline-block bg-lightblue/10 border border-lightblue/30 text-lightblue px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4"></span>
                         <h1 id="courseTitle" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-6 drop-shadow-lg"></h1>
@@ -868,7 +1011,7 @@
                         <p class="text-sm text-gray-400 font-light mb-1">Acesso Imediato + 7 dias de garantia</p>
                         <p class="text-white font-bold text-lg">Inscrições Abertas</p>
                     </div>
-                    <a href="https://wa.me/5562992457304" target="_blank" class="inline-flex items-center justify-center gap-3 bg-orange text-white hover:bg-white hover:text-navy px-10 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(244,123,32,0.4)] whitespace-nowrap">
+                    <a id="courseCheckoutBtn" href="#" target="_blank" class="inline-flex items-center justify-center gap-3 bg-orange text-white hover:bg-white hover:text-navy px-10 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(244,123,32,0.4)] whitespace-nowrap">
                         Garantir Minha Vaga <i class="fas fa-check-circle"></i>
                     </a>
                 </div>
@@ -915,44 +1058,44 @@
         const teachersData = {
             'carlos-vinicius': {
                 name: 'Carlos Vinícius Alves Ribeiro',
-                role: 'Promotor de Justiça - MPGO',
+                role: 'Promotor de Justiça - MP/GO',
                 specialty: 'Especialista em Direito Administrativo e Direito de Estado',
-                bio: 'Promotor de Justiça do Ministério Público do Estado de Goiás (MPGO), com ampla atuação acadêmica e em órgãos de cúpula do Ministério Público brasileiro. Doutor e Mestre em Direito Administrativo pela Universidade de São Paulo (USP), com foco no Direito de Estado.',
+                bio: 'Promotor de Justiça do Ministério Público do Estado de Goiás (MPGO), com ampla atuação acadêmica e em órgãos de cúpula do Ministério Público brasileiro. Doutor e Mestre em Direito Administrativo pela Universidade de São Paulo (USP), com foco no Direito de Estado. Atua como professor em instituições de destaque, como a PUC-GO, a UFG, a UEG, a Escola Superior da Advocacia (OAB-GO e OAB-SP) e a Fundação Escola Superior do Ministério Público. Foi secretário-geral do Conselho Nacional do Ministério Público (CNMP), integra comissões estratégicas do órgão e, em 2025, foi aprovado pelo Senado Federal para compor o Conselho Nacional de Justiça (CNJ).',
                 img: 'assets/CARLOS VINICIUS.JPG (1).jpeg'
             },
             'carlos-andre': {
                 name: 'Carlos André',
-                role: 'Fundador Instituto Carlos André',
+                role: 'Fundador Inst. Carlos André',
                 specialty: 'Especialista em Língua Portuguesa e Redação para Concursos',
-                bio: 'Advogado, linguista e professor de língua portuguesa e de redação. Fundador do Instituto Carlos André, maior instituição de ensino especializada em português e em redação para concursos públicos no Centro-Oeste do Brasil.',
-                img: 'assets//CARLOS ANDRE.JPG (1).jpeg'
+                bio: 'Graduado em Direito pela Pontifícia Universidade Católica de Goiás (PUC-GO), é cofundador do Instituto Carlos André, professor em instituições de referência na graduação, pós-graduação e formação jurídica, além de atuar como comentarista e articulista de Língua Portuguesa. Foi representante da OAB Nacional no Senado Federal, integra grupos técnicos voltados à redação jurídica e ocupa posição de destaque na OAB Goiás. É autor dos livros A Nova Ortografia da Língua Portuguesa e Na Ponta da Língua, além de desenvolver pesquisas de mestrado nas áreas de Gramática, Linguística e Letras.',
+                img: 'assets/CARLOS ANDRE.JPG (1).jpeg'
             },
             'reinaldo-alves': {
                 name: 'Reinaldo Alves',
-                role: 'Desembargador - TJGO',
+                role: 'Desembargador - TJ/GO',
                 specialty: 'Especialista em Direito Empresarial',
-                bio: 'Desembargador no Tribunal de Justiça do Estado de Goiás. Mestre em Direito Empresarial pela Universidade de Franca, com sólida trajetória na magistratura estadual e reconhecida contribuição para o desenvolvimento do Direito Empresarial na região.',
+                bio: 'Ingressou na magistratura em 1991. Atuou nas comarcas de Edeia, Cristalina, Rio Verde e Goiânia. Exerceu as funções de juiz substituto em segundo grau e juiz auxiliar da presidência do TJGO por três gestões consecutivas. Desembargador no Tribunal de Justiça do Estado de Goiás. Mestre em Direito Empresarial pela Universidade de Franca.',
                 img: 'assets/REINALDO.JPG (1).jpeg'
             },
             'wilson-silva': {
                 name: 'Wilson da Silva Dias',
-                role: 'Desembargador - TJGO',
+                role: 'Desembargador - TJ/GO',
                 specialty: 'Especialista em Direito Processual Penal',
-                bio: 'Desembargador do Tribunal de Justiça do Estado de Goiás (TJGO). Professor de Direito Processual Penal. Mestre em Direito, Relações Internacionais e Desenvolvimento pela PUC/GO e Mestre em Defesa e Segurança Hemisférica pelo Inter-American Defense College em Washington DC, EUA.',
+                bio: 'Graduado em Direito pelo Centro Universitário de Brasília (1991). Ingressou na magistratura em 1992 como Juiz Substituto do Estado de Goiás, atuando em diversas comarcas. Presidente da Associação dos Magistrados de Goiás (2006–2008) e Vice-Presidente da Associação dos Magistrados Brasileiros (2007–2010 e 2014–2016). Mestre em Direito, Relações Internacionais e Desenvolvimento pela PUC-GO, e Mestre em Defesa e Segurança Hemisférica pelo Inter-American Defense College (EUA). Juiz Auxiliar da Presidência do CNJ (2009–2010) e do TJGO (2013). Diretor do Foro da Comarca de Goiânia (2015–2017). Professor de Direito Processual Penal na ESMEG. Titular da VEPEMA de Goiânia-GO.',
                 img: 'assets/WILSON.JPG (1).jpeg'
             },
             'guilherme-carreira': {
                 name: 'Guilherme Carreira',
                 role: 'Juiz de Direito - TJ/GO',
                 specialty: 'Especialista em Direito Processual Civil',
-                bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás. Mestre em Direito Processual Civil pela PUC/SP. Membro da Associação Brasileira de Direito Processual (ABDPro), com relevante contribuição doutrinária e pedagógica na área processual.',
+                bio: 'Juiz de Direito no Estado de Goiás. Possui graduação em Direito pela Universidade Estadual Paulista Júlio de Mesquita Filho (UNESP - 2005). É especialista em Direito Processual Civil e em Direito Tributário pela PUC-SP (COGEAE). Mestre em Direito Processual Civil pela Pontifícia Universidade Católica de São Paulo (PUC - SP). Doutor em direito constitucional pelo IDP. Professor de direito processual civil da Unicerrado (Goiatuba-GO). Professor da ESMEG (Escola Superior da Magistratura de Goiás) e da EJUG (Escola Judicial de Goiás). Membro da ABDPro.',
                 img: 'assets/GUILHERME.JPG (1).jpeg'
             },
             'danyllo-luiz': {
                 name: 'Danyllo Luiz Guimarães',
-                role: 'Assessor Jurídico - TJGO',
+                role: 'Assessor Jurídico - TJ/GO',
                 specialty: 'Especialista em Direito Penal e Processual Penal',
-                bio: 'Professor de Direito com ênfase em Direito Penal, Processual Penal, Constitucional e Administrativo. Assessor jurídico de Desembargador do TJGO. Especialista em Direito Penal e Processual Penal e Pós-Graduando em Processo Civil pela EJUG.',
+                bio: 'Graduado em Direito pela PUC-Goiás. Advogado Licenciado. Especializado em Direito Penal e Processo Penal pela Universidade Cândido Mendes (RJ). Pós-Graduando em Direito Civil e Processo Civil pela Escola Judicial do Estado de Goiás. Professor de Processo Penal em cursos preparatórios para concursos públicos. Ex-Assessor Jurídico de Juiz de Direito, de Juiz Auxiliar da Presidência e da Corregedoria-Geral de Justiça de Goiás. Ex-Chefe de Gabinete da Diretoria do Foro de Goiânia. Atualmente assessora Juiz Substituto do Segundo Grau do TJGO.',
                 img: 'assets/DANYLLO.JPG (1).jpeg'
             },
             'thiago-henrique': {
@@ -964,38 +1107,108 @@
             },
             'giovanni-machado': {
                 name: 'Giovanni Machado',
-                role: 'Advogado / Vice-Pres. TED/OAB-GO',
+                role: 'Vice-Pres. TED/OAB-GO',
                 specialty: 'Especialista em Direito Civil e Processo Civil',
                 bio: 'Advogado e vice-presidente do Tribunal de Ética e Disciplina da OAB-GO. Especialista em Direito Civil e Processo Civil. Mestrando em Ciências Jurídicas pela Faculdade Autônoma de Portugal, com atuação destacada no campo da ética profissional e do contencioso cível.',
                 img: 'assets/Giovanni Machado.jpeg'
             },
             'amanda-neves': {
                 name: 'Amanda Neves',
-                role: 'Assessora de Desembargador - TJGO',
+                role: 'Assessora - TJ/GO',
                 specialty: 'Especialista em Direito Civil e Processo Civil',
-                bio: 'Analista Judiciária do Tribunal de Justiça do Estado de Goiás, com sólida atuação na área cível em gabinete de Desembargador. Pós-graduada em Direito Civil e Processo Civil, aprofundou sua formação como mentoranda em Família e Sucessões. Atua como professora e mentora na área de assessoria em gabinetes cíveis.',
+                bio: 'Analista Judiciária do Tribunal de Justiça do Estado de Goiás, concursada desde 2007, com sólida atuação na área cível em gabinete de Desembargador. Pós-graduada em Direito Civil e Processo Civil, aprofundou sua formação como mentoranda em Família e Sucessões sob orientação do Professor Cristiano Chaves de Farias. Atua como professora e mentora na área de assessoria em gabinetes cíveis, acompanhando alunos de todo o Brasil na preparação técnica para a rotina dos tribunais.',
                 img: 'assets/AMANDA.JPG (1).jpeg' 
             },
             'aldo-sabino': {
                 name: 'Aldo Guilherme Saad',
-                role: 'Juiz de Direito - TJGO',
+                role: 'Juiz de Direito - TJ/GO',
                 specialty: 'Especialista em Direito Civil e Processo Civil',
-                bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás, especializado em Direito Civil e Processo Civil. Atua na preparação para carreiras jurídicas com foco na aprovação para Magistratura, Ministério Público e outras carreiras.',
-                img: 'assets/aldo (2).JPG' 
+                bio: 'Bacharel em Direito pela PUC-Goiás (1997). Especialista em Direito Civil e Processual Civil pela UniAnhanguera. Ex-Promotor de Justiça (1997–1999). Juiz Auxiliar da Corregedoria-Geral da Justiça (2019–2021) e da Presidência do TJGO (2021–2024). Professor da ESMEG e da EJUG. Titular do 2º Juizado Especial Cível de Goiânia. Autor de 3 livros jurídicos.',
+                img: 'assets/Aldo Sabino.jpg.jpeg' 
             },
             'vinicius-borges': {
                 name: 'Vinicius de Castro Borges',
-                role: 'Juiz de Direito - TJGO',
+                role: 'Juiz de Direito - TJ/GO',
                 specialty: 'Especialista em Direito Penal e Direito Processual Civil',
                 bio: 'Juiz de Direito do Tribunal de Justiça do Estado de Goiás. Especialista em Direito Penal e em Direito Processual Civil, com atuação jurisdicional que alia rigor técnico e experiência prática, contribuindo para a formação de profissionais voltados às carreiras jurídicas.',
                 img: 'assets/vinicius_borges.jpg' 
             },
             'wild-afonso': {
                 name: 'Wild Afonso',
-                role: 'Desembargador - TJGO',
+                role: 'Desembargador - TJ/GO',
                 specialty: 'Especialista em Direito Penal e Direito Público',
                 bio: 'Desembargador do Tribunal de Justiça do Estado de Goiás (TJGO). Especialista em Direito Penal e Mestre em Direito Público, com longa e destacada trajetória na magistratura goiana, contribuindo para o desenvolvimento da jurisprudência penal e para a formação de novos operadores do direito.',
                 img: 'assets/Wilson da Silva Dias.jpg.jpeg' 
+            },
+            'lucas-fernandes': {
+                name: 'Lucas Fernandes de Andrade',
+                role: 'Advogado',
+                specialty: 'Especializado em Direito Público e Tributário',
+                bio: 'Advogado e contador. Especializado em Direito Público e em Direito Tributário. Mestre em Direito Constitucional Econômico.',
+                img: '' 
+            },
+            'patricia-bretas': {
+                name: 'Patrícia Bretas',
+                role: 'Juíza de Direito',
+                specialty: 'Especialista em Processo Penal',
+                bio: 'Ingressou na magistratura em 2007, mestre em Processo Penal e Garantismo pela Universidade de Girona (Espanha) e pós-graduada em Poder Judiciário pela FGV-Rio.',
+                img: '' 
+            },
+            'jesus-crisostomo': {
+                name: 'Jesus Crisóstomo',
+                role: 'Juiz Federal',
+                specialty: 'Mestre em Direito Agrário',
+                bio: 'Possui graduação em Direito pela Pontifícia Universidade Católica de Goiás (1991) e mestrado em Direito Agrário pela Universidade Federal de Goiás (2003). Atualmente é Juiz Federal da Tribunal Regional Federal da 1ª Região.',
+                img: '' 
+            },
+            'marcelo-lopes': {
+                name: 'Marcelo Lopes de Jesus',
+                role: 'Juiz de Direito',
+                specialty: 'Mestre em Direito pela UFG',
+                bio: 'Graduado em Direito e em Engenharia Civil pela UFG. Mestre em Direito pela UFG. Professor da ESMEG, da ESMP e da ESA, além do Instituto Goiano de Direito e da Rede Juris. Coautor do Manual de Direito Civil pela Editora Juspodivm. Titular do Juizado Especial Cível e Criminal de Senador Canedo.',
+                img: '' 
+            },
+            'fernando-samuel': {
+                name: 'Fernando Samuel',
+                role: 'Juiz de Direito TJGO',
+                specialty: 'Mestre em Direito Constitucional',
+                bio: 'Mestre em Direito Constitucional pelo IDP (2017). Possui graduação em Direito pela Universidade de Uberaba (2003). Atualmente é juiz de direito do Tribunal de Justiça do Estado de Goiás (desde 2008), Coordenador do GMF, Coordenador do Programa Pró-Júri. Tem experiência na área de Direito, com ênfase em Direito Constitucional, Processual Penal, Execução Penal e Direito Penal.',
+                img: '' 
+            },
+            'ana-claudia': {
+                name: 'Ana Claudia Veloso',
+                role: 'Juíza de Direito TJGO',
+                specialty: 'Mestre em Ciências Jurídico-Políticas',
+                bio: 'Possui graduação em Direito pela PUC-Goiás (1984) e mestrado em Ciências Juridico-Políticas pela Universidade de Coimbra (1993), Doutoranda em Direito Constitucional pelo IDP. Atualmente é Juíza de Direito do TJGO, titular do 1 Juízo das Garantias da Comarca de Goiânia, membro do GMF/GO e Juíza Auxiliar da Presidência no TRE-GO.',
+                img: '' 
+            },
+            'vanessa-nogueira': {
+                name: 'Vanessa Nogueira Antunes Ferreira',
+                role: 'Juíza de Direito TJGO',
+                specialty: 'Especialista em Processo Civil e Civil',
+                bio: 'Bacharel em Direito pela UFG, em 2004. Possui título de especialista em Direito Processual Civil e Direito Civil. Atualmente, cursa mestrado em Direito Agrário pela UFG. Foi juíza de direito do TJRS desde 2014, onde participou de permuta e atualmente exerce a Magistratura no TJGO. Tendo sido servidora pública do TJGO, de 2001 a 2014.',
+                img: '' 
+            },
+            'michele-riad': {
+                name: 'Michele Riad Iskandar',
+                role: 'Assessora Jurídica',
+                specialty: 'Pós-graduada em Civil e Processual Civil',
+                bio: 'Graduada em Direito pela Universidade Salgado de Oliveira. Pós-graduada em Direito Civil e Processual Civil pela Universidade Cândido Mendes. Assistente Executiva de Desembargador no TJGO. Mediadora e Conciliadora certificada pelo CNJ. Instrutora nos cursos de formação de mediadores judiciais, conciliadores e nas Oficinas de Divórcio e Parentalidade.',
+                img: '' 
+            },
+            'pedro-ivo': {
+                name: 'Pedro Ivo',
+                role: 'Assessor Jurídico',
+                specialty: 'Especialista em Direito Processual',
+                bio: 'Graduado em Direito pela PUC-Goiás. Especialista em Direito Processual pela UniRV. Assessor Jurídico do Tribunal de Justiça do Estado de Goiás.',
+                img: '' 
+            },
+            'abrao-amisy': {
+                name: 'Abrão Amisy',
+                role: 'Procurador de Justiça',
+                specialty: 'Mestre em Razonamiento Probatório',
+                bio: 'Possui graduação em Direito pela UFU (1989), mestrado em Ciências Jurídicas pela Universidade Autónoma de Lisboa (2020), mestrado em Educação pela PUC Goiás (2002) e mestrado em Razonamiento Probatório pela Universitat de Girona (2019). Atuando principalmente nos seguintes temas: Paternalismo Epistêmico.',
+                img: '' 
             }
         };
 
@@ -1006,6 +1219,7 @@
                 tags: ['12 horas de conteúdo', 'Certificado OAB-compatible', 'Acesso vitalício', '3.200+ alunos'],
                 desc: 'Do requisito legal à homologação judicial. Um curso construído para advogados que precisam dominar o ANPP como instrumento real de defesa, não apenas como conceito.',
                 img: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80',
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/anpp',
                 learnings: [
                     { title: 'Requisitos e vedações', text: 'Análise cirúrgica do art. 28-A do CPP. Quem pode pleitear, quem está excluído e como argumentar nas zonas cinzentas.' },
                     { title: 'Redação do acordo', text: 'Cláusulas essenciais, condições negociáveis e armadilhas contratuais. Modelos comentados com análise de casos reais.' },
@@ -1029,6 +1243,7 @@
                 tags: ['14 horas de conteúdo', 'Certificado OAB-compatible', 'Acesso vitalício', '2.800+ alunos'],
                 desc: 'LEP na prática. Um curso para advogados que atuam na fase mais negligenciada do processo penal e precisam dominar cada etapa da execução da pena com segurança técnica.',
                 img: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80',
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/penal',
                 learnings: [
                     { title: 'Progressão de regime', text: 'Requisitos objetivos e subjetivos, exame criminológico, decisões contraditórias e como construir o pedido que o juiz aprova.' },
                     { title: 'Livramento condicional', text: 'Pressupostos legais, causas de revogação obrigatória e facultativa, e estratégias de defesa na audiência admonitória.' },
@@ -1054,6 +1269,7 @@
                 tags: ['16 horas de conteúdo', 'Certificado OAB-compatible', 'Acesso vitalício', '2.400+ alunos'],
                 desc: 'Da elegibilidade às contas eleitorais. Um curso completo para advogados, candidatos e assessores que precisam navegar com segurança por todas as fases do processo eleitoral — da filiação partidária à diplomação.',
                 img: 'https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=800&q=80',
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/eleitoral',
                 learnings: [
                     { title: 'Elegibilidade e registro', text: 'Condições de elegibilidade, causas de inelegibilidade, impugnação de registro de candidatura e a jurisprudência recente do TSE.' },
                     { title: 'Propaganda eleitoral', text: 'Regras de veiculação, propaganda antecipada, uso da internet e redes sociais, e como identificar e responder a infrações.' },
@@ -1081,6 +1297,7 @@
                 tags: ['Prova objetiva + discursiva', 'Certificado de conclusão', 'Acesso vitalício', '2.100+ alunos'],
                 desc: 'Todas as matérias do edital em um só lugar. Curso estruturado para as duas áreas — Judiciária e Apoio Judiciário e Administrativo — com foco no conteúdo exigido pela banca UFG/CS.',
                 img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/user_groups/3/subscription',
                 learnings: [
                     { title: 'Língua Portuguesa', text: 'Interpretação textual, gramática, coesão e coerência. Gêneros textuais oficiais e redação no padrão exigido pela banca. 15 questões na prova.' },
                     { title: 'História e Geografia de Goiás', text: 'Aspectos históricos, econômicos, políticos e culturais de Goiás. Atualidades goianas. 5 questões de alto aproveitamento com preparação correta.' },
@@ -1169,10 +1386,17 @@
             document.getElementById('courseSubtitle').textContent = course.subtitle;
             document.getElementById('courseDesc').textContent = course.desc;
 
-            // ADICIONAR IMAGEM DO CURSO AQUI
             const imgElement = document.getElementById('courseImg');
             if(imgElement && course.img) {
                 imgElement.src = course.img;
+            }
+
+            // Define o link do checkout de forma dinâmica
+            const checkoutBtn = document.getElementById('courseCheckoutBtn');
+            if(checkoutBtn && course.checkoutLink) {
+                checkoutBtn.href = course.checkoutLink;
+            } else {
+                checkoutBtn.href = "https://wa.me/5562992457304"; // fallback para whatsapp
             }
 
             const tagsContainer = document.getElementById('courseTags');
