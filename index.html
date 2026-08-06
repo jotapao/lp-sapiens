@@ -2643,6 +2643,56 @@ Conversa com o Gemini
 
         }
 
+        // ==========================================
+        // ENVIO DO FORMULÁRIO DE LEADS (FORMSPREE)
+        // ==========================================
+        const leadForm = document.getElementById("leadForm");
+        
+        if (leadForm) {
+            leadForm.addEventListener("submit", async function(event) {
+                event.preventDefault(); // Evita o recarregamento da página
+                
+                const form = event.target;
+                const data = new FormData(form);
+                const originalBtnText = form.querySelector('button[type="submit"]').innerHTML;
+                const submitBtn = form.querySelector('button[type="submit"]');
+
+                // Altera o texto do botão para indicar carregamento
+                submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Sucesso
+                        alert("Obrigado! Seus dados foram recebidos com sucesso. Em breve entraremos em contato.");
+                        form.reset(); // Limpa os campos
+                    } else {
+                        // Erro no Formspree
+                        const responseData = await response.json();
+                        if (Object.hasOwn(responseData, 'errors')) {
+                            alert(responseData["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Oops! Ocorreu um problema ao enviar o formulário.");
+                        }
+                    }
+                } catch (error) {
+                    alert("Oops! Ocorreu um erro de conexão ao tentar enviar.");
+                } finally {
+                    // Restaura o botão ao estado original
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
     </script>
 
 </body>
