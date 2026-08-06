@@ -26,6 +26,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
+        /* STREAMING_CHUNK:Configuring Tailwind theme... */
         tailwind.config = {
             theme: {
                 extend: {
@@ -57,6 +58,7 @@
     </script>
 
     <style>
+        /* STREAMING_CHUNK:Styling global elements and animations... */
         /* ===== FIXES GLOBAIS ===== */
         html, body { 
             background-color: #ffffff; 
@@ -167,6 +169,7 @@
 
     <div class="tech-bg"></div>
 
+    <!-- STREAMING_CHUNK:Rendering Main Site Header... -->
     <!-- ========================================================================= -->
     <!-- SITE PRINCIPAL (HOME) -->
     <!-- ========================================================================= -->
@@ -212,6 +215,7 @@
             </div>
         </header>
 
+        <!-- STREAMING_CHUNK:Rendering Hero Section... -->
         <main class="w-full relative z-10" id="main-content">
             <!-- HERO SECTION -->
             <section id="home" class="w-full pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-48 lg:pb-32 relative">
@@ -252,6 +256,7 @@
                 </div>
             </section>
 
+            <!-- STREAMING_CHUNK:Rendering About Section... -->
             <!-- SOBRE O SAPIENS -->
             <section id="sobre" class="w-full py-16 sm:py-24 relative">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -293,6 +298,7 @@
                 </div>
             </section>
 
+            <!-- STREAMING_CHUNK:Rendering Methodology Section... -->
             <!-- METODOLOGIA -->
             <section id="metodologia" class="w-full py-16 sm:py-24 relative">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -361,6 +367,7 @@
                 </div>
             </section>
 
+            <!-- STREAMING_CHUNK:Rendering Courses Section... -->
             <!-- CURSOS -->
             <section id="cursos" class="w-full py-16 sm:py-24 relative">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -450,6 +457,7 @@
                 </div>
             </section>
 
+            <!-- STREAMING_CHUNK:Rendering Teachers Section (Docentes)... -->
             <!-- ============================================== -->
             <!-- SEÇÃO 5: CORPO DOCENTE                         -->
             <!-- ============================================== -->
@@ -681,7 +689,8 @@
                         </div>
 
                         <!-- Amanda Neves -->
-                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('amanda-neves')">
+                        <!-- STREAMING_CHUNK:Aligning Amanda Neves card... -->
+                        <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer lg:col-start-2" onclick="openProfilePage('amanda-neves')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                                 <img src="assets/Amanda Neves Analista TJGO.JPG.jpeg" alt="Professora Amanda Neves" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
@@ -695,6 +704,7 @@
                         </div>
 
                         <!-- Aldo Sabino -->
+                        <!-- STREAMING_CHUNK:Aligning Aldo Sabino card... -->
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('aldo-sabino')">
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
@@ -713,6 +723,7 @@
                 
             </section>
 
+            <!-- STREAMING_CHUNK:Rendering FAQ Section... -->
             <!-- DÚVIDAS FREQUENTES (FAQ) -->
             <section id="faq" class="w-full py-16 sm:py-24 relative bg-lightbg">
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -765,6 +776,7 @@
                 </div>
             </section>
 
+            <!-- STREAMING_CHUNK:Rendering Contact and Footer... -->
             <!-- CAPTAÇÃO DE LEADS (Seção Contato) -->
             <section id="contato" class="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative z-20">
                 <div class="max-w-6xl mx-auto glass-card shine-effect rounded-[2.5rem] shadow-2xl overflow-hidden blur-reveal active">
@@ -881,6 +893,7 @@
         </a>
     </div>
 
+    <!-- STREAMING_CHUNK:Rendering SPAs views (Profile and Course)... -->
     <!-- PROFILE PAGE -->
     <div id="profile-page" class="hidden w-full min-h-screen bg-[#050914] text-white">
         <div class="fixed inset-0 pointer-events-none z-0">
@@ -972,6 +985,7 @@
         </main>
     </div>
 
+    <!-- STREAMING_CHUNK:Adding internal scripts and data logic... -->
     <script>
         function checkReveal() {
             var reveals = document.querySelectorAll('.blur-reveal');
