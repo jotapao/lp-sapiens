@@ -1,1378 +1,2650 @@
+Conversa com o Gemini
 <!DOCTYPE html>
+
 <html lang="pt-BR" class="scroll-smooth" style="scroll-padding-top: 100px;">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
     
+
     <!-- ============================================== -->
+
     <!-- SEO & SEGURANÇA PROFISSIONAL                   -->
+
     <!-- ============================================== -->
+
     <title>Instituto Sapiens de Ensino | Formação Jurídica</title>
+
     <meta name="description" content="Destaque-se com uma formação jurídica de alta performance. Aprenda com profissionais que vivenciam o Direito na prática.">
+
     <link rel="canonical" href="https://ensinosapiens.com.br/">
+
     
+
     <!-- Fontes Premium com Preload para Performance -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
     
+
     <!-- FontAwesome Assíncrono para não bloquear renderização -->
+
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
     
+
     <!-- Tailwind CSS -->
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     
+
     <script>
+
         tailwind.config = {
+
             theme: {
+
                 extend: {
+
                     colors: {
+
                         navy: '#0f1c3f',
+
                         navyDark: '#050914', 
+
                         lightblue: '#5f8bcf', 
+
                         orange: '#f47b20',    
+
                         lightbg: '#ffffff', 
+
                     },
+
                     fontFamily: {
+
                         sans: ['Inter', 'sans-serif'],
+
                         heading: ['Montserrat', 'sans-serif'],
+
                         serif: ['Playfair Display', 'serif'],
+
                     },
+
                     animation: {
+
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+
                         'fade-in': 'fadeIn 0.5s ease-out forwards',
+
                     },
+
                     keyframes: {
+
                         fadeIn: {
+
                             '0%': { opacity: '0', transform: 'translateY(10px)' },
+
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+
                         }
+
                     }
+
                 }
+
             }
+
         }
+
     </script>
 
+
+
     <style>
+
         /* ===== FIXES GLOBAIS ===== */
+
         html, body { 
+
             background-color: #ffffff; 
+
             color: #0f1c3f; 
+
             overflow-x: hidden !important; 
+
             width: 100%;
+
             position: relative;
+
         }
+
         
+
         ::selection { background-color: #f47b20; color: #fff; }
+
         ::-webkit-scrollbar { width: 6px; }
+
         ::-webkit-scrollbar-track { background: #ffffff; }
+
         ::-webkit-scrollbar-thumb { background: #0f1c3f; border-radius: 4px; }
 
+
+
         .tech-bg {
+
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
+
             background-color: #ffffff;
+
         }
+
+
 
         .gradient-text {
+
             background: linear-gradient(to right, #f47b20, #ffb347, #5f8bcf);
+
             background-size: 200% auto;
+
             -webkit-background-clip: text;
+
             background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             animation: textGradient 4s linear infinite;
+
         }
+
         @keyframes textGradient { to { background-position: 200% center; } }
 
+
+
         .glass-nav {
+
             background: rgba(255, 255, 255, 0.85);
+
             backdrop-filter: blur(16px);
+
             -webkit-backdrop-filter: blur(16px);
+
             border-bottom: 1px solid rgba(15, 28, 63, 0.05);
+
         }
+
         
+
         .glass-card {
+
             background: linear-gradient(145deg, #0f1c3f 0%, #050914 100%);
+
             color: #ffffff;
+
             border: 1px solid rgba(255, 255, 255, 0.05);
+
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+
         }
+
+
 
         .shine-effect { position: relative; overflow: hidden; }
+
         .shine-effect::before {
+
             content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
+
             background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+
             transform: skewX(-25deg); z-index: 10; transition: all 0.75s ease; pointer-events: none;
+
         }
+
         .shine-effect:hover::before, .shine-effect.is-active::before { left: 200%; transition: all 0.75s ease; }
 
+
+
         .blur-reveal {
+
             opacity: 0; filter: blur(10px); transform: translateY(30px) scale(0.95);
+
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+
         }
+
         .blur-reveal.active { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
+
         .delay-100 { transition-delay: 100ms; }
+
         .delay-200 { transition-delay: 200ms; }
+
         .delay-300 { transition-delay: 300ms; }
 
+
+
         .method-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+
         .method-card:hover, .method-card.is-active { 
+
             transform: translateY(-12px) scale(1.02); 
+
             border-color: rgba(255, 255, 255, 0.15); 
+
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4), 0 0 40px -5px var(--hover-glow, rgba(95, 139, 207, 0.3)); 
+
         }
+
+
 
         .course-card {
+
             position: relative; transition: all 0.4s ease-out;
+
             background: linear-gradient(180deg, #0f1c3f 0%, #050914 100%);
+
             border: 1px solid rgba(255, 255, 255, 0.05); z-index: 1;
+
         }
+
         .course-card:hover {
+
             transform: translateY(-15px) scale(1.02); border-color: var(--card-glow); 
+
             box-shadow: 0 35px 60px -15px rgba(0,0,0,0.5), 0 0 15px 0px var(--card-glow), inset 0 0 10px 0px var(--card-glow); 
+
         }
+
         .course-card .img-container img { transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease; }
+
         .course-card:hover .img-container img { transform: scale(1.12) rotate(-2deg) !important; opacity: 0.35 !important; }
 
+
+
         .teacher-card { position: relative; overflow: hidden; transition: all 0.5s ease; cursor: pointer; }
+
         .teacher-card:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(244, 123, 32, 0.2); border-color: #f47b20; }
+
         
+
         .hover-lift { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease; }
+
         .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2); }
+
         
+
         .pulse-btn-green {
+
             box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+
             animation: pulse-green 2s infinite cubic-bezier(0.66, 0, 0, 1);
+
         }
+
         @keyframes pulse-green { to { box-shadow: 0 0 0 25px rgba(34, 197, 94, 0); } }
 
+
+
         #mobileMenu { transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; transform-origin: top; }
+
         #mobileMenu.hidden-menu { opacity: 0; transform: scaleY(0.95); visibility: hidden; pointer-events: none; height: 0; }
+
         #mobileMenu.active-menu { opacity: 1; transform: scaleY(1); visibility: visible; pointer-events: auto; height: auto; }
 
+
+
         .custom-scroll-content::-webkit-scrollbar { width: 6px; }
+
         .custom-scroll-content::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 8px; }
+
         .custom-scroll-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 8px; }
+
         .custom-scroll-content::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
 
+
+
         /* FAQ Accordion */
+
         .faq-content { transition: max-height 0.4s ease-out, padding 0.4s ease; max-height: 0; overflow: hidden; }
+
         .faq-item.active .faq-content { max-height: 500px; padding-bottom: 1.5rem; }
+
         .faq-item.active .faq-icon { transform: rotate(180deg); }
+
     </style>
+
 </head>
+
 <body class="font-sans text-gray-800 antialiased flex flex-col min-h-screen relative">
+
+
 
     <div class="tech-bg"></div>
 
+
+
     <!-- ========================================================================= -->
+
     <!-- SITE PRINCIPAL (HOME) -->
+
     <!-- ========================================================================= -->
+
     <div id="main-site" class="block w-full">
+
         <!-- CABEÇALHO -->
+
         <header class="fixed w-full z-50 top-0 sm:top-4 px-0 sm:px-6 lg:px-8 transition-all duration-300" id="navbar">
+
             <div class="max-w-6xl mx-auto glass-nav sm:rounded-2xl shadow-glass relative">
+
                 <div class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-6">
+
                     <a href="#home" class="flex-shrink-0 flex items-center gap-3 group hover:opacity-80 transition-opacity" aria-label="Ir para o topo da página inicial">
+
                         <!-- Logo sem o filtro invert -->
+
                         <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens Logo" width="150" height="50" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/150x50/ffffff/0f1c3f?text=Logo'">
+
                     </a>
+
                     <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Navegação Principal">
+
                         <a href="#home" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Início</a>
+
                         <a href="#sobre" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Sobre o Sapiens</a>
+
                         <a href="#cursos" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Cursos</a>
+
                         <a href="#docentes" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Professores</a>
+
                         <a href="#faq" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Dúvidas</a>
+
                         <a href="#contato" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:text-navy hover:bg-navy/5 transition-all text-[11px] xl:text-xs font-bold uppercase">Contato</a>
+
                     </nav>
+
                     <div class="hidden md:flex">
+
                         <a href="https://gasctv.com.br" target="_blank" aria-label="Acessar a plataforma do aluno" class="inline-block bg-navy hover:bg-orange text-white px-4 xl:px-6 py-2.5 rounded-xl font-heading font-bold transition-all duration-300 text-[10px] xl:text-xs uppercase tracking-wider hover:shadow-neon-orange group hover-lift">
+
                             Quero elevar minha carreira <i class="fas fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+
                         </a>
+
                     </div>
+
                     <div class="md:hidden flex items-center">
+
                         <button id="mobileMenuBtn" aria-label="Abrir menu de navegação móvel" aria-expanded="false" class="text-navy hover:text-orange focus:outline-none p-2 transition-colors">
+
                             <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+
                         </button>
+
                     </div>
+
                 </div>
+
                 <div id="mobileMenu" class="hidden-menu absolute top-full left-0 w-full mt-1 glass-nav sm:rounded-2xl overflow-hidden shadow-premium border-t sm:border border-navy/10 z-50">
+
                     <div class="p-3 flex flex-col gap-1 text-center">
+
                         <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold uppercase">Início</a>
+
                         <a href="#sobre" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold uppercase">Sobre o Sapiens</a>
+
                         <a href="#cursos" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold uppercase">Cursos</a>
+
                         <a href="#docentes" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold uppercase">Professores</a>
+
                         <a href="#faq" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold uppercase">Dúvidas</a>
+
                         <a href="#contato" class="mobile-nav-link block px-4 py-3 rounded-xl text-gray-600 hover:bg-navy/5 font-bold uppercase">Contato</a>
+
                         <a href="https://gasctv.com.br" target="_blank" class="block mt-2 px-4 py-3 rounded-xl bg-orange text-white font-bold uppercase tracking-wider text-sm">Quero elevar minha carreira</a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </header>
+
+
 
         <main class="w-full relative z-10" id="main-content">
+
             <!-- HERO SECTION -->
+
             <section id="home" class="w-full pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-48 lg:pb-32 relative">
+
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center text-center lg:text-left">
+
                         <div class="lg:col-span-7">
+
                             <div class="blur-reveal active inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-navy/10 bg-navy/5 mb-6 sm:mb-8">
+
                                 <span class="w-2 h-2 rounded-full bg-orange animate-pulse" aria-hidden="true"></span> 
+
                                 <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-navy uppercase">Formação Jurídica de Alta Performance</span>
+
                             </div>
+
                             <h1 class="blur-reveal active delay-100 font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-navy leading-[1.1] tracking-tighter mb-4 sm:mb-6 uppercase">
+
                                 Destaque-se com <br>uma formação de <span class="gradient-text">alta performance.</span>
+
                             </h1>
+
                             <p class="blur-reveal active delay-200 text-sm sm:text-base lg:text-lg text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+
                                 Aprenda com profissionais que vivenciam o Direito na prática e desenvolva as competências que diferenciam os melhores profissionais do mercado.
+
                             </p>
+
                             <div class="blur-reveal active delay-300 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
+
                                 <a href="https://wa.me/5562992457304" target="_blank" class="hover-lift bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] flex items-center justify-center gap-3 group w-full sm:w-auto">
+
                                     <i class="fab fa-whatsapp text-xl group-hover:scale-125 transition-transform duration-300" aria-hidden="true"></i> Falar com Especialista
+
                                 </a>
+
                                 <a href="https://gasctv.com.br" target="_blank" class="hover-lift bg-navy hover:bg-navyDark text-white px-6 sm:px-8 py-4 rounded-xl font-heading font-bold text-sm sm:text-base text-center transition-all flex items-center justify-center gap-3 w-full sm:w-auto group shadow-lg">
+
                                     Quero Elevar Minha Carreira <i class="fas fa-arrow-right opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" aria-hidden="true"></i>
+
                                 </a>
+
                             </div>
+
                         </div>
+
                         <div class="lg:col-span-5 relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none blur-reveal active delay-300">
+
                             <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-navy/20 shadow-2xl bg-navyDark">
+
                                 <!-- Adicionado playsinline e preload -->
+
                                 <video class="w-full h-full object-cover relative z-10" controls playsinline preload="metadata" aria-label="Apresentação em vídeo do Instituto Sapiens" poster="assets/Logo PNG.png">
+
                                     <source src="assets/IMG_4233.mp4" type="video/mp4">
+
                                     <!-- A tag track resolve o erro de acessibilidade -->
+
                                     <track kind="captions" src="data:text/vtt," srclang="pt-BR" label="Português">
+
                                     O seu navegador não suporta a tag de vídeo.
+
                                 </video>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <!-- SOBRE O SAPIENS -->
+
             <section id="sobre" class="w-full py-16 sm:py-24 relative">
+
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                     <div class="glass-card rounded-[3rem] p-8 sm:p-16 mb-20 blur-reveal flex flex-col lg:flex-row items-center gap-12 border-t-2 border-t-lightblue">
+
                         <div class="lg:w-1/2 relative">
+
                             <div class="absolute -top-10 -left-10 w-40 h-40 bg-lightblue/20 blur-[60px] rounded-full"></div>
+
                             <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-none mb-6">O próximo nível da sua carreira jurídica <span class="text-lightblue">começa agora.</span></h2>
+
                             
+
                             <div class="space-y-4 text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+
                                 <p>O mercado jurídico exige muito mais do que conhecimento teórico. Exige estratégia, posicionamento e excelência técnica.</p>
+
                                 <p>Nossa metodologia foi desenvolvida para profissionais que desejam atuar com mais segurança, autoridade e resultados.</p>
+
                                 
+
                                 <ul class="space-y-4 mt-6 text-white font-medium">
+
                                     <li class="flex items-start gap-3">
+
                                         <i class="fas fa-check-circle text-orange mt-1" aria-hidden="true"></i>
+
                                         <span>Eleve sua atuação jurídica a um novo nível de excelência.</span>
+
                                     </li>
+
                                     <li class="flex items-start gap-3">
+
                                         <i class="fas fa-check-circle text-orange mt-1" aria-hidden="true"></i>
+
                                         <span>Desenvolva competências que fortalecem sua autoridade profissional.</span>
+
                                     </li>
+
                                     <li class="flex items-start gap-3">
+
                                         <i class="fas fa-check-circle text-orange mt-1" aria-hidden="true"></i>
+
                                         <span>Domine estratégias jurídicas avançadas e destaque-se no mercado.</span>
+
                                     </li>
+
                                     <li class="flex items-start gap-3">
+
                                         <i class="fas fa-check-circle text-orange mt-1" aria-hidden="true"></i>
+
                                         <span>Aprenda com quem vive o Direito na prática.</span>
+
                                     </li>
+
                                 </ul>
+
                             </div>
+
                         </div>
+
                         <div class="lg:w-1/2 w-full h-[450px] rounded-3xl overflow-hidden relative shadow-neon-blue border border-white/10">
+
                             <!-- Adicionado loading lazy e width/height -->
+
                             <img src="assets/ChatGPT Image 1 de jun. de 2026, 15_04_55.png" alt="Reunião de profissionais do Direito" loading="lazy" width="600" height="450" class="w-full h-full object-cover opacity-70">
+
                             <div class="absolute inset-0 bg-gradient-to-tr from-navyDark to-transparent"></div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <!-- METODOLOGIA -->
+
             <section id="metodologia" class="w-full py-16 sm:py-24 relative">
+
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                     <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 blur-reveal">
+
                         <span class="inline-block px-4 py-1.5 bg-orange/10 border border-orange/20 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">Algoritmo Pedagógico</span>
+
                         <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-navy uppercase tracking-tight leading-none mb-6">Excelência, Estratégia e Prática</h2>
+
                         <p class="text-gray-600 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto">Nossa metodologia integra conhecimento técnico, experiência prática e visão estratégica para preparar profissionais capazes de enfrentar os desafios reais da advocacia e das carreiras jurídicas.</p>
+
                     </div>
+
                     
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-16">
+
                         <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal text-center" style="--hover-glow: #f47b20;">
+
                             <div class="w-16 h-16 mx-auto bg-[#0a1128] border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-balance-scale" aria-hidden="true"></i></div>
+
                             <h3 class="font-heading text-xl sm:text-2xl font-black text-white mb-4">Formação de Autoridade</h3>
+
                             <p class="text-gray-400 font-light text-sm">Formação jurídica que transforma potencial em autoridade.</p>
+
                         </div>
+
                         <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-100 text-center" style="--hover-glow: #5f8bcf;">
+
                             <div class="w-16 h-16 mx-auto bg-[#0a1128] border border-white/20 text-lightblue rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-chess-knight" aria-hidden="true"></i></div>
+
                             <h3 class="font-heading text-xl sm:text-2xl font-black text-white mb-4">Visão Estratégica</h3>
+
                             <p class="text-gray-400 font-light text-sm">Formação estratégica para impulsionar sua carreira e ampliar oportunidades.</p>
+
                         </div>
+
                         <div class="method-card glass-card shine-effect p-10 rounded-3xl blur-reveal delay-200 text-center" style="--hover-glow: #f47b20;">
+
                             <div class="w-16 h-16 mx-auto bg-[#0a1128] border border-white/20 text-orange rounded-2xl flex items-center justify-center text-3xl mb-6"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+
                             <h3 class="font-heading text-xl sm:text-2xl font-black text-white mb-4">Aplicação Prática</h3>
+
                             <p class="text-gray-400 font-light text-sm">Conteúdo desenvolvido para aplicação prática imediata. Aprendizado orientado para resultados concretos.</p>
+
                         </div>
+
                     </div>
+
+
 
                     <!-- SEÇÃO DE BENEFÍCIOS DENTRO DE MÉTODOS -->
+
                     <div class="glass-card rounded-[3rem] p-8 sm:p-12 lg:p-16 blur-reveal border-t-2 border-t-green-500 relative overflow-hidden">
+
                         <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-green-500/10 blur-[80px] rounded-full"></div>
+
                         <div class="text-center max-w-3xl mx-auto mb-10 relative z-10">
+
                             <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight mb-4">Uma formação pensada para quem busca resultados extraordinários</h3>
+
                             <p class="text-gray-300 text-sm sm:text-base font-light">Formação de alta performance para profissionais que desejam acelerar o crescimento na carreira e ampliar suas oportunidades.</p>
+
                         </div>
+
                         
+
                         <div class="relative z-10">
+
                             <p class="text-orange font-bold uppercase tracking-widest text-xs mb-6 text-center">O que você vai conquistar:</p>
+
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+
                                     <i class="fas fa-shield-alt text-green-400 text-2xl" aria-hidden="true"></i>
+
                                     <span class="text-sm text-gray-200 font-medium">Mais segurança na atuação profissional.</span>
+
                                 </div>
+
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+
                                     <i class="fas fa-crown text-orange text-2xl" aria-hidden="true"></i>
+
                                     <span class="text-sm text-gray-200 font-medium">Mais autoridade perante clientes e colegas.</span>
+
                                 </div>
+
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+
                                     <i class="fas fa-gavel text-lightblue text-2xl" aria-hidden="true"></i>
+
                                     <span class="text-sm text-gray-200 font-medium">Conhecimento aplicável à prática jurídica.</span>
+
                                 </div>
+
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+
                                     <i class="fas fa-crosshairs text-green-400 text-2xl" aria-hidden="true"></i>
+
                                     <span class="text-sm text-gray-200 font-medium">Posicionamento diferenciado no mercado.</span>
+
                                 </div>
+
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+
                                     <i class="fas fa-chess text-orange text-2xl" aria-hidden="true"></i>
+
                                     <span class="text-sm text-gray-200 font-medium">Desenvolvimento de competências estratégicas.</span>
+
                                 </div>
+
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+
                                     <i class="fas fa-brain text-lightblue text-2xl" aria-hidden="true"></i>
+
                                     <span class="text-sm text-gray-200 font-medium">Maior capacidade de tomada de decisão.</span>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <!-- CURSOS -->
+
             <section id="cursos" class="w-full py-16 sm:py-24 relative">
+
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                     <div class="text-center mb-10 blur-reveal flex flex-col items-center">
+
                         <span class="inline-block px-4 py-1.5 bg-lightblue/10 border border-lightblue/20 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">O Arsenal Sapiens</span>
+
                         <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-navy uppercase tracking-tight leading-none mb-6">Nossos Cursos</h2>
+
                     </div>
+
+
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 blur-reveal">
+
                         
+
                         <!-- Curso 1: Analista Judiciário TJGO -->
+
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-orange">
+
                             <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-tjgo')">
+
                                 <img src="assets/Analista J.png" alt="Banner do Curso Analista Judiciário TJGO" loading="lazy" width="800" height="342" class="w-full h-full object-cover object-center opacity-80" onerror="this.src='https://placehold.co/800x400/0a1128/ffffff?text=Analista+Judiciário'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+
                             </div>
+
                             <div class="flex flex-col flex-grow">
+
                                 <div class="flex flex-wrap gap-2 mb-4">
+
                                     <span class="inline-block px-3 py-1 bg-white/10 border border-white/20 text-gray-300 rounded-md text-[10px] font-bold uppercase tracking-widest">TJGO - CURSO PARA O NOVO EDITAL</span>
+
                                     <span class="inline-block px-3 py-1 bg-white/10 border border-white/20 text-gray-300 rounded-md text-[10px] font-bold uppercase tracking-widest">TURMA COM VAGAS LIMITADAS</span>
+
                                 </div>
+
                                 <h3 class="font-heading text-xl lg:text-2xl font-black text-white uppercase mb-2">Analista Judiciário TJGO</h3>
+
                                 <p class="text-orange text-xs tracking-wider uppercase mb-4 font-bold italic font-serif">Aprovação do Zero ao Cargo</p>
+
                                 <p class="text-gray-400 text-sm mb-6">Todas as matérias do edital em um só lugar. Curso estruturado para as duas áreas Judiciária e Apoio Judiciário e Administrativo com foco no conteúdo exigido pela banca examinadora.</p>
+
                                 
+
                                 <button onclick="openCoursePage('curso-tjgo')" class="w-full bg-white/10 border border-white/20 hover:bg-white hover:text-navy text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto flex items-center justify-center gap-2">
+
                                     Resumo de Informações <i class="fas fa-info-circle" aria-hidden="true"></i>
+
                                 </button>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Curso 2: Execução Penal -->
+
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-lightblue">
+
                             <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-execucao')">
+
                                 <img src="assets/Penal.png" alt="Banner do Curso Execução Penal" loading="lazy" width="800" height="342" class="w-full h-full object-cover object-center opacity-80" onerror="this.src='https://placehold.co/800x400/0a1128/ffffff?text=Execução+Penal'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+
                             </div>
+
                             <div class="flex flex-col flex-grow">
+
                                 <span class="inline-block px-3 py-1 bg-white/10 border border-white/20 text-gray-300 rounded-md text-[10px] font-bold uppercase tracking-widest mb-4 w-max">INSCRIÇÕES ABERTAS</span>
+
                                 <h3 class="font-heading text-xl lg:text-2xl font-black text-white uppercase mb-2">Execução Penal</h3>
+
                                 <p class="text-lightblue text-xs tracking-wider uppercase mb-4 font-bold italic font-serif">de Alta Performance</p>
+
                                 <p class="text-gray-400 text-sm mb-6">Domínio prático das teses e dos incidentes executórios. A execução penal deixou de ser uma área meramente procedimental para se tornar um dos campos mais dinâmicos e estratégicos do Direito Criminal.</p>
+
                                 
+
                                 <button onclick="openCoursePage('curso-execucao')" class="w-full bg-white/10 border border-white/20 hover:bg-white hover:text-navy text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto flex items-center justify-center gap-2">
+
                                     Resumo de Informações <i class="fas fa-info-circle" aria-hidden="true"></i>
+
                                 </button>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Curso 3: Recursos para Tribunais -->
+
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-green-500">
+
                             <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-recursos')">
+
                                 <img src="assets/Recursos T.png" alt="Banner do Curso Recursos para Tribunais" loading="lazy" width="800" height="342" class="w-full h-full object-cover object-center opacity-80" onerror="this.src='https://placehold.co/800x400/0a1128/ffffff?text=Recursos+para+Tribunais'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+
                             </div>
+
                             <div class="flex flex-col flex-grow">
+
                                 <span class="inline-block px-3 py-1 bg-white/10 border border-white/20 text-gray-300 rounded-md text-[10px] font-bold uppercase tracking-widest mb-4 w-max">INSCRIÇÕES ABERTAS</span>
+
                                 <h3 class="font-heading text-xl lg:text-2xl font-black text-white uppercase mb-2">Recursos para Tribunais</h3>
+
                                 <p class="text-green-400 text-xs tracking-wider uppercase mb-4 font-bold italic font-serif">Teoria, prática e estratégia</p>
+
                                 <p class="text-gray-400 text-sm mb-6">Da construção da tese recursal ao julgamento nos tribunais. Um curso desenvolvido para capacitar advogados e operadores do Direito na elaboração de recursos consistentes, técnicas de sustentação jurídica e estratégias que aumentam as chances de êxito em segunda instância e nos tribunais superiores.</p>
+
                                 
+
                                 <button onclick="openCoursePage('curso-recursos')" class="w-full bg-white/10 border border-white/20 hover:bg-white hover:text-navy text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto flex items-center justify-center gap-2">
+
                                     Resumo de Informações <i class="fas fa-info-circle" aria-hidden="true"></i>
+
                                 </button>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Curso 4: ANPP -->
+
                         <div class="course-card glass-card flex flex-col rounded-[2rem] p-6 sm:p-8 border-t-2 border-t-purple-500">
+
                             <div class="img-container w-full aspect-[21/9] rounded-[1.5rem] overflow-hidden relative bg-[#0a1128] border border-white/10 mb-6 cursor-pointer" onclick="openCoursePage('curso-anpp')">
+
                                 <img src="assets/Anpp (1).png" alt="Banner do Curso ANPP" loading="lazy" width="800" height="342" class="w-full h-full object-cover object-center opacity-80" onerror="this.src='https://placehold.co/800x400/0a1128/ffffff?text=ANPP'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark to-transparent opacity-60"></div>
+
                             </div>
+
                             <div class="flex flex-col flex-grow">
+
                                 <span class="inline-block px-3 py-1 bg-white/10 border border-white/20 text-gray-300 rounded-md text-[10px] font-bold uppercase tracking-widest mb-4 w-max">DIREITO PENAL NEGOCIAL</span>
+
                                 <h3 class="font-heading text-xl lg:text-2xl font-black text-white uppercase mb-2">Acordo de Não Persecução Penal</h3>
+
                                 <p class="text-purple-400 text-xs tracking-wider uppercase mb-4 font-bold italic font-serif">Teoria, prática e estratégia</p>
+
                                 <p class="text-gray-400 text-sm mb-6">Do requisito legal à homologação judicial. Um curso construído para advogados que precisam dominar o ANPP como instrumento real de defesa, não apenas como conceito.</p>
+
                                 
+
                                 <button onclick="openCoursePage('curso-anpp')" class="w-full bg-white/10 border border-white/20 hover:bg-white hover:text-navy text-white py-3.5 rounded-xl font-heading font-bold text-sm uppercase transition-all mt-auto flex items-center justify-center gap-2">
+
                                     Resumo de Informações <i class="fas fa-info-circle" aria-hidden="true"></i>
+
                                 </button>
+
                             </div>
+
                         </div>
 
+
+
                     </div>
+
                 </div>
+
             </section>
 
+
+
             <!-- ============================================== -->
+
             <!-- SEÇÃO 5: CORPO DOCENTE                         -->
+
             <!-- ============================================== -->
+
             <section id="docentes" class="w-full py-16 sm:py-24 relative">
+
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                     <div class="mb-16 sm:mb-20 text-center blur-reveal px-4 flex flex-col items-center">
+
                         <span class="inline-block px-4 py-1.5 bg-orange/10 border border-orange/20 rounded-full text-orange font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">Prática Real</span>
+
                         <h2 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-navy leading-none mb-6">Aprenda com quem vive o Direito na prática</h2>
+
                     </div>
+
+
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 blur-reveal">
+
                         <!-- Carlos Vinicius -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('carlos-vinicius')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+
                                 <img src="assets/CARLOS VINICIUS.JPG (1).jpeg" alt="Professor Carlos Vinícius" loading="lazy" width="300" height="400" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400/0a1128/ffffff?text=C.Vinícius'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Carlos Vinícius</h3>
+
                                     <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Promotor - MP/GO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Carlos Andre -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('carlos-andre')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+
                                 <img src="assets/CARLOS ANDRE.JPG (1).jpeg" alt="Professor Carlos André" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125" onerror="this.src='https://placehold.co/300x400/0a1128/ffffff?text=C.André'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Carlos André</h3>
+
                                     <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Advogado e Linguista</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Reinaldo Alves -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('reinaldo-alves')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+
                                 <img src="assets/REINALDO.JPG (1).jpeg" alt="Professor Reinaldo Alves" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125" onerror="this.src='https://placehold.co/300x400/0a1128/ffffff?text=Reinaldo'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Reinaldo Alves</h3>
+
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Wilson da Silva Dias -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('wilson-dias')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+
                                 <img src="assets/WILSON.JPG (1).jpeg" alt="Professor Wilson da Silva" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125" onerror="this.src='https://placehold.co/300x400/0a1128/ffffff?text=Wilson'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Wilson da Silva</h3>
+
                                     <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Desembargador - TJ/GO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Guilherme Carreira -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('guilherme-carreira')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10">
+
                                 <img src="assets/GUILHERME.JPG (1).jpeg" alt="Professor Guilherme Carreira" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125" onerror="this.src='https://placehold.co/300x400/0a1128/ffffff?text=Guilherme'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Guilherme Carreira</h3>
+
                                     <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJ/GO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Danyllo Luiz -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('danyllo-luiz')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/DANYLLO.JPG (1).jpeg" alt="Professor Danyllo Luiz" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Danyllo Luiz</h3>
+
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessor Jurídico - TJ/GO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Lucas Fernandes -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('lucas-fernandes')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Dr Lucas.JPG.jpeg" alt="Professor Lucas Fernandes" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Lucas Fernandes</h3>
+
                                     <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Advogado</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Patricia Bretas -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('patricia-bretas')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Patricia Bretas.JPG.jpeg" alt="Professora Patrícia Bretas" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Patrícia Bretas</h3>
+
                                     <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juíza de Direito</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Jesus Crisostomo -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('jesus-crisostomo')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Jesus.JPG.jpeg" alt="Professor Jesus Crisóstomo" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Jesus Crisóstomo</h3>
+
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Juiz Federal</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Marcelo Lopes -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('marcelo-lopes')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/MARCELO.JPG (1).jpeg" alt="Professor Marcelo Lopes" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Marcelo Lopes</h3>
+
                                     <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juiz de Direito</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                         
+
                         <!-- Fernando Samuel -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('fernando-samuel')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Fernando Samuel.JPG.jpeg" alt="Professor Fernando Samuel" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Fernando Samuel</h3>
+
                                     <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juiz de Direito - TJGO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Ana Claudia -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('ana-claudia')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Ana Claudia.JPG.jpeg" alt="Professora Ana Claudia" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Ana Claudia</h3>
+
                                     <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Juíza de Direito - TJGO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Vanessa Nogueira -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('vanessa-nogueira')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Vanessa Nogueira.JPG.jpeg" alt="Professora Vanessa Nogueira" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Vanessa Nogueira</h3>
+
                                     <p class="text-lightblue text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-lightblue/10 border border-lightblue/30 inline-block px-2 py-1 rounded">Juíza de Direito - TJGO</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Michele Riad -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('michele-riad')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Michele Riad.JPG.jpeg" alt="Professora Michele Riad" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Michele Riad</h3>
+
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessora Jurídica</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Pedro Ivo -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('pedro-ivo')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Pedro ivo.JPG.jpeg" alt="Professor Pedro Ivo" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Pedro Ivo</h3>
+
                                     <p class="text-gray-300 text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-white/10 border border-white/20 inline-block px-2 py-1 rounded">Assessor Jurídico</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
+
+
 
                         <!-- Abrao Amisy -->
+
                         <div class="teacher-card glass-card rounded-3xl text-center cursor-pointer" onclick="openProfilePage('abrao-amisy')">
+
                             <div class="w-full aspect-[3/4] relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a1128]">
+
                                 <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                                 <img src="assets/Abrao Amisy.JPG.jpeg" alt="Professor Abrão Amisy" loading="lazy" width="300" height="400" class="w-full h-full object-cover filter contrast-125 relative z-10" onerror="this.style.display='none'">
+
                                 <div class="absolute inset-0 bg-gradient-to-t from-navyDark via-navyDark/70 to-transparent z-20"></div>
+
                                 <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+
                                     <h3 class="font-heading font-black text-xl text-white uppercase tracking-wide">Abrão Amisy</h3>
+
                                     <p class="text-orange text-[9px] font-bold tracking-[0.1em] uppercase mt-2 bg-orange/10 border border-orange/30 inline-block px-2 py-1 rounded">Procurador de Justiça</p>
+
                                     <button class="mt-4 w-full block text-center bg-white/10 hover:bg-white text-white hover:text-navy border border-white/20 py-2 rounded-xl text-[10px] font-bold uppercase transition-all">Ver Perfil</button>
+
                                 </div>
+
                             </div>
+
                         </div>
 
+
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <!-- DÚVIDAS FREQUENTES (FAQ) -->
+
             <section id="faq" class="w-full py-16 sm:py-24 relative bg-lightbg">
+
                 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
                     <div class="text-center mb-12 blur-reveal">
+
                         <span class="inline-block px-4 py-1.5 bg-lightblue/10 border border-lightblue/20 rounded-full text-lightblue font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-4">Informações Importantes</span>
+
                         <h2 class="font-heading text-4xl sm:text-5xl font-black text-navy uppercase tracking-tight leading-none mb-6">Dúvidas Frequentes</h2>
+
                     </div>
 
-                   <div class="space-y-4 blur-reveal delay-100">
-    <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
-        <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
-            <h3 class="font-heading font-bold text-white text-sm sm:text-base">Como funcionam as aulas?</h3>
-            <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon" aria-hidden="true"></i>
-        </div>
-        <div class="faq-content px-6 bg-[#050914]">
-            <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">
-                Oferecemos aulas híbridas, mesclando os formatos presencial e online. As aulas são ministradas por mestres, doutores e autores renomados, com gravação de alta qualidade. Todo o conteúdo fica disponível em nossa moderna plataforma, permitindo que você estude a qualquer hora e lugar rumo à sua aprovação.
-            </p>
-        </div>
-    </div>
-</div>
+
+
+                    <div class="space-y-4 blur-reveal delay-100">
+
+                        <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+
+                            <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+
+                                <h3 class="font-heading font-bold text-white text-sm sm:text-base">Como funcionam as aulas?</h3>
+
+                                <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon" aria-hidden="true"></i>
+
+                            </div>
+
+                            <div class="faq-content px-6 bg-[#050914]">
+
+                                <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Nossas aulas são 100% online e gravadas com alta qualidade audiovisual. Todo o material é disponibilizado em nossa plataforma tecnológica para que você possa estudar de onde estiver e no horário que preferir.</p>
+
+                            </div>
+
+                        </div>
+
                         
+
                         <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+
                             <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+
                                 <h3 class="font-heading font-bold text-white text-sm sm:text-base">Por quanto tempo terei acesso ao curso?</h3>
+
                                 <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon" aria-hidden="true"></i>
+
                             </div>
+
                             <div class="faq-content px-6 bg-[#050914]">
+
                                 <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Você terá acesso por um longo período conforme estipulado na página de matrícula de cada curso específico. Consulte os detalhes clicando em "Resumo de Informações".</p>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+
                             <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+
                                 <h3 class="font-heading font-bold text-white text-sm sm:text-base">O Instituto emite certificado?</h3>
+
                                 <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon" aria-hidden="true"></i>
+
                             </div>
+
                             <div class="faq-content px-6 bg-[#050914]">
+
                                 <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Sim! Todos os cursos garantem emissão de certificado digital compatível com os exigidos pela OAB e instituições públicas, contendo a respectiva carga horária do conteúdo assistido.</p>
+
                             </div>
+
                         </div>
 
+
+
                         <div class="faq-item glass-card rounded-2xl border border-white/10 overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
+
                             <div class="px-6 py-5 flex justify-between items-center bg-[#0a1128]">
+
                                 <h3 class="font-heading font-bold text-white text-sm sm:text-base">E se eu não me adaptar à metodologia?</h3>
+
                                 <i class="fas fa-chevron-down text-lightblue transition-transform duration-300 faq-icon" aria-hidden="true"></i>
+
                             </div>
+
                             <div class="faq-content px-6 bg-[#050914]">
+
                                 <p class="text-gray-400 font-light text-sm leading-relaxed mt-2">Acreditamos tanto na excelência do nosso ensino que oferecemos <strong>7 dias de garantia incondicional</strong>. Se por qualquer motivo você não se adaptar, basta um e-mail para nossa equipe que devolveremos 100% do valor investido, sem burocracia.</p>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
+
+
 
             <!-- CAPTAÇÃO DE LEADS (Seção Contato) -->
+
             <section id="contato" class="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative z-20">
+
                 <div class="max-w-6xl mx-auto glass-card shine-effect rounded-[2.5rem] shadow-2xl overflow-hidden blur-reveal active">
+
                     <div class="grid grid-cols-1 lg:grid-cols-2">
+
                         <div class="p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden">
+
                             <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-400 opacity-20 rounded-full blur-[50px] animate-pulse-slow"></div>
+
                             <div class="relative z-10 text-center lg:text-left">
+
                                 <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-lightblue/10 text-lightblue border border-lightblue/20 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6">
+
                                     <i class="fas fa-lock text-xs" aria-hidden="true"></i> Acesso Restrito
+
                                 </span>
+
                                 <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight leading-none mb-6">Invista na sua formação. Potencialize sua carreira. Conquiste novos resultados.</h3>
+
                                 <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">Prepare-se para atuar com mais segurança, estratégia e excelência.</p>
+
                                 <p class="text-orange font-bold uppercase tracking-wider text-sm">Torne-se a referência que o mercado procura.</p>
+
                             </div>
+
                         </div>
+
                         <div class="bg-black/20 p-8 sm:p-12 lg:p-16 relative border-t lg:border-t-0 lg:border-l border-white/5 flex flex-col justify-center">
+
                             <!-- PARA CAPTURAR EMAILS: Mude a action para o endpoint do Formspree, Basin, ou insira o HTML da sua ferramenta de Email Marketing -->
-                            <form action="https://formspree.io/f/mnpaqdbe" method="POST" class="space-y-4 sm:space-y-5 relative z-10" id="leadForm">
+
+                            <form action="https://formspree.io/f//mnpaqdbe" method="POST" class="space-y-4 sm:space-y-5 relative z-10" id="leadForm">
+
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
                                     <div>
+
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">Nome</label>
+
                                         <input type="text" name="nome" class="w-full bg-[#0a1128] border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:border-cyan-400 outline-none transition-all text-sm" placeholder="Seu nome" required>
+
                                     </div>
+
                                     <div>
+
                                         <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">WhatsApp</label>
+
                                         <input type="tel" name="whatsapp" class="w-full bg-[#0a1128] border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:border-cyan-400 outline-none transition-all text-sm" placeholder="(00) 00000-0000" maxlength="15" id="whatsappInput" required>
+
                                     </div>
+
                                 </div>
+
                                 <div>
+
                                     <label class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1.5 block">E-mail</label>
+
                                     <input type="email" name="email" class="w-full bg-[#0a1128] border border-white/10 px-4 py-3 sm:py-4 rounded-xl text-white font-medium focus:border-cyan-400 outline-none transition-all text-sm" placeholder="Seu melhor e-mail" required>
+
                                 </div>
+
                                 <div class="w-full mt-4 hover-lift">
+
                                     <button type="submit" class="w-full bg-lightblue hover:bg-white hover:text-navy text-white font-heading font-bold uppercase tracking-wider py-4 sm:py-5 rounded-xl shadow-[0_0_20px_rgba(95,139,207,0.3)] transition-all duration-300 flex items-center justify-center gap-3 text-[11px] sm:text-sm group">
+
                                         Garantir Minha Vaga <i class="fas fa-check-circle group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+
                                     </button>
+
                                 </div>
+
                             </form>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
 
+
+
         </main>
+
+
 
         <footer class="bg-[#050914] text-gray-400 pt-20 pb-8 border-t border-white/5 relative z-20 w-full">
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                 <!-- Top Section -->
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
                     <!-- Brand -->
+
                     <div>
+
                         <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens Logo" width="150" height="50" loading="lazy" class="h-12 mb-6 opacity-90 transition-opacity hover:opacity-100" onerror="this.src='https://placehold.co/150x50/ffffff/0f1c3f?text=Logo'">
+
                         <p class="text-sm font-light leading-relaxed mb-8">Acelerando a aprovação da elite do judiciário brasileiro com engenharia reversa e metodologia preditiva. Estude com quem faz.</p>
+
                         <div class="flex gap-4">
+
                             <a href="#" aria-label="Acessar Instagram" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-orange hover:text-white transition-all shadow-lg"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+
                             <a href="https://wa.me/5562992457304" target="_blank" aria-label="Acessar WhatsApp" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all shadow-lg"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+
                             <a href="#" aria-label="Acessar LinkedIn" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-lightblue hover:text-white transition-all shadow-lg"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+
                             <a href="#" aria-label="Acessar YouTube" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-lg"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+
                         </div>
+
                     </div>
+
                     
+
                     <nav aria-label="Links úteis">
+
                         <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Navegação</h4>
+
                         <ul class="space-y-3 text-sm font-light">
+
                             <li><a href="#home" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Início</a></li>
+
                             <li><a href="#sobre" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Sobre o Sapiens</a></li>
+
                             <li><a href="#metodologia" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Metodologia</a></li>
+
                             <li><a href="#docentes" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Corpo Docente</a></li>
+
                             <li><a href="#faq" class="hover:text-orange transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Dúvidas (FAQ)</a></li>
+
                         </ul>
+
                     </nav>
+
                     
+
                     <nav aria-label="Carreiras Jurídicas">
+
                         <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Carreiras Jurídicas</h4>
+
                         <ul class="space-y-3 text-sm font-light">
+
                             <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Acordo de Não Persecução</a></li>
+
                             <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Execução Penal</a></li>
+
                             <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Recursos para Tribunais</a></li>
+
                             <li><a href="#cursos" class="hover:text-lightblue transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-white/50" aria-hidden="true"></i> Analista TJGO</a></li>
+
                         </ul>
+
                     </nav>
+
                     
+
                     <div>
+
                         <h4 class="text-white font-heading font-black tracking-wider uppercase mb-6 text-sm">Fale Conosco</h4>
+
                         <ul class="space-y-4 text-sm font-light">
+
                             <li class="flex items-start gap-3">
+
                                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-orange" aria-hidden="true"></i></div>
+
                                 <span class="pt-1.5">Goiânia, GO<br>Sede Tecnológica de Gravações</span>
+
                             </li>
+
                             <li class="flex items-center gap-3">
+
                                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-orange" aria-hidden="true"></i></div>
+
                                 <span>contato@institutosapiens.com.br</span>
+
                             </li>
+
                             <li class="flex items-center gap-3">
+
                                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"><i class="fas fa-phone-alt text-orange" aria-hidden="true"></i></div>
+
                                 <span>(62) 99245-7304</span>
+
                             </li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
                 
+
                 <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light">
+
                     <p>&copy; 2026 Instituto Sapiens de Ensino. Todos os direitos reservados.</p>
+
                     <div class="flex gap-6">
+
                         <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+
                         <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </footer>
 
+
+
         <a href="https://wa.me/5562992457304" target="_blank" aria-label="Abrir conversa no WhatsApp" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl hover:bg-green-400 transition-transform pulse-btn-green shadow-xl z-50">
+
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
+
         </a>
+
     </div>
+
+
 
     <!-- PROFILE PAGE -->
+
     <div id="profile-page" class="hidden w-full min-h-screen bg-[#050914] text-white">
+
         <div class="fixed inset-0 pointer-events-none z-0">
+
             <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-orange/5 blur-[120px] rounded-full"></div>
+
             <div class="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-lightblue/10 blur-[120px] rounded-full"></div>
+
         </div>
+
+
 
         <header class="w-full relative z-10 py-6 px-4 sm:px-6 lg:px-12 border-b border-white/5 bg-[#050914]/80 backdrop-blur-md sticky top-0">
+
             <div class="max-w-7xl mx-auto flex justify-between items-center">
+
                 <button onclick="closeSpaPage('docentes')" aria-label="Fechar perfil e voltar aos professores" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
+
                     <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-colors cursor-pointer">
+
                         <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform" aria-hidden="true"></i>
+
                     </div>
+
                     <span class="font-bold text-xs uppercase tracking-wider hidden sm:block">Voltar aos Professores</span>
+
                 </button>
+
                 <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens Logo" width="120" height="32" class="h-8 w-auto object-contain opacity-90" onerror="this.src='https://placehold.co/150x50/ffffff/0f1c3f?text=Logo'">
+
             </div>
+
         </header>
+
+
 
         <main class="flex items-center justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
+
             <div class="w-full max-w-5xl glass-card rounded-[2.5rem] p-8 sm:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.6)] animate-fade-in relative overflow-hidden">
+
                 <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start relative z-10">
+
                     <div class="w-48 h-48 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden flex-shrink-0 border border-white/10 shadow-[0_0_40px_rgba(95,139,207,0.15)] relative bg-[#0a1128]">
+
                         <div class="absolute inset-0 flex items-center justify-center text-white/10 text-6xl"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+
                         <img id="profileImg" src="" alt="Foto do professor em destaque" width="320" height="320" class="w-full h-full object-cover filter contrast-110 relative z-10">
+
                         <div class="absolute inset-0 bg-gradient-to-t from-navyDark/80 via-transparent to-transparent z-20"></div>
+
                     </div>
+
                     <div class="flex-1 text-center lg:text-left flex flex-col justify-center">
+
                         <span id="profileRole" class="inline-block bg-orange/10 border border-orange/30 text-orange px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4 w-max mx-auto lg:mx-0"></span>
+
                         <h1 id="profileName" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-3"></h1>
+
                         <h2 id="profileSpecialty" class="text-lightblue font-medium text-sm mb-8"></h2>
+
                         <div class="w-16 h-1 bg-white/10 mb-8 mx-auto lg:mx-0 rounded-full"></div>
+
                         <p id="profileBio" class="text-gray-300 leading-relaxed font-light text-base text-justify"></p>
+
                         <div class="mt-12">
+
                             <button onclick="closeSpaPageAndScroll('cursos')" aria-label="Ver cursos disponíveis" class="inline-flex items-center justify-center gap-3 bg-white text-navy hover:bg-orange hover:text-white px-8 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_20px_rgba(244,123,32,0.4)]">
+
                                 Ver Cursos <i class="fas fa-arrow-right" aria-hidden="true"></i>
+
                             </button>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </main>
+
     </div>
+
+
 
     <!-- COURSE PAGE -->
+
     <div id="course-page" class="hidden w-full min-h-screen bg-white text-navy">
+
         <div class="fixed inset-0 pointer-events-none z-0">
+
             <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-orange/5 blur-[120px] rounded-full"></div>
+
             <div class="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-lightblue/10 blur-[120px] rounded-full"></div>
+
         </div>
 
+
+
         <header class="w-full relative z-10 py-6 px-4 sm:px-6 lg:px-12 border-b border-navy/5 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+
             <div class="max-w-7xl mx-auto flex justify-between items-center">
+
                 <button onclick="closeSpaPage('cursos')" aria-label="Fechar e voltar aos cursos" class="flex items-center gap-3 text-gray-500 hover:text-navy transition-colors group">
+
                     <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center border border-navy/10 group-hover:bg-navy/10 transition-colors cursor-pointer">
+
                         <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform" aria-hidden="true"></i>
+
                     </div>
+
                     <span class="font-bold text-xs uppercase tracking-wider hidden sm:block">Voltar aos Cursos</span>
+
                 </button>
+
                 <img src="assets/logo_sem_fundo.png" alt="Instituto Sapiens Logo" width="120" height="32" class="h-8 w-auto object-contain opacity-90" onerror="this.src='https://placehold.co/150x50/ffffff/0f1c3f?text=Logo'">
+
             </div>
+
         </header>
 
+
+
         <main class="flex items-start justify-center relative z-10 py-12 px-4 sm:px-6 min-h-[calc(100vh-100px)]">
+
             <div class="w-full max-w-5xl glass-card text-white rounded-[2.5rem] shadow-[0_30px_60px_rgba(15,28,63,0.3)] animate-fade-in relative overflow-hidden flex flex-col max-h-[85vh]">
+
                 
+
                 <div class="w-full h-48 sm:h-64 relative bg-[#0a1128] border-b border-white/10 shrink-0">
+
                     <img id="courseImg" src="" alt="Capa do Curso detalhada" width="1024" height="256" class="w-full h-full object-cover opacity-60">
+
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050914] to-transparent"></div>
+
                 </div>
+
                 
+
                 <div class="p-8 sm:p-12 lg:p-16 overflow-y-auto custom-scroll-content flex-1 relative z-10">
+
                     <div class="text-center relative z-10">
+
                         <span id="courseSubtitle" class="inline-block bg-lightblue/10 border border-lightblue/30 text-lightblue px-4 py-1.5 rounded-lg text-xs font-bold tracking-widest uppercase mb-4"></span>
+
                         <h1 id="courseTitle" class="font-heading text-3xl lg:text-5xl font-black text-white uppercase tracking-tight mb-6 drop-shadow-lg"></h1>
+
                         <p id="courseDesc" class="text-gray-300 leading-relaxed font-light text-base lg:text-lg max-w-3xl mx-auto mb-8"></p>
+
                         
+
                         <div id="courseTags" class="flex flex-wrap justify-center gap-3 mb-12"></div>
+
                     </div>
+
                 </div>
+
+
 
                 <div class="bg-[#050914] p-6 sm:p-8 border-t border-white/5 flex justify-center items-center shrink-0">
+
                     <a id="courseCheckoutBtn" href="#" target="_blank" aria-label="Ir para a página de pagamento e garantir vaga" class="inline-flex items-center justify-center gap-3 bg-orange text-white hover:bg-white hover:text-navy px-10 py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(244,123,32,0.4)] whitespace-nowrap">
+
                         <span id="courseCheckoutBtnText">Garantir Minha Vaga</span> <i id="courseCheckoutBtnIcon" class="fas fa-check-circle" aria-hidden="true"></i>
+
                     </a>
+
                 </div>
 
+
+
             </div>
+
         </main>
+
     </div>
 
+
+
     <script>
+
         function checkReveal() {
+
             var reveals = document.querySelectorAll('.blur-reveal');
+
             for (var i = 0; i < reveals.length; i++) {
+
                 var windowHeight = window.innerHeight;
+
                 var elementTop = reveals[i].getBoundingClientRect().top;
+
                 if (elementTop < windowHeight - 30) {
+
                     reveals[i].classList.add('active');
+
                 }
+
             }
+
         }
+
         window.addEventListener('scroll', checkReveal);
+
         window.addEventListener('load', checkReveal);
 
+
+
         function toggleFaq(element) {
+
             element.classList.toggle('active');
+
             let icon = element.querySelector('.faq-icon');
+
             if(element.classList.contains('active')){
+
                 element.querySelector('h3').setAttribute('aria-expanded', 'true');
+
             } else {
+
                 element.querySelector('h3').setAttribute('aria-expanded', 'false');
+
             }
+
         }
+
+
 
         document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+
             const menu = document.getElementById('mobileMenu');
+
             const btn = document.getElementById('mobileMenuBtn');
+
             if(menu.classList.contains('hidden-menu')) {
+
                 menu.classList.remove('hidden-menu');
+
                 menu.classList.add('active-menu');
+
                 btn.setAttribute('aria-expanded', 'true');
+
             } else {
+
                 menu.classList.remove('active-menu');
+
                 menu.classList.add('hidden-menu');
+
                 btn.setAttribute('aria-expanded', 'false');
+
             }
+
         });
+
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
+
             link.addEventListener('click', () => {
+
                 document.getElementById('mobileMenu').classList.add('hidden-menu');
+
                 document.getElementById('mobileMenu').classList.remove('active-menu');
+
                 document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
+
             });
+
         });
 
-        // ==========================================
-        // DADOS DOS PROFESSORES (ATUALIZADOS)
-        // ==========================================
-        const teachersData = {
-            'carlos-vinicius': {
-                name: 'Carlos Vinícius Alves Ribeiro',
-                role: 'Promotor de Justiça - MP/GO',
-                specialty: 'Especialista em Direito Administrativo e Direito de Estado',
-                bio: 'Promotor de Justiça do Ministério Público do Estado de Goiás (MPGO), com ampla atuação acadêmica e em órgãos de cúpula do Ministério Público brasileiro. Doutor e Mestre em Direito Administrativo pela Universidade de São Paulo (USP), com foco no Direito de Estado. Atua como professor em instituições de destaque, como a PUC-GO, a UFG, a UEG, a Escola Superior da Advocacia (OAB-GO e OAB-SP) e a Fundação Escola Superior do Ministério Público. Foi secretário-geral do Conselho Nacional do Ministério Público (CNMP), integra comissões estratégicas do órgão e, em 2025, foi aprovado pelo Senado Federal para compor o Conselho Nacional de Justiça (CNJ).',
-                img: 'assets/CARLOS VINICIUS.JPG (1).jpeg'
-            },
-            'carlos-andre': {
-                name: 'Carlos André',
-                role: 'Fundador Inst. Carlos André',
-                specialty: 'Especialista em Língua Portuguesa e Redação para Concursos',
-                bio: 'Graduado em Direito pela Pontifícia Universidade Católica de Goiás (PUC-GO), é cofundador do Instituto Carlos André, professor em instituições de referência na graduação, pós-graduação e formação jurídica, além de atuar como comentarista e articulista de Língua Portuguesa. Foi representante da OAB Nacional no Senado Federal, integra grupos técnicos voltados à redação jurídica e ocupa posição de destaque na OAB Goiás. É autor dos livros A Nova Ortografia da Língua Portuguesa e Na Ponta da Língua, além de desenvolver pesquisas de mestrado nas áreas de Gramática, Linguística e Letras.',
-                img: 'assets/CARLOS ANDRE.JPG (1).jpeg'
-            },
-            'reinaldo-alves': {
-                name: 'Reinaldo Alves',
-                role: 'Desembargador - TJ/GO',
-                specialty: 'Especialista em Direito Empresarial',
-                bio: 'Ingressou na magistratura em 1991. Atuou nas comarcas de Edeia, Cristalina, Rio Verde e Goiânia. Exerceu as funções de juiz substituto em segundo grau e juiz auxiliar da presidência do TJGO por três gestões consecutivas. Desembargador no Tribunal de Justiça do Estado de Goiás. Mestre em Direito Empresarial pela Universidade de Franca.',
-                img: 'assets/REINALDO.JPG (1).jpeg'
-            },
-            'wilson-dias': {
-                name: 'Wilson da Silva Dias',
-                role: 'Desembargador - TJ/GO',
-                specialty: 'Especialista em Direito Processual Penal',
-                bio: 'Graduado em Direito pelo Centro Universitário de Brasília (1991). Ingressou na magistratura em 1992 como Juiz Substituto do Estado de Goiás, atuando em diversas comarcas. Presidente da Associação dos Magistrados de Goiás (2006–2008) e Vice-Presidente da Associação dos Magistrados Brasileiros (2007–2010 e 2014–2016). Mestre em Direito, Relações Internacionais e Desenvolvimento pela PUC-GO, e Mestre em Defesa e Segurança Hemisférica pelo Inter-American Defense College (EUA). Juiz Auxiliar da Presidência do CNJ (2009–2010) e do TJGO (2013). Diretor do Foro da Comarca de Goiânia (2015–2017). Professor de Direito Processual Penal na ESMEG. Titular da VEPEMA de Goiânia-GO.',
-                img: 'assets/WILSON.JPG (1).jpeg'
-            },
-            'guilherme-carreira': {
-                name: 'Guilherme Carreira',
-                role: 'Juiz de Direito - TJ/GO',
-                specialty: 'Especialista em Direito Processual Civil',
-                bio: 'Juiz de Direito no Estado de Goiás. Possui graduação em Direito pela Universidade Estadual Paulista Júlio de Mesquita Filho (UNESP - 2005). É especialista em Direito Processual Civil e em Direito Tributário pela PUC-SP (COGEAE). Mestre em Direito Processual Civil pela Pontifícia Universidade Católica de São Paulo (PUC - SP). Doutor em direito constitucional pelo IDP. Professor de direito processual civil da Unicerrado (Goiatuba-GO). Professor da ESMEG (Escola Superior da Magistratura de Goiás) e da EJUG (Escola Judicial de Goiás). Membro da ABDPro.',
-                img: 'assets/GUILHERME.JPG (1).jpeg'
-            },
-            'danyllo-luiz': {
-                name: 'Danyllo Luiz Guimarães',
-                role: 'Assessor Jurídico - TJ/GO',
-                specialty: 'Especialista em Direito Penal e Processual Penal',
-                bio: 'Graduado em Direito pela PUC-Goiás. Advogado Licenciado. Especializado em Direito Penal e Processo Penal pela Universidade Cândido Mendes (RJ). Pós-Graduando em Direito Civil e Processo Civil pela Escola Judicial do Estado de Goiás. Professor de Processo Penal em cursos preparatórios para concursos públicos. Ex-Assessor Jurídico de Juiz de Direito, de Juiz Auxiliar da Presidência e da Corregedoria-Geral de Justiça de Goiás. Ex-Chefe de Gabinete da Diretoria do Foro de Goiânia. Atualmente assessora Juiz Substituto do Segundo Grau do TJGO.',
-                img: 'assets/DANYLLO.JPG (1).jpeg'
-            },
-            'lucas-fernandes': {
-                name: 'Lucas Fernandes de Andrade',
-                role: 'Advogado',
-                specialty: 'Especializado em Direito Público e Tributário',
-                bio: 'Advogado e contador. Especializado em Direito Público e em Direito Tributário. Mestre em Direito Constitucional Econômico.',
-                img: 'assets/Dr Lucas.JPG.jpeg' 
-            },
-            'patricia-bretas': {
-                name: 'Patrícia Bretas',
-                role: 'Juíza de Direito',
-                specialty: 'Especialista em Processo Penal',
-                bio: 'Ingressou na magistratura em 2007, mestre em Processo Penal e Garantismo pela Universidade de Girona (Espanha) e pós-graduada em Poder Judiciário pela FGV-Rio.',
-                img: 'assets/Patricia Bretas.JPG.jpeg' 
-            },
-            'jesus-crisostomo': {
-                name: 'Jesus Crisóstomo',
-                role: 'Juiz Federal',
-                specialty: 'Mestre em Direito Agrário',
-                bio: 'Possui graduação em Direito pela Pontifícia Universidade Católica de Goiás (1991) e mestrado em Direito Agrário pela Universidade Federal de Goiás (2003). Atualmente é Juiz Federal da Tribunal Regional Federal da 1ª Região.',
-                img: 'assets/Jesus.JPG.jpeg' 
-            },
-            'marcelo-lopes': {
-                name: 'Marcelo Lopes de Jesus',
-                role: 'Juiz de Direito',
-                specialty: 'Mestre em Direito pela UFG',
-                bio: 'Graduado em Direito e em Engenharia Civil pela UFG. Mestre em Direito pela UFG. Professor da ESMEG, da ESMP e da ESA, além do Instituto Goiano de Direito e da Rede Juris. Coautor do Manual de Direito Civil pela Editora Juspodivm. Titular do Juizado Especial Cível e Criminal de Senador Canedo.',
-                img: 'assets/MARCELO.JPG (1).jpeg' 
-            },
-            'fernando-samuel': {
-                name: 'Fernando Samuel',
-                role: 'Juiz de Direito TJGO',
-                specialty: 'Mestre em Direito Constitucional',
-                bio: 'Mestre em Direito Constitucional pelo IDP (2017). Possui graduação em Direito pela Universidade de Uberaba (2003). Atualmente é juiz de direito do Tribunal de Justiça do Estado de Goiás (desde 2008), Coordenador do GMF, Coordenador do Programa Pró-Júri. Tem experiência na área de Direito, com ênfase em Direito Constitucional, Processual Penal, Execução Penal e Direito Penal.',
-                img: 'assets/Fernando Samuel.JPG.jpeg' 
-            },
-            'ana-claudia': {
-                name: 'Ana Claudia Veloso',
-                role: 'Juíza de Direito TJGO',
-                specialty: 'Mestre em Ciências Jurídico-Políticas',
-                bio: 'Possui graduação em Direito pela PUC-Goiás (1984) e mestrado em Ciências Juridico-Políticas pela Universidade de Coimbra (1993), Doutoranda em Direito Constitucional pelo IDP. Atualmente é Juíza de Direito do TJGO, titular do 1 Juízo das Garantias da Comarca de Goiânia, membro do GMF/GO e Juíza Auxiliar da Presidência no TRE-GO.',
-                img: 'assets/Ana Claudia.JPG.jpeg' 
-            },
-            'vanessa-nogueira': {
-                name: 'Vanessa Nogueira Antunes Ferreira',
-                role: 'Juíza de Direito TJGO',
-                specialty: 'Especialista em Processo Civil e Civil',
-                bio: 'Bacharel em Direito pela UFG, em 2004. Possui título de especialista em Direito Processual Civil e Direito Civil. Atualmente, cursa mestrado em Direito Agrário pela UFG. Foi juíza de direito do TJRS desde 2014, onde participou de permuta e atualmente exerce a Magistratura no TJGO. Tendo sido servidora pública do TJGO, de 2001 a 2014.',
-                img: 'assets/Vanessa Nogueira.JPG.jpeg' 
-            },
-            'michele-riad': {
-                name: 'Michele Riad Iskandar',
-                role: 'Assessora Jurídica',
-                specialty: 'Pós-graduada em Civil e Processual Civil',
-                bio: 'Graduada em Direito pela Universidade Salgado de Oliveira. Pós-graduada em Direito Civil e Processual Civil pela Universidade Cândido Mendes. Assistente Executiva de Desembargador no TJGO. Mediadora e Conciliadora certificada pelo CNJ. Instrutora nos cursos de formação de mediadores judiciais, conciliadores e nas Oficinas de Divórcio e Parentalidade.',
-                img: 'assets/Michele Riad.JPG.jpeg' 
-            },
-            'pedro-ivo': {
-                name: 'Pedro Ivo',
-                role: 'Assessor Jurídico',
-                specialty: 'Especialista em Direito Processual',
-                bio: 'Graduado em Direito pela PUC-Goiás. Especialista em Direito Processual pela UniRV. Assessor Jurídico do Tribunal de Justiça do Estado de Goiás.',
-                img: 'assets/Pedro ivo.JPG.jpeg' 
-            },
-            'abrao-amisy': {
-                name: 'Abrão Amisy',
-                role: 'Procurador de Justiça',
-                specialty: 'Mestre em Razonamiento Probatório',
-                bio: 'Possui graduação em Direito pela UFU (1989), mestrado em Ciências Jurídicas pela Universidade Autónoma de Lisboa (2020), mestrado em Educação pela PUC Goiás (2002) e mestrado em Razonamiento Probatório pela Universitat de Girona (2019). Atuando principalmente nos seguintes temas: Paternalismo Epistêmico.',
-                img: 'assets/Abrao Amisy.JPG.jpeg' 
-            }
-        };
+
 
         // ==========================================
-        // DADOS DOS CURSOS (ATUALIZADOS)
+
+        // DADOS DOS PROFESSORES (ATUALIZADOS)
+
         // ==========================================
-        const coursesData = {
-            'curso-anpp': {
-                title: 'Acordo de Não Persecução Penal',
-                subtitle: 'Teoria, prática e estratégia',
-                tags: ['Certificado OAB-compatible'],
-                desc: 'Do requisito legal à homologação judicial. Um curso construído para advogados que precisam dominar o ANPP como instrumento real de defesa, não apenas como conceito.',
-                img: 'assets/Anpp (1).png',
-                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/9',
-                isPreLaunch: false,
-                learnings: [
-                    { title: 'Requisitos e vedações', text: 'Análise cirúrgica do art. 28-A do CPP. Quem pode pleitear, quem está excluído e como argumentar nas zonas cinzentas.' },
-                    { title: 'Redação do acordo', text: 'Cláusulas essenciais, condições negociáveis e armadilhas contratuais. Modelos comentados com análise de casos reais.' },
-                    { title: 'Homologação e recusa', text: 'Como se comportar na audiência. Fundamentos para impugnar recusas ministeriais e estratégias recursais.' },
-                    { title: 'Rescisão e cumprimento', text: 'Execução das condições, descumprimento e seus efeitos. Como preservar o cliente em caso de controvérsia superveniente.' }
-                ],
-                modules: [
-                    { id: 'M1', title: 'Origem e fundamentos constitucionais', text: 'Justiça negocial no sistema acusatório. O ANPP entre o princípio da obrigatoriedade e a discricionariedade regrada.' },
-                    { id: 'M2', title: 'Pressupostos objetivos e subjetivos', text: 'Pena mínima, crimes excluídos, violência doméstica, reincidência e personalidade do agente. Análise jurisprudencial aprofundada.' },
-                    { id: 'M3', title: 'A negociação com o Ministério Público', text: 'Técnica de abordagem, momento ideal e como construir o contexto favorável antes de sentar à mesa.' },
-                    { id: 'M4', title: 'Redação e cláusulas do acordo', text: 'Workshop prático com modelos. Condições mínimas, condições facultativas e como redigir para proteger o investigado.' },
-                    { id: 'M5', title: 'Audiência de homologação e atuação judicial', text: 'Papel do juiz, recusa fundamentada, recurso cabível e legitimidade do investigado para impugnar recusa ministerial.' },
-                    { id: 'M6', title: 'Execução, descumprimento e efeitos', text: 'Cumprimento integral, extinção da punibilidade, rescisão e retomada da persecução. STJ e STF: estado atual da jurisprudência.' },
-                    { id: 'M7', title: 'Casos práticos e simulações', text: 'Três estudos de caso com peças reais anonimizadas. Simulação de negociação e audiência com feedback gravado.' }
-                ],
-                audience: ['Advogados criminalistas', 'Defensores públicos', 'Advogados que atuam pontualmente em penal', 'Pós-graduandos em direito penal', 'Membros do MP que querem o outro lado', 'Assessores jurídicos']
+
+        const teachersData = {
+
+            'carlos-vinicius': {
+
+                name: 'Carlos Vinícius Alves Ribeiro',
+
+                role: 'Promotor de Justiça - MP/GO',
+
+                specialty: 'Especialista em Direito Administrativo e Direito de Estado',
+
+                bio: 'Promotor de Justiça do Ministério Público do Estado de Goiás (MPGO), com ampla atuação acadêmica e em órgãos de cúpula do Ministério Público brasileiro. Doutor e Mestre em Direito Administrativo pela Universidade de São Paulo (USP), com foco no Direito de Estado. Atua como professor em instituições de destaque, como a PUC-GO, a UFG, a UEG, a Escola Superior da Advocacia (OAB-GO e OAB-SP) e a Fundação Escola Superior do Ministério Público. Foi secretário-geral do Conselho Nacional do Ministério Público (CNMP), integra comissões estratégicas do órgão e, em 2025, foi aprovado pelo Senado Federal para compor o Conselho Nacional de Justiça (CNJ).',
+
+                img: 'assets/CARLOS VINICIUS.JPG (1).jpeg'
+
             },
-            'curso-execucao': {
-                title: 'Execução Penal',
-                subtitle: 'De Alta Performance',
-                tags: ['Certificado OAB-compatible',],
-                desc: 'Domínio prático das teses e dos incidentes executórios. A execução penal deixou de ser uma área meramente procedimental para se tornar um dos campos mais dinâmicos e estratégicos do Direito Criminal.',
-                img: 'assets/Penal.png',
-                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/10',
-                isPreLaunch: false,
-                learnings: [
-                    { title: 'Progressão de regime', text: 'Requisitos objetivos e subjetivos, exame criminológico, decisões contraditórias e como construir o pedido que o juiz aprova.' },
-                    { title: 'Livramento condicional', text: 'Pressupostos legais, causas de revogação obrigatória e facultativa, e estratégias de defesa na audiência admonitória.' },
-                    { title: 'Remição e benefícios', text: 'Remição por trabalho e estudo, saída temporária, regime aberto e prisão domiciliar. Mapeamento das hipóteses e dos recursos cabíveis.' },
-                    { title: 'Incidentes e recursos', text: 'Agravo em execução, habeas corpus, conversão de pena, unificação de penas e reconhecimento de prescrição da pretensão executória.' }
-                ],
-                modules: [
-                    { id: 'M1', title: 'A Lei de Execução Penal e o juízo da execução', text: 'Competência, estrutura do juízo, legitimidade para requerer e o papel do MP, da defesa e do condenado no processo de execução.' },
-                    { id: 'M2', title: 'Regimes de cumprimento de pena', text: 'Fechado, semiaberto e aberto. Estabelecimentos penais, direitos do preso e obrigações do Estado. O que fazer quando a vaga não existe.' },
-                    { id: 'M3', title: 'Progressão de regime na prática', text: 'Fração aplicável, crimes hediondos, réu primário e reincidente. Exame criminológico: quando é exigível e como impugnar a exigência indevida.' },
-                    { id: 'M4', title: 'Remição por trabalho e por estudo', text: 'Cálculo, documentação necessária, extensão ao ensino superior e às atividades culturais. Súmulas do STJ e jurisprudência atual.' },
-                    { id: 'M5', title: 'Saída temporária e prisão domiciliar', text: 'Requisitos, monitoração eletrônica, revogação e reestabelecimento. Prisão domiciliar humanitária: doenças, maternidade e idade avançada.' },
-                    { id: 'M6', title: 'Livramento condicional e sursis', text: 'Distinção, requisitos, condições impostas, prorrogação e extinção da pena. Defesa na audiência de revogação.' },
-                    { id: 'M7', title: 'Incidentes de execução', text: 'Falta disciplinar grave, regressão cautelar, unificação de penas e detração. Como agir em cada fase e quais provas reunir.' },
-                    { id: 'M8', title: 'Recursos e habeas corpus em execução', text: 'Agravo em execução: prazo, cabimento e efeito suspensivo. HC como via alternativa. Revisão criminal e seus limites.' },
-                    { id: 'M9', title: 'Casos práticos e peças comentadas', text: 'Pedido de progressão, agravo em execução e HC em casos reais anonimizados. Análise de erros comuns e estratégias que funcionam.' }
-                ],
-                audience: ['Advogados criminalistas', 'Defensores públicos', 'Advogados que atendem familiares de presos', 'Pós-graduandos em direito penal', 'Servidores do sistema penitenciário', 'Assessores jurídicos']
+
+            'carlos-andre': {
+
+                name: 'Carlos André',
+
+                role: 'Fundador Inst. Carlos André',
+
+                specialty: 'Especialista em Língua Portuguesa e Redação para Concursos',
+
+                bio: 'Graduado em Direito pela Pontifícia Universidade Católica de Goiás (PUC-GO), é cofundador do Instituto Carlos André, professor em instituições de referência na graduação, pós-graduação e formação jurídica, além de atuar como comentarista e articulista de Língua Portuguesa. Foi representante da OAB Nacional no Senado Federal, integra grupos técnicos voltados à redação jurídica e ocupa posição de destaque na OAB Goiás. É autor dos livros A Nova Ortografia da Língua Portuguesa e Na Ponta da Língua, além de desenvolver pesquisas de mestrado nas áreas de Gramática, Linguística e Letras.',
+
+                img: 'assets/CARLOS ANDRE.JPG (1).jpeg'
+
             },
-            'curso-recursos': {
-                title: 'Recursos para Tribunais',
-                subtitle: 'Teoria, prática e estratégia',
-                tags: [ 'Certificado OAB-compatible',],
-                desc: 'Da construção da tese recursal ao julgamento nos tribunais. Um curso desenvolvido para capacitar advogados e operadores do Direito na elaboração de recursos consistentes, técnicas de sustentação jurídica e estratégias que aumentam as chances de êxito em segunda instância e nos tribunais superiores.',
-                img: 'assets/Recursos T.png',
-                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/15',
-                isPreLaunch: false,
-                learnings: [
-                    { title: 'Arquitetura Recursal', text: 'Como estruturar uma peça recursal que realmente é lida pelos desembargadores e ministros. Técnicas de visual law e objetividade.' },
-                    { title: 'Sustentação Oral e Memoriais', text: 'A arte da persuasão nas cortes. Como preparar memoriais efetivos e dominar a tribuna durante o julgamento.' },
-                    { title: 'Recursos Excepcionais', text: 'O funil do STJ e STF. Dominando os requisitos de admissibilidade: prequestionamento, repercussão geral e transcendência.' },
-                    { title: 'Gestão de Precedentes', text: 'Como utilizar o sistema de precedentes vinculantes a favor do seu cliente na elaboração do recurso.' }
-                ],
-                modules: [
-                    { id: 'M1', title: 'Teoria Geral dos Recursos', text: 'Princípios fundamentais, juízos de admissibilidade e de mérito, efeitos recursais e pressupostos processuais sob a ótica dos tribunais.' },
-                    { id: 'M2', title: 'Recursos Ordinários na Prática', text: 'Apelação, Agravo de Instrumento e Embargos de Declaração. Hipóteses de cabimento, prazos, preparo e elaboração estratégica.' },
-                    { id: 'M3', title: 'A Dinâmica dos Tribunais', text: 'Como funciona a pauta, a distribuição, a função do relator e o colegiado. Estratégias de despacho com desembargadores.' },
-                    { id: 'M4', title: 'Recurso Especial (STJ)', text: 'Hipóteses constitucionais, súmulas restritivas, técnicas de prequestionamento e superação de óbices na admissibilidade.' },
-                    { id: 'M5', title: 'Recurso Extraordinário (STF)', text: 'A repercussão geral na prática processual, matérias de ordem constitucional e a construção da tese para o STF.' },
-                    { id: 'M6', title: 'Sustentação Oral e Memoriais', text: 'Preparação do briefing, tempo de fala, controle emocional, postura na tribuna e elaboração de memoriais de alto impacto.' }
-                ],
-                audience: ['Advogados atuantes em instâncias superiores', 'Procuradores', 'Assessores de Desembargadores', 'Profissionais de contencioso cível e penal', 'Pós-graduandos em Processo']
+
+            'reinaldo-alves': {
+
+                name: 'Reinaldo Alves',
+
+                role: 'Desembargador - TJ/GO',
+
+                specialty: 'Especialista em Direito Empresarial',
+
+                bio: 'Ingressou na magistratura em 1991. Atuou nas comarcas de Edeia, Cristalina, Rio Verde e Goiânia. Exerceu as funções de juiz substituto em segundo grau e juiz auxiliar da presidência do TJGO por três gestões consecutivas. Desembargador no Tribunal de Justiça do Estado de Goiás. Mestre em Direito Empresarial pela Universidade de Franca.',
+
+                img: 'assets/REINALDO.JPG (1).jpeg'
+
             },
-            'curso-tjgo': {
-                title: 'Analista Judiciário TJGO',
-                subtitle: 'Aprovação do zero ao cargo',
-                tags: ['Prova objetiva + discursiva', 'Certificado de conclusão',],
-                desc: 'Todas as matérias do edital em um só lugar. Curso estruturado para as duas áreas Judiciária e Apoio Judiciário e Administrativo com foco no conteúdo exigido pela banca examinadora.',
-                img: 'assets/Analista J.png',
-                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/4',
-                isPreLaunch: false,
-                learnings: [
-                    { title: 'Língua Portuguesa', text: 'Interpretação textual, gramática, coesão e coerência. Gêneros textuais oficiais e redação no padrão exigido pela banca. 15 questões na prova.' },
-                    { title: 'História e Geografia de Goiás', text: 'Aspectos históricos, econômicos, políticos e culturais de Goiás. Atualidades goianas. 5 questões de alto aproveitamento com preparação correta.' },
-                    { title: 'Legislação Complementar', text: 'Regimento Interno do TJGO, Lei 9.129/81, Resolução CNJ 325/2020, Constituição Estadual e Código de Organização Judiciária. 10 questões com peso 2.' },
-                    { title: 'Conhecimentos Específicos', text: 'Direito Constitucional, Administrativo, Civil, Proc. Civil, Penal e Proc. Penal ou Administração Pública. 30 questões com peso 2.' }
-                ],
-                modules: [
-                    { id: 'M1', title: 'Língua Portuguesa', text: 'Leitura e análise de textos. Mecanismos de produção de sentidos. Gêneros textuais oficiais: ofício, memorando, e-mail. Morfossintaxe, concordância, regência, ortografia e acentuação.' },
-                    { id: 'M2', title: 'História e Geografia de Goiás', text: 'História social, econômica e política de Goiás. Aspectos físicos: hidrografia, clima, relevo e vegetação. Atualidades goianas.' },
-                    { id: 'M3', title: 'Legislação Complementar', text: 'Regimento Interno do TJGO. Lei Estadual 9.129/81. Resolução CNJ 325/2020. Constituição do Estado de Goiás. Código de Organização Judiciária de Goiás.' },
-                    { id: 'M4', title: 'Direito Constitucional (Área Judiciária)', text: 'Constitucionalismo brasileiro. Controle de constitucionalidade. Direitos e garantias fundamentais. Organização dos Poderes. Poder Judiciário: estrutura, competências, CNJ.' },
-                    { id: 'M5', title: 'Direito Administrativo (Área Judiciária)', text: 'Princípios constitucionais. Poderes da Administração. Atos administrativos. Servidores públicos (Lei 20.756/2020). Licitação e contratos (Lei 14.133/2021). Improbidade.' },
-                    { id: 'M6', title: 'Direito Civil (Área Judiciária)', text: 'LINDB. Pessoas, bens e fatos jurídicos. Negócio jurídico. Prescrição e decadência. Obrigações e contratos. Responsabilidade civil. Direitos reais.' },
-                    { id: 'M7', title: 'Direito Processual Civil (Área Judiciária)', text: 'Normas e competência. Litisconsórcio. Tutela provisória. Petição inicial e resposta. Provas e audiência. Sentença e recursos. Cumprimento de sentença.' },
-                    { id: 'M8', title: 'Direito Penal (Área Judiciária)', text: 'Princípios penais. Teoria do crime e culpabilidade. Penas. Crimes em espécie. Legislação especial: hediondos, violência doméstica, organizações criminosas.' },
-                    { id: 'M9', title: 'Direito Processual Penal (Área Judiciária)', text: 'Princípios. Inquérito policial. Provas e prisões cautelares. Procedimentos ordinário e sumário. Tribunal do Júri. Recursos e habeas corpus. Execução Penal.' },
-                    { id: 'M10', title: 'Noções de Direito Const. e Adm. (Área de Apoio)', text: 'Direitos e garantias fundamentais. Princípios constitucionais. Poder Judiciário. Atos administrativos. Contratos e licitação.' },
-                    { id: 'M11', title: 'Noções de Administração Pública (Área de Apoio)', text: 'Paradigmas da Administração Pública. Governança e accountability. Planejamento (PPA, LDO, LOA). Transparência e acesso à informação. Gestão por processos.' },
-                    { id: 'M12', title: 'Prova Discursiva e Simulados', text: 'Técnica de redação dissertativo-argumentativa. Simulações com feedback. Simulados completos no padrão do edital com gabarito comentado.' }
-                ],
-                audience: ['Bacharéis em direito (Área Judiciária)', 'Graduados em qualquer área (Área de Apoio)', 'Candidatos sem experiência em concurso', 'Candidatos que já tentaram e querem refazer a preparação', 'Servidores comissionados buscando estabilidade', 'Recém-formados que querem ingressar no TJGO']
+
+            'wilson-dias': {
+
+                name: 'Wilson da Silva Dias',
+
+                role: 'Desembargador - TJ/GO',
+
+                specialty: 'Especialista em Direito Processual Penal',
+
+                bio: 'Graduado em Direito pelo Centro Universitário de Brasília (1991). Ingressou na magistratura em 1992 como Juiz Substituto do Estado de Goiás, atuando em diversas comarcas. Presidente da Associação dos Magistrados de Goiás (2006–2008) e Vice-Presidente da Associação dos Magistrados Brasileiros (2007–2010 e 2014–2016). Mestre em Direito, Relações Internacionais e Desenvolvimento pela PUC-GO, e Mestre em Defesa e Segurança Hemisférica pelo Inter-American Defense College (EUA). Juiz Auxiliar da Presidência do CNJ (2009–2010) e do TJGO (2013). Diretor do Foro da Comarca de Goiânia (2015–2017). Professor de Direito Processual Penal na ESMEG. Titular da VEPEMA de Goiânia-GO.',
+
+                img: 'assets/WILSON.JPG (1).jpeg'
+
+            },
+
+            'guilherme-carreira': {
+
+                name: 'Guilherme Carreira',
+
+                role: 'Juiz de Direito - TJ/GO',
+
+                specialty: 'Especialista em Direito Processual Civil',
+
+                bio: 'Juiz de Direito no Estado de Goiás. Possui graduação em Direito pela Universidade Estadual Paulista Júlio de Mesquita Filho (UNESP - 2005). É especialista em Direito Processual Civil e em Direito Tributário pela PUC-SP (COGEAE). Mestre em Direito Processual Civil pela Pontifícia Universidade Católica de São Paulo (PUC - SP). Doutor em direito constitucional pelo IDP. Professor de direito processual civil da Unicerrado (Goiatuba-GO). Professor da ESMEG (Escola Superior da Magistratura de Goiás) e da EJUG (Escola Judicial de Goiás). Membro da ABDPro.',
+
+                img: 'assets/GUILHERME.JPG (1).jpeg'
+
+            },
+
+            'danyllo-luiz': {
+
+                name: 'Danyllo Luiz Guimarães',
+
+                role: 'Assessor Jurídico - TJ/GO',
+
+                specialty: 'Especialista em Direito Penal e Processual Penal',
+
+                bio: 'Graduado em Direito pela PUC-Goiás. Advogado Licenciado. Especializado em Direito Penal e Processo Penal pela Universidade Cândido Mendes (RJ). Pós-Graduando em Direito Civil e Processo Civil pela Escola Judicial do Estado de Goiás. Professor de Processo Penal em cursos preparatórios para concursos públicos. Ex-Assessor Jurídico de Juiz de Direito, de Juiz Auxiliar da Presidência e da Corregedoria-Geral de Justiça de Goiás. Ex-Chefe de Gabinete da Diretoria do Foro de Goiânia. Atualmente assessora Juiz Substituto do Segundo Grau do TJGO.',
+
+                img: 'assets/DANYLLO.JPG (1).jpeg'
+
+            },
+
+            'lucas-fernandes': {
+
+                name: 'Lucas Fernandes de Andrade',
+
+                role: 'Advogado',
+
+                specialty: 'Especializado em Direito Público e Tributário',
+
+                bio: 'Advogado e contador. Especializado em Direito Público e em Direito Tributário. Mestre em Direito Constitucional Econômico.',
+
+                img: 'assets/Dr Lucas.JPG.jpeg' 
+
+            },
+
+            'patricia-bretas': {
+
+                name: 'Patrícia Bretas',
+
+                role: 'Juíza de Direito',
+
+                specialty: 'Especialista em Processo Penal',
+
+                bio: 'Ingressou na magistratura em 2007, mestre em Processo Penal e Garantismo pela Universidade de Girona (Espanha) e pós-graduada em Poder Judiciário pela FGV-Rio.',
+
+                img: 'assets/Patricia Bretas.JPG.jpeg' 
+
+            },
+
+            'jesus-crisostomo': {
+
+                name: 'Jesus Crisóstomo',
+
+                role: 'Juiz Federal',
+
+                specialty: 'Mestre em Direito Agrário',
+
+                bio: 'Possui graduação em Direito pela Pontifícia Universidade Católica de Goiás (1991) e mestrado em Direito Agrário pela Universidade Federal de Goiás (2003). Atualmente é Juiz Federal da Tribunal Regional Federal da 1ª Região.',
+
+                img: 'assets/Jesus.JPG.jpeg' 
+
+            },
+
+            'marcelo-lopes': {
+
+                name: 'Marcelo Lopes de Jesus',
+
+                role: 'Juiz de Direito',
+
+                specialty: 'Mestre em Direito pela UFG',
+
+                bio: 'Graduado em Direito e em Engenharia Civil pela UFG. Mestre em Direito pela UFG. Professor da ESMEG, da ESMP e da ESA, além do Instituto Goiano de Direito e da Rede Juris. Coautor do Manual de Direito Civil pela Editora Juspodivm. Titular do Juizado Especial Cível e Criminal de Senador Canedo.',
+
+                img: 'assets/MARCELO.JPG (1).jpeg' 
+
+            },
+
+            'fernando-samuel': {
+
+                name: 'Fernando Samuel',
+
+                role: 'Juiz de Direito TJGO',
+
+                specialty: 'Mestre em Direito Constitucional',
+
+                bio: 'Mestre em Direito Constitucional pelo IDP (2017). Possui graduação em Direito pela Universidade de Uberaba (2003). Atualmente é juiz de direito do Tribunal de Justiça do Estado de Goiás (desde 2008), Coordenador do GMF, Coordenador do Programa Pró-Júri. Tem experiência na área de Direito, com ênfase em Direito Constitucional, Processual Penal, Execução Penal e Direito Penal.',
+
+                img: 'assets/Fernando Samuel.JPG.jpeg' 
+
+            },
+
+            'ana-claudia': {
+
+                name: 'Ana Claudia Veloso',
+
+                role: 'Juíza de Direito TJGO',
+
+                specialty: 'Mestre em Ciências Jurídico-Políticas',
+
+                bio: 'Possui graduação em Direito pela PUC-Goiás (1984) e mestrado em Ciências Juridico-Políticas pela Universidade de Coimbra (1993), Doutoranda em Direito Constitucional pelo IDP. Atualmente é Juíza de Direito do TJGO, titular do 1 Juízo das Garantias da Comarca de Goiânia, membro do GMF/GO e Juíza Auxiliar da Presidência no TRE-GO.',
+
+                img: 'assets/Ana Claudia.JPG.jpeg' 
+
+            },
+
+            'vanessa-nogueira': {
+
+                name: 'Vanessa Nogueira Antunes Ferreira',
+
+                role: 'Juíza de Direito TJGO',
+
+                specialty: 'Especialista em Processo Civil e Civil',
+
+                bio: 'Bacharel em Direito pela UFG, em 2004. Possui título de especialista em Direito Processual Civil e Direito Civil. Atualmente, cursa mestrado em Direito Agrário pela UFG. Foi juíza de direito do TJRS desde 2014, onde participou de permuta e atualmente exerce a Magistratura no TJGO. Tendo sido servidora pública do TJGO, de 2001 a 2014.',
+
+                img: 'assets/Vanessa Nogueira.JPG.jpeg' 
+
+            },
+
+            'michele-riad': {
+
+                name: 'Michele Riad Iskandar',
+
+                role: 'Assessora Jurídica',
+
+                specialty: 'Pós-graduada em Civil e Processual Civil',
+
+                bio: 'Graduada em Direito pela Universidade Salgado de Oliveira. Pós-graduada em Direito Civil e Processual Civil pela Universidade Cândido Mendes. Assistente Executiva de Desembargador no TJGO. Mediadora e Conciliadora certificada pelo CNJ. Instrutora nos cursos de formação de mediadores judiciais, conciliadores e nas Oficinas de Divórcio e Parentalidade.',
+
+                img: 'assets/Michele Riad.JPG.jpeg' 
+
+            },
+
+            'pedro-ivo': {
+
+                name: 'Pedro Ivo',
+
+                role: 'Assessor Jurídico',
+
+                specialty: 'Especialista em Direito Processual',
+
+                bio: 'Graduado em Direito pela PUC-Goiás. Especialista em Direito Processual pela UniRV. Assessor Jurídico do Tribunal de Justiça do Estado de Goiás.',
+
+                img: 'assets/Pedro ivo.JPG.jpeg' 
+
+            },
+
+            'abrao-amisy': {
+
+                name: 'Abrão Amisy',
+
+                role: 'Procurador de Justiça',
+
+                specialty: 'Mestre em Razonamiento Probatório',
+
+                bio: 'Possui graduação em Direito pela UFU (1989), mestrado em Ciências Jurídicas pela Universidade Autónoma de Lisboa (2020), mestrado em Educação pela PUC Goiás (2002) e mestrado em Razonamiento Probatório pela Universitat de Girona (2019). Atuando principalmente nos seguintes temas: Paternalismo Epistêmico.',
+
+                img: 'assets/Abrao Amisy.JPG.jpeg' 
+
             }
+
         };
+
+
+
+        // ==========================================
+
+        // DADOS DOS CURSOS (ATUALIZADOS)
+
+        // ==========================================
+
+        const coursesData = {
+
+            'curso-anpp': {
+
+                title: 'Acordo de Não Persecução Penal',
+
+                subtitle: 'Teoria, prática e estratégia',
+
+                tags: ['Certificado OAB-compatible'],
+
+                desc: 'Do requisito legal à homologação judicial. Um curso construído para advogados que precisam dominar o ANPP como instrumento real de defesa, não apenas como conceito.',
+
+                img: 'assets/Anpp (1).png',
+
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/9',
+
+                isPreLaunch: false,
+
+                learnings: [
+
+                    { title: 'Requisitos e vedações', text: 'Análise cirúrgica do art. 28-A do CPP. Quem pode pleitear, quem está excluído e como argumentar nas zonas cinzentas.' },
+
+                    { title: 'Redação do acordo', text: 'Cláusulas essenciais, condições negociáveis e armadilhas contratuais. Modelos comentados com análise de casos reais.' },
+
+                    { title: 'Homologação e recusa', text: 'Como se comportar na audiência. Fundamentos para impugnar recusas ministeriais e estratégias recursais.' },
+
+                    { title: 'Rescisão e cumprimento', text: 'Execução das condições, descumprimento e seus efeitos. Como preservar o cliente em caso de controvérsia superveniente.' }
+
+                ],
+
+                modules: [
+
+                    { id: 'M1', title: 'Origem e fundamentos constitucionais', text: 'Justiça negocial no sistema acusatório. O ANPP entre o princípio da obrigatoriedade e a discricionariedade regrada.' },
+
+                    { id: 'M2', title: 'Pressupostos objetivos e subjetivos', text: 'Pena mínima, crimes excluídos, violência doméstica, reincidência e personalidade do agente. Análise jurisprudencial aprofundada.' },
+
+                    { id: 'M3', title: 'A negociação com o Ministério Público', text: 'Técnica de abordagem, momento ideal e como construir o contexto favorável antes de sentar à mesa.' },
+
+                    { id: 'M4', title: 'Redação e cláusulas do acordo', text: 'Workshop prático com modelos. Condições mínimas, condições facultativas e como redigir para proteger o investigado.' },
+
+                    { id: 'M5', title: 'Audiência de homologação e atuação judicial', text: 'Papel do juiz, recusa fundamentada, recurso cabível e legitimidade do investigado para impugnar recusa ministerial.' },
+
+                    { id: 'M6', title: 'Execução, descumprimento e efeitos', text: 'Cumprimento integral, extinção da punibilidade, rescisão e retomada da persecução. STJ e STF: estado atual da jurisprudência.' },
+
+                    { id: 'M7', title: 'Casos práticos e simulações', text: 'Três estudos de caso com peças reais anonimizadas. Simulação de negociação e audiência com feedback gravado.' }
+
+                ],
+
+                audience: ['Advogados criminalistas', 'Defensores públicos', 'Advogados que atuam pontualmente em penal', 'Pós-graduandos em direito penal', 'Membros do MP que querem o outro lado', 'Assessores jurídicos']
+
+            },
+
+            'curso-execucao': {
+
+                title: 'Execução Penal',
+
+                subtitle: 'De Alta Performance',
+
+                tags: ['Certificado OAB-compatible',],
+
+                desc: 'Domínio prático das teses e dos incidentes executórios. A execução penal deixou de ser uma área meramente procedimental para se tornar um dos campos mais dinâmicos e estratégicos do Direito Criminal.',
+
+                img: 'assets/Penal.png',
+
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/10',
+
+                isPreLaunch: false,
+
+                learnings: [
+
+                    { title: 'Progressão de regime', text: 'Requisitos objetivos e subjetivos, exame criminológico, decisões contraditórias e como construir o pedido que o juiz aprova.' },
+
+                    { title: 'Livramento condicional', text: 'Pressupostos legais, causas de revogação obrigatória e facultativa, e estratégias de defesa na audiência admonitória.' },
+
+                    { title: 'Remição e benefícios', text: 'Remição por trabalho e estudo, saída temporária, regime aberto e prisão domiciliar. Mapeamento das hipóteses e dos recursos cabíveis.' },
+
+                    { title: 'Incidentes e recursos', text: 'Agravo em execução, habeas corpus, conversão de pena, unificação de penas e reconhecimento de prescrição da pretensão executória.' }
+
+                ],
+
+                modules: [
+
+                    { id: 'M1', title: 'A Lei de Execução Penal e o juízo da execução', text: 'Competência, estrutura do juízo, legitimidade para requerer e o papel do MP, da defesa e do condenado no processo de execução.' },
+
+                    { id: 'M2', title: 'Regimes de cumprimento de pena', text: 'Fechado, semiaberto e aberto. Estabelecimentos penais, direitos do preso e obrigações do Estado. O que fazer quando a vaga não existe.' },
+
+                    { id: 'M3', title: 'Progressão de regime na prática', text: 'Fração aplicável, crimes hediondos, réu primário e reincidente. Exame criminológico: quando é exigível e como impugnar a exigência indevida.' },
+
+                    { id: 'M4', title: 'Remição por trabalho e por estudo', text: 'Cálculo, documentação necessária, extensão ao ensino superior e às atividades culturais. Súmulas do STJ e jurisprudência atual.' },
+
+                    { id: 'M5', title: 'Saída temporária e prisão domiciliar', text: 'Requisitos, monitoração eletrônica, revogação e reestabelecimento. Prisão domiciliar humanitária: doenças, maternidade e idade avançada.' },
+
+                    { id: 'M6', title: 'Livramento condicional e sursis', text: 'Distinção, requisitos, condições impostas, prorrogação e extinção da pena. Defesa na audiência de revogação.' },
+
+                    { id: 'M7', title: 'Incidentes de execução', text: 'Falta disciplinar grave, regressão cautelar, unificação de penas e detração. Como agir em cada fase e quais provas reunir.' },
+
+                    { id: 'M8', title: 'Recursos e habeas corpus em execução', text: 'Agravo em execução: prazo, cabimento e efeito suspensivo. HC como via alternativa. Revisão criminal e seus limites.' },
+
+                    { id: 'M9', title: 'Casos práticos e peças comentadas', text: 'Pedido de progressão, agravo em execução e HC em casos reais anonimizados. Análise de erros comuns e estratégias que funcionam.' }
+
+                ],
+
+                audience: ['Advogados criminalistas', 'Defensores públicos', 'Advogados que atendem familiares de presos', 'Pós-graduandos em direito penal', 'Servidores do sistema penitenciário', 'Assessores jurídicos']
+
+            },
+
+            'curso-recursos': {
+
+                title: 'Recursos para Tribunais',
+
+                subtitle: 'Teoria, prática e estratégia',
+
+                tags: [ 'Certificado OAB-compatible',],
+
+                desc: 'Da construção da tese recursal ao julgamento nos tribunais. Um curso desenvolvido para capacitar advogados e operadores do Direito na elaboração de recursos consistentes, técnicas de sustentação jurídica e estratégias que aumentam as chances de êxito em segunda instância e nos tribunais superiores.',
+
+                img: 'assets/Recursos T.png',
+
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/15',
+
+                isPreLaunch: false,
+
+                learnings: [
+
+                    { title: 'Arquitetura Recursal', text: 'Como estruturar uma peça recursal que realmente é lida pelos desembargadores e ministros. Técnicas de visual law e objetividade.' },
+
+                    { title: 'Sustentação Oral e Memoriais', text: 'A arte da persuasão nas cortes. Como preparar memoriais efetivos e dominar a tribuna durante o julgamento.' },
+
+                    { title: 'Recursos Excepcionais', text: 'O funil do STJ e STF. Dominando os requisitos de admissibilidade: prequestionamento, repercussão geral e transcendência.' },
+
+                    { title: 'Gestão de Precedentes', text: 'Como utilizar o sistema de precedentes vinculantes a favor do seu cliente na elaboração do recurso.' }
+
+                ],
+
+                modules: [
+
+                    { id: 'M1', title: 'Teoria Geral dos Recursos', text: 'Princípios fundamentais, juízos de admissibilidade e de mérito, efeitos recursais e pressupostos processuais sob a ótica dos tribunais.' },
+
+                    { id: 'M2', title: 'Recursos Ordinários na Prática', text: 'Apelação, Agravo de Instrumento e Embargos de Declaração. Hipóteses de cabimento, prazos, preparo e elaboração estratégica.' },
+
+                    { id: 'M3', title: 'A Dinâmica dos Tribunais', text: 'Como funciona a pauta, a distribuição, a função do relator e o colegiado. Estratégias de despacho com desembargadores.' },
+
+                    { id: 'M4', title: 'Recurso Especial (STJ)', text: 'Hipóteses constitucionais, súmulas restritivas, técnicas de prequestionamento e superação de óbices na admissibilidade.' },
+
+                    { id: 'M5', title: 'Recurso Extraordinário (STF)', text: 'A repercussão geral na prática processual, matérias de ordem constitucional e a construção da tese para o STF.' },
+
+                    { id: 'M6', title: 'Sustentação Oral e Memoriais', text: 'Preparação do briefing, tempo de fala, controle emocional, postura na tribuna e elaboração de memoriais de alto impacto.' }
+
+                ],
+
+                audience: ['Advogados atuantes em instâncias superiores', 'Procuradores', 'Assessores de Desembargadores', 'Profissionais de contencioso cível e penal', 'Pós-graduandos em Processo']
+
+            },
+
+            'curso-tjgo': {
+
+                title: 'Analista Judiciário TJGO',
+
+                subtitle: 'Aprovação do zero ao cargo',
+
+                tags: ['Prova objetiva + discursiva', 'Certificado de conclusão',],
+
+                desc: 'Todas as matérias do edital em um só lugar. Curso estruturado para as duas áreas Judiciária e Apoio Judiciário e Administrativo com foco no conteúdo exigido pela banca examinadora.',
+
+                img: 'assets/Analista J.png',
+
+                checkoutLink: 'https://ensinosapiens.eitvcloud.com/pages/4',
+
+                isPreLaunch: false,
+
+                learnings: [
+
+                    { title: 'Língua Portuguesa', text: 'Interpretação textual, gramática, coesão e coerência. Gêneros textuais oficiais e redação no padrão exigido pela banca. 15 questões na prova.' },
+
+                    { title: 'História e Geografia de Goiás', text: 'Aspectos históricos, econômicos, políticos e culturais de Goiás. Atualidades goianas. 5 questões de alto aproveitamento com preparação correta.' },
+
+                    { title: 'Legislação Complementar', text: 'Regimento Interno do TJGO, Lei 9.129/81, Resolução CNJ 325/2020, Constituição Estadual e Código de Organização Judiciária. 10 questões com peso 2.' },
+
+                    { title: 'Conhecimentos Específicos', text: 'Direito Constitucional, Administrativo, Civil, Proc. Civil, Penal e Proc. Penal ou Administração Pública. 30 questões com peso 2.' }
+
+                ],
+
+                modules: [
+
+                    { id: 'M1', title: 'Língua Portuguesa', text: 'Leitura e análise de textos. Mecanismos de produção de sentidos. Gêneros textuais oficiais: ofício, memorando, e-mail. Morfossintaxe, concordância, regência, ortografia e acentuação.' },
+
+                    { id: 'M2', title: 'História e Geografia de Goiás', text: 'História social, econômica e política de Goiás. Aspectos físicos: hidrografia, clima, relevo e vegetação. Atualidades goianas.' },
+
+                    { id: 'M3', title: 'Legislação Complementar', text: 'Regimento Interno do TJGO. Lei Estadual 9.129/81. Resolução CNJ 325/2020. Constituição do Estado de Goiás. Código de Organização Judiciária de Goiás.' },
+
+                    { id: 'M4', title: 'Direito Constitucional (Área Judiciária)', text: 'Constitucionalismo brasileiro. Controle de constitucionalidade. Direitos e garantias fundamentais. Organização dos Poderes. Poder Judiciário: estrutura, competências, CNJ.' },
+
+                    { id: 'M5', title: 'Direito Administrativo (Área Judiciária)', text: 'Princípios constitucionais. Poderes da Administração. Atos administrativos. Servidores públicos (Lei 20.756/2020). Licitação e contratos (Lei 14.133/2021). Improbidade.' },
+
+                    { id: 'M6', title: 'Direito Civil (Área Judiciária)', text: 'LINDB. Pessoas, bens e fatos jurídicos. Negócio jurídico. Prescrição e decadência. Obrigações e contratos. Responsabilidade civil. Direitos reais.' },
+
+                    { id: 'M7', title: 'Direito Processual Civil (Área Judiciária)', text: 'Normas e competência. Litisconsórcio. Tutela provisória. Petição inicial e resposta. Provas e audiência. Sentença e recursos. Cumprimento de sentença.' },
+
+                    { id: 'M8', title: 'Direito Penal (Área Judiciária)', text: 'Princípios penais. Teoria do crime e culpabilidade. Penas. Crimes em espécie. Legislação especial: hediondos, violência doméstica, organizações criminosas.' },
+
+                    { id: 'M9', title: 'Direito Processual Penal (Área Judiciária)', text: 'Princípios. Inquérito policial. Provas e prisões cautelares. Procedimentos ordinário e sumário. Tribunal do Júri. Recursos e habeas corpus. Execução Penal.' },
+
+                    { id: 'M10', title: 'Noções de Direito Const. e Adm. (Área de Apoio)', text: 'Direitos e garantias fundamentais. Princípios constitucionais. Poder Judiciário. Atos administrativos. Contratos e licitação.' },
+
+                    { id: 'M11', title: 'Noções de Administração Pública (Área de Apoio)', text: 'Paradigmas da Administração Pública. Governança e accountability. Planejamento (PPA, LDO, LOA). Transparência e acesso à informação. Gestão por processos.' },
+
+                    { id: 'M12', title: 'Prova Discursiva e Simulados', text: 'Técnica de redação dissertativo-argumentativa. Simulações com feedback. Simulados completos no padrão do edital com gabarito comentado.' }
+
+                ],
+
+                audience: ['Bacharéis em direito (Área Judiciária)', 'Graduados em qualquer área (Área de Apoio)', 'Candidatos sem experiência em concurso', 'Candidatos que já tentaram e querem refazer a preparação', 'Servidores comissionados buscando estabilidade', 'Recém-formados que querem ingressar no TJGO']
+
+            }
+
+        };
+
+
 
         function openSpaPage(pageId) {
+
             document.getElementById('main-site').classList.remove('block');
+
             document.getElementById('main-site').classList.add('hidden');
+
             
+
             document.getElementById('profile-page').classList.remove('block');
+
             document.getElementById('profile-page').classList.add('hidden');
+
             document.getElementById('course-page').classList.remove('block');
+
             document.getElementById('course-page').classList.add('hidden');
+
+
 
             document.getElementById(pageId).classList.remove('hidden');
+
             document.getElementById(pageId).classList.add('block');
+
             
+
             window.scrollTo(0, 0);
+
         }
+
+
 
         function closeSpaPage(returnToSection) {
+
             document.getElementById('profile-page').classList.remove('block');
+
             document.getElementById('profile-page').classList.add('hidden');
+
             document.getElementById('course-page').classList.remove('block');
+
             document.getElementById('course-page').classList.add('hidden');
+
             
+
             document.getElementById('main-site').classList.remove('hidden');
+
             document.getElementById('main-site').classList.add('block');
+
             
+
             if(returnToSection) {
+
                 document.getElementById(returnToSection).scrollIntoView({ behavior: 'instant' });
+
             }
+
         }
+
+
 
         function closeSpaPageAndScroll(sectionId) {
+
             closeSpaPage();
+
             setTimeout(() => {
+
                 document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+
             }, 100);
+
         }
+
+
 
         function openProfilePage(id) {
+
             const teacher = teachersData[id];
+
             if(!teacher) return;
+
             
+
             const imgElement = document.getElementById('profileImg');
+
             if(teacher.img && teacher.img !== '') {
+
                 imgElement.src = teacher.img;
+
                 imgElement.style.display = 'block';
+
             } else {
+
                 imgElement.style.display = 'none';
+
             }
+
+
 
             document.getElementById('profileName').textContent = teacher.name;
+
             document.getElementById('profileRole').textContent = teacher.role;
+
             document.getElementById('profileSpecialty').textContent = teacher.specialty;
+
             document.getElementById('profileBio').textContent = teacher.bio;
+
             
+
             openSpaPage('profile-page');
+
         }
+
+
 
         function openCoursePage(id) {
+
             const course = coursesData[id];
+
             if(!course) return;
 
+
+
             document.getElementById('courseTitle').textContent = course.title;
+
             document.getElementById('courseSubtitle').textContent = course.subtitle;
+
             document.getElementById('courseDesc').textContent = course.desc;
 
+
+
             const imgElement = document.getElementById('courseImg');
+
             if(imgElement && course.img) {
+
                 imgElement.src = course.img;
+
             }
+
+
 
             // ATUALIZAÇÃO DINÂMICA DO BOTÃO
+
             const checkoutBtn = document.getElementById('courseCheckoutBtn');
+
             const checkoutBtnText = document.getElementById('courseCheckoutBtnText');
+
             const checkoutBtnIcon = document.getElementById('courseCheckoutBtnIcon');
+
             
+
             if(checkoutBtn && course.checkoutLink) {
+
                 checkoutBtn.href = course.checkoutLink;
+
             } else {
+
                 checkoutBtn.href = "https://wa.me/5562992457304"; 
+
             }
+
+
 
             if(course.isPreLaunch) {
+
                 checkoutBtn.classList.remove('bg-orange');
+
                 checkoutBtn.classList.add('bg-lightblue');
+
                 checkoutBtn.style.boxShadow = '0 0 20px rgba(95,139,207,0.4)';
+
                 checkoutBtnText.textContent = "Falar com a equipe";
+
                 checkoutBtnIcon.className = "fas fa-arrow-right";
+
             } else {
+
                 checkoutBtn.classList.remove('bg-lightblue');
+
                 checkoutBtn.classList.add('bg-orange');
+
                 checkoutBtn.style.boxShadow = '0 0 20px rgba(244,123,32,0.4)';
+
                 checkoutBtnText.textContent = "Garantir Minha Vaga";
+
                 checkoutBtnIcon.className = "fas fa-check-circle";
+
             }
 
+
+
             const tagsContainer = document.getElementById('courseTags');
+
             tagsContainer.innerHTML = '';
+
             course.tags.forEach(tag => {
+
                 tagsContainer.innerHTML += `<span class="bg-white/5 border border-white/10 text-gray-300 px-4 py-1.5 rounded-full text-xs font-medium"><i class="fas fa-check text-orange mr-2" aria-hidden="true"></i>${tag}</span>`;
+
             });
+
+
 
             openSpaPage('course-page');
+
         }
 
-        // ==========================================
-        // ENVIO DO FORMULÁRIO DE LEADS (FORMSPREE)
-        // ==========================================
-        const leadForm = document.getElementById("leadForm");
-        
-        if (leadForm) {
-            leadForm.addEventListener("submit", async function(event) {
-                event.preventDefault(); // Evita o recarregamento da página
-                
-                const form = event.target;
-                const data = new FormData(form);
-                const originalBtnText = form.querySelector('button[type="submit"]').innerHTML;
-                const submitBtn = form.querySelector('button[type="submit"]');
-
-                // Altera o texto do botão para indicar carregamento
-                submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
-                submitBtn.disabled = true;
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: data,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        // Sucesso
-                        alert("Obrigado! Seus dados foram recebidos com sucesso. Em breve entraremos em contato.");
-                        form.reset(); // Limpa os campos
-                    } else {
-                        // Erro no Formspree
-                        const responseData = await response.json();
-                        if (Object.hasOwn(responseData, 'errors')) {
-                            alert(responseData["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert("Oops! Ocorreu um problema ao enviar o formulário.");
-                        }
-                    }
-                } catch (error) {
-                    alert("Oops! Ocorreu um erro de conexão ao tentar enviar.");
-                } finally {
-                    // Restaura o botão ao estado original
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.disabled = false;
-                }
-            });
-        }
     </script>
+
 </body>
+
 </html>
